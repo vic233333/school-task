@@ -1,0 +1,44 @@
+<?xml?>
+<project>
+	<settings>
+		<label>A2</label>
+		<root_path>\</root_path>
+		<output_path>\</output_path>
+		<source_path>\</source_path>
+		<jdkprofile_ref/>
+		<compiler_ref/>
+		<ant_ref/>
+	</settings>
+	<runtimes>
+		<runtime>
+			<label>&lt;Default&gt;</label>
+			<application_ref/>
+			<applet_ref/>
+			<debugger_ref/>
+			<param/>
+			<run>A2Test</run>
+		</runtime>
+	</runtimes>
+	<libraries/>
+	<files>
+		<include>
+			<fileitem>
+				<path>A2Test.java</path>
+				<source>true</source>
+			</fileitem>
+			<fileitem>
+				<path>Item.java</path>
+				<source>true</source>
+			</fileitem>
+			<fileitem>
+				<path>TaxableItem.java</path>
+				<source>true</source>
+			</fileitem>
+			<fileitem>
+				<path>Vehicle.java</path>
+				<source>true</source>
+			</fileitem>
+		</include>
+	</files>
+	<tasks/>
+</project>

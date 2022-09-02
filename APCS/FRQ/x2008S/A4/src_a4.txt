@@ -1,0 +1,5 @@
+C:\Skypub\CollegeBoard\CompSci\APExam2008\Java\A4\AndChecker.java
+C:\Skypub\CollegeBoard\CompSci\APExam2008\Java\A4\Checker.java
+C:\Skypub\CollegeBoard\CompSci\APExam2008\Java\A4\CheckerTest.java
+C:\Skypub\CollegeBoard\CompSci\APExam2008\Java\A4\NotChecker.java
+C:\Skypub\CollegeBoard\CompSci\APExam2008\Java\A4\SubstringChecker.java
