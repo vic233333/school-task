@@ -80,4 +80,8 @@ public class App {
     public String withouEnd2(String str) {
         return str.length() >= 2 ? str.substring(1, str.length() - 1) : "";
     }
+
+    public String middleTwo(String str) {
+        return str.substring(str.length() / 2 - 1, str.length() / 2 + 1);
+    }
 }
