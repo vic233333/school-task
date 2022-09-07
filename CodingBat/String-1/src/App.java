@@ -187,4 +187,20 @@ public class App {
         int strEnd = str.length() < 2 ? str.length() : 2;
         return str.substring(0, strEnd) + str.substring(0, strEnd) + str.substring(0, strEnd);
     }
+
+    public String without2(String str) {
+        if (str.length() == 2) {
+            return "";
+        } else if (str.length() < 2) {
+            return str;
+        } else {
+            String start = str.substring(0, 2);
+            String end = str.substring(str.length() - 2, str.length());
+            if (start.equals(end)) {
+                return str.substring(2);
+            } else {
+                return str;
+            }
+        }
+    }
 }
