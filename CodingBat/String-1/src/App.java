@@ -44,13 +44,17 @@ public class App {
     }
 
     public String comboString(String a, String b) {
-        if (a.length() < b.length()) {//交换两个字符串
+        if (a.length() < b.length()) {// 交换两个字符串
             String temp;
             temp = a;
             a = b;
             b = temp;
         }
         return b + a + b;
+    }
+
+    public String nonStart(String a, String b) {
+        return a.substring(1)+b.substring(1);
     }
 
 }
