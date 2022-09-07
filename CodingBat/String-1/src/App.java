@@ -32,4 +32,8 @@ public class App {
         return str.substring(0, end);
     }
 
+    public String firstHalf(String str) {
+        int end = str.length() / 2;
+        return str.substring(0, end);
+    }
 }
