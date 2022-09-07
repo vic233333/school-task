@@ -113,4 +113,15 @@ public class App {
         } else
             return false;
     }
+
+    public String atFirst(String str) {
+        int add = 0;
+        String addString = new String("");
+        int end = str.length() >= 2 ? 2 : str.length();
+        while (add + str.length() < 2) {
+            addString = addString + "@";
+            add++;
+        }
+        return str.substring(0, end) + addString;
+    }
 }
