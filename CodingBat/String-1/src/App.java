@@ -132,22 +132,31 @@ public class App {
     }
 
     public String conCat(String a, String b) {
-        if(a.length() == 0 || b.length() == 0)
+        if (a.length() == 0 || b.length() == 0)
             return a + b;
-              
-        if(a.charAt(a.length() - 1) == b.charAt(0))
+
+        if (a.charAt(a.length() - 1) == b.charAt(0))
             return a + b.substring(1);
 
         return a + b;
     }
 
     public String lastTwo(String str) {
-        if (str.length() <=1) {
+        if (str.length() <= 1) {
             return str;
+        } else {
+            return str.substring(0, str.length() - 2) + str.substring(str.length() - 1)
+                    + str.substring(str.length() - 2, str.length() - 1);
         }
-        else
-        {
-            return str.substring(0, str.length()-2)+str.substring(str.length()-1)+str.substring(str.length()-2, str.length()-1);
+    }
+
+    public String seeColor(String str) {
+        if (str.indexOf("red") == 0) {
+            return "red";
+        } else if (str.indexOf("blue") == 0) {
+            return "blue";
+        } else {
+            return "";
         }
     }
 }
