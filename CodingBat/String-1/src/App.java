@@ -101,4 +101,8 @@ public class App {
         index = index < 0 ? 0 : index;
         return str.substring(index, index + 2);
     }
+
+    public String middleThree(String str) {
+        return str.substring(str.length() / 2 - 1, str.length() / 2 + 2);
+    }
 }
