@@ -86,8 +86,13 @@ public class App {
     }
 
     public boolean endsLy(String str) {
-        int first = str.length()>=2?str.length()-2:0;
+        int first = str.length() >= 2 ? str.length() - 2 : 0;
         String extra = str.substring(first);
         return extra.equals("ly");
-    }    
+    }
+
+    public String nTwice(String str, int n) {
+        return str.substring(0, n)
+                + str.substring(str.length() - n);
+    }
 }
