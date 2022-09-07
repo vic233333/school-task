@@ -39,7 +39,18 @@ public class App {
 
     public String withoutEnd(String str) {
         int end = str.length() >= 2 ? str.length() - 1 : str.length();
-        int first =str.length() >= 2 ? 1 : 0;
+        int first = str.length() >= 2 ? 1 : 0;
         return str.substring(first, end);
     }
+
+    public String comboString(String a, String b) {
+        if (a.length() < b.length()) {//交换两个字符串
+            String temp;
+            temp = a;
+            a = b;
+            b = temp;
+        }
+        return b + a + b;
+    }
+
 }
