@@ -62,4 +62,10 @@ public class App {
         String last = str.length() > 2 ? str.substring(2) : "";
         return last + first;
     }
+
+    public String right2(String str) {
+        String first = str.substring(0, str.length() - 2);
+        String last = str.substring(str.length() - 2, str.length());
+        return last + first;
+    }
 }
