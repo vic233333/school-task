@@ -203,4 +203,15 @@ public class App {
             }
         }
     }
+
+    public String deFront(String str) {    
+        String sum = str.substring(2);
+        if (str.charAt(1) == 'b') {
+            sum = "b" + sum;
+        }
+        if (str.charAt(0) == 'a') {
+            sum = "a" + sum;
+        }
+        return sum;
+    }
 }
