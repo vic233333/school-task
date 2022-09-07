@@ -20,4 +20,10 @@ public class App {
         String last = out.substring(2);
         return first + word + last;
     }
+
+    public String extraEnd(String str) {
+        int len = str.length();
+        String sub = str.substring(len - 2);
+        return sub + sub + sub;
+    }
 }
