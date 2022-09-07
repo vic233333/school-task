@@ -54,7 +54,12 @@ public class App {
     }
 
     public String nonStart(String a, String b) {
-        return a.substring(1)+b.substring(1);
+        return a.substring(1) + b.substring(1);
     }
 
+    public String left2(String str) {
+        String first = str.substring(0, 2);
+        String last = str.length() > 2 ? str.substring(2) : "";
+        return last + first;
+    }
 }
