@@ -36,4 +36,10 @@ public class App {
         int end = str.length() / 2;
         return str.substring(0, end);
     }
+
+    public String withoutEnd(String str) {
+        int end = str.length() >= 2 ? str.length() - 1 : str.length();
+        int first =str.length() >= 2 ? 1 : 0;
+        return str.substring(first, end);
+    }
 }
