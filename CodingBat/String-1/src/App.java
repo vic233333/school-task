@@ -204,7 +204,7 @@ public class App {
         }
     }
 
-    public String deFront(String str) {    
+    public String deFront(String str) {
         String sum = str.substring(2);
         if (str.charAt(1) == 'b') {
             sum = "b" + sum;
@@ -213,5 +213,19 @@ public class App {
             sum = "a" + sum;
         }
         return sum;
+    }
+
+    public String startWord(String str, String word) {
+        if (str.length() == 0) {
+            return "";
+        }
+        if (word.length() == 1) {
+            return str.substring(0, 1);
+        }
+        String pairWord = word.substring(1);
+        if (str.indexOf(pairWord) == -1) {
+            return "";
+        }
+        return str.substring(str.indexOf(pairWord) - 1, str.indexOf(pairWord) + word.length() - 1);
     }
 }
