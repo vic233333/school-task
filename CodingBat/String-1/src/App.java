@@ -95,4 +95,10 @@ public class App {
         return str.substring(0, n)
                 + str.substring(str.length() - n);
     }
+
+    public String twoChar(String str, int index) {
+        index = index + 2 > str.length() ? 0 : index;
+        index = index < 0 ? 0 : index;
+        return str.substring(index, index + 2);
+    }
 }
