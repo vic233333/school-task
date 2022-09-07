@@ -26,4 +26,10 @@ public class App {
         String sub = str.substring(len - 2);
         return sub + sub + sub;
     }
+
+    public String firstTwo(String str) {
+        int end = str.length() >= 2 ? 2 : str.length();
+        return str.substring(0, end);
+    }
+
 }
