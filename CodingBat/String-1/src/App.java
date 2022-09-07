@@ -105,4 +105,12 @@ public class App {
     public String middleThree(String str) {
         return str.substring(str.length() / 2 - 1, str.length() / 2 + 2);
     }
+
+    public boolean hasBad(String str) {
+        if (str.indexOf("b") == 0 && str.indexOf("a") == 1 && str.indexOf("d") == 2 ||
+                str.indexOf("b") == 1 && str.indexOf("a") == 2 && str.indexOf("d") == 3) {
+            return true;
+        } else
+            return false;
+    }
 }
