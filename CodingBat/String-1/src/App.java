@@ -130,4 +130,14 @@ public class App {
         b = b.length() != 0 ? b : b + "@";
         return a.substring(0, 1) + b.substring(b.length() - 1, b.length());
     }
+
+    public String conCat(String a, String b) {
+        if(a.length() == 0 || b.length() == 0)
+            return a + b;
+              
+        if(a.charAt(a.length() - 1) == b.charAt(0))
+            return a + b.substring(1);
+
+        return a + b;
+    }
 }
