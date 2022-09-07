@@ -84,4 +84,10 @@ public class App {
     public String middleTwo(String str) {
         return str.substring(str.length() / 2 - 1, str.length() / 2 + 1);
     }
+
+    public boolean endsLy(String str) {
+        int first = str.length()>=2?str.length()-2:0;
+        String extra = str.substring(first);
+        return extra.equals("ly");
+    }    
 }
