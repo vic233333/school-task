@@ -159,4 +159,17 @@ public class App {
             return "";
         }
     }
+
+    public boolean frontAgain(String str) {
+        if (str.length() < 2) {
+            return false;
+        } else if (str.length() == 2) {
+            return true;
+        } else if (str.charAt(0) == str.charAt(str.length() - 2) && str.charAt(1) == str.charAt(str.length() - 1)
+                || str.charAt(1) == str.charAt(str.length() - 2) && str.charAt(0) == str.charAt(str.length() - 1)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
