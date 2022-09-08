@@ -228,4 +228,20 @@ public class App {
         }
         return str.substring(str.indexOf(pairWord) - 1, str.indexOf(pairWord) + word.length() - 1);
     }
+
+    public String withoutX(String str) {
+        if (str.length() == 0) {
+            return "";
+        } else {
+            int begin = 0;
+            int end = str.length();
+            if (str.charAt(begin) == 'x') {
+                begin = begin + 1 > end - 1 ? end : begin + 1;
+            }
+            if (str.charAt(end - 1) == 'x') {
+                end = end - 1 < begin + 1 ? begin : end - 1;
+            }
+            return str.substring(begin, end);
+        }
+    }
 }
