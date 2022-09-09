@@ -56,4 +56,13 @@ public class App {
         nums[nums.length - 1] = temp;
         return nums;
     }
+
+    public int[] reverse3(int[] nums) {
+        int[] nums_copy = new int[nums.length];
+        for(int i= nums.length-1, j=0; i>=0;i--, j++)
+        {
+            nums_copy[i] = nums[j];
+        }
+        return nums_copy;
+    } 
 }
