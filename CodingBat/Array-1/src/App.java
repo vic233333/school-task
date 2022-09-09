@@ -84,4 +84,9 @@ public class App {
             return nums[0] + nums[1];
         }
     }
+
+    public int[] middleWay(int[] a, int[] b) {
+        int[] ans = new int[] { a[a.length / 2], b[b.length / 2] };
+        return ans;
+    }
 }
