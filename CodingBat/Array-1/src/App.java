@@ -59,10 +59,29 @@ public class App {
 
     public int[] reverse3(int[] nums) {
         int[] nums_copy = new int[nums.length];
-        for(int i= nums.length-1, j=0; i>=0;i--, j++)
-        {
+        for (int i = nums.length - 1, j = 0; i >= 0; i--, j++) {
             nums_copy[i] = nums[j];
         }
         return nums_copy;
-    } 
+    }
+
+    public int[] maxEnd3(int[] nums) {
+        int maxn = 0;
+        maxn = nums[0] > nums[nums.length - 1] ? nums[0] : nums[nums.length - 1];
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = maxn;
+        }
+        return nums;
+    }
+
+    public int sum2(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        } else if (nums.length == 1) {
+            return nums[0];
+
+        } else {
+            return nums[0] + nums[1];
+        }
+    }
 }
