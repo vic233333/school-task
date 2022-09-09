@@ -89,4 +89,9 @@ public class App {
         int[] ans = new int[] { a[a.length / 2], b[b.length / 2] };
         return ans;
     }
+
+    public int[] makeEnds(int[] nums) {
+        int[] ans = new int[] { nums[0], nums[nums.length - 1] };
+        return ans;
+    }
 }
