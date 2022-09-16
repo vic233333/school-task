@@ -96,9 +96,8 @@ public class App {
     }
 
     public boolean has23(int[] nums) {
-        for(int i=0; i<nums.length; i++)
-        {
-            if (nums[i]==2||nums[i]==3) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 2 || nums[i] == 3) {
                 return true;
             }
         }
@@ -118,5 +117,19 @@ public class App {
         int ans[] = new int[nums.length * 2];
         ans[ans.length - 1] = nums[nums.length - 1];
         return ans;
+    }
+
+    public boolean double23(int[] nums) {
+        int sum_2 = 0;
+        int sum_3 = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 2) {
+                sum_2++;
+            }
+            if (nums[i] == 3) {
+                sum_3++;
+            }
+        }
+        return sum_2 == 2 || sum_3 == 2;
     }
 }
