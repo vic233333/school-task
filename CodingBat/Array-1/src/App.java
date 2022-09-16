@@ -153,4 +153,16 @@ public class App {
         }
         return sum;
     }
+
+    public int[] biggerTwo(int[] a, int[] b) {
+        int sum_a = 0;
+        int sum_b = 0;
+        for (int i = 0; i < a.length; i++) {
+            sum_a += a[i];
+        }
+        for (int j = 0; j < b.length; j++) {
+            sum_b += b[j];
+        }
+        return sum_a >= sum_b ? a : b;
+    }
 }
