@@ -28,7 +28,7 @@ public class Array2D {
     public static void main(String[] args) {
         int[][] arr_1 = make2D(3, 4);
         print2D(arr_1);
-        int[][] arr_2 = make1ToN2Darray(3, 4);
+        int[][] arr_2 = make1ToN2DArray(3, 4);
         print2D(arr_2);
     }
 }
