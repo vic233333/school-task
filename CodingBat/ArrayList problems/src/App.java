@@ -23,4 +23,15 @@ public class App {
         }
         return sum;
     }
+
+    public int listFairlyOddNums(List<Integer> numsList) {
+        int sum = 0;
+        for (int i = 0; i < numsList.size(); i++) {
+            if (i % 2 == 0 && numsList.get(i) % 2 == 1
+                    || i % 2 == 1 && numsList.get(i) % 2 == 0) {
+                sum += numsList.get(i);
+            }
+        }
+        return sum;
+    }
 }
