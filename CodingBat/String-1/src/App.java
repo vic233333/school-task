@@ -215,6 +215,7 @@ public class App {
         return sum;
     }
 
+    // startWord method 1
     public String startWord(String str, String word) {
         if (str.length() == 0) {
             return "";
@@ -228,6 +229,15 @@ public class App {
         }
         return str.substring(str.indexOf(pairWord) - 1, str.indexOf(pairWord) + word.length() - 1);
     }
+
+    // startWord method 2
+    // public String startWord(String str, String word) {
+    //     if (str.length() > 0 && (str.substring(1).indexOf(word.substring(1)) == 0)) {
+    //         return str.substring(0, word.length());
+    //     } else {
+    //         return "";
+    //     }
+    // }
 
     public String withoutX(String str) {
         if (str.length() == 0) {
