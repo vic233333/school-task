@@ -8,8 +8,18 @@ public class App {
 
     public int listSumEvenIndexes(List<Integer> numsList) {
         int sum = 0;
-        for (int i = 0; i < numsList.size(); i+=2) {
+        for (int i = 0; i < numsList.size(); i += 2) {
             sum += numsList.get(i);
+        }
+        return sum;
+    }
+
+    public int listEvenCount(List<Integer> numsList) {
+        int sum = 0;
+        for (int i = 0; i < numsList.size(); i++) {
+            if (numsList.get(i) % 2 == 0) {
+                sum++;
+            }
         }
         return sum;
     }
