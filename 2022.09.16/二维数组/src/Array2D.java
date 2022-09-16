@@ -13,7 +13,7 @@ public class Array2D {
         }
     }
 
-    public static int[][] make1ToN2Darray(int row, int col) {
+    public static int[][] make1ToN2DArray(int row, int col) {
         int[][] arr = new int[row][col];
         int n = 1;
         for (int i = 0; i < arr.length; i++) {
