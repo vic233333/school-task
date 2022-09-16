@@ -172,4 +172,15 @@ public class App {
         ans[1] = nums[nums.length / 2];
         return ans;
     }
+
+    public int[] plusTwo(int[] a, int[] b) {
+        int[] ans = new int[a.length + b.length];
+        for (int i = 0; i < a.length; i++) {
+            ans[i] = a[i];
+        }
+        for (int i = a.length; i < b.length + a.length; i++) {
+            ans[i] = b[i - a.length];
+        }
+        return ans;
+    }
 }
