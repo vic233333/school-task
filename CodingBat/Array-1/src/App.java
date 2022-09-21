@@ -198,4 +198,12 @@ public class App {
         ans[2] = nums[nums.length / 2 + 1];
         return ans;
     }
+
+    public int maxTriple(int[] nums) {
+        int maxn = Integer.MIN_VALUE;
+        maxn = nums[0] > maxn ? nums[0] : maxn;
+        maxn = nums[nums.length / 2] > maxn ? nums[nums.length / 2] : maxn;
+        maxn = nums[nums.length - 1] > maxn ? nums[nums.length - 1] : maxn;
+        return maxn;
+    }
 }
