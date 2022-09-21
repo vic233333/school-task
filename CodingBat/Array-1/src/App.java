@@ -206,4 +206,15 @@ public class App {
         maxn = nums[nums.length - 1] > maxn ? nums[nums.length - 1] : maxn;
         return maxn;
     }
+
+    public int[] frontPiece(int[] nums) {
+        if (nums.length <= 1) {
+            return nums;
+        } else {
+            int[] ans = new int[2];
+            ans[0] = nums[0];
+            ans[1] = nums[1];
+            return ans;
+        }
+    }
 }
