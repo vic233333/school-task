@@ -8,9 +8,35 @@ public class App {
     public String doubleChar(String str) {
         String ans = new String();
         for (int i = 0; i < str.length(); i++) {
-            ans += str.substring(i, i+1);
-            ans += str.substring(i, i+1);
+            ans += str.substring(i, i + 1);
+            ans += str.substring(i, i + 1);
         }
         return ans;
-    }    
+    }
+
+    public boolean catDog(String str) {
+        int countCat = 0;
+        int countDog = 0;
+        int k = 0;
+        for (;;) {
+            k = str.indexOf("cat", k);
+            if (k != -1) {
+                countCat++;
+                k++;
+            } else {
+                break;
+            }
+        }
+        k = 0;
+        for (;;) {
+            k = str.indexOf("dog", k);
+            if (k != -1) {
+                countDog++;
+                k++;
+            } else {
+                break;
+            }
+        }
+        return countDog == countCat;
+    }
 }
