@@ -238,4 +238,22 @@ public class App {
             }
         }
     }
+
+    public int[] make2(int[] a, int[] b) {
+        int[] ans = new int[2];
+        int k = 0;
+        for (int i : a) {
+            if (k>=2) {
+                break;
+            }
+            ans[k++] = i;
+        }
+        for (int i : b) {
+            if (k>=2) {
+                break;
+            }
+            ans[k++] = i;
+        }
+        return ans;
+    }
 }
