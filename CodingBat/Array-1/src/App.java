@@ -243,16 +243,35 @@ public class App {
         int[] ans = new int[2];
         int k = 0;
         for (int i : a) {
-            if (k>=2) {
+            if (k >= 2) {
                 break;
             }
             ans[k++] = i;
         }
         for (int i : b) {
-            if (k>=2) {
+            if (k >= 2) {
                 break;
             }
             ans[k++] = i;
+        }
+        return ans;
+    }
+
+    public int[] front11(int[] a, int[] b) {
+        int lenans = 2;
+        if (a.length < 1) {
+            lenans--;
+        }
+        if (b.length < 1) {
+            lenans--;
+        }
+        int[] ans = new int[lenans];
+        int k = 0;
+        if (a.length >= 1) {
+            ans[k++] = a[0];
+        }
+        if (b.length >= 1) {
+            ans[k++] = b[0];
         }
         return ans;
     }
