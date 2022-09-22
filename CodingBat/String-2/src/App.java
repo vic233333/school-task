@@ -54,4 +54,21 @@ public class App {
         }
         return countDog == countCat;
     }
+
+    public int countCode(String str) {
+        int sum = 0;
+        int k = 0;
+        for (;;) {
+            k = str.indexOf("co", k);
+            if (k == -1) {
+                break;
+            } else if (k <= str.length() - 4 && str.charAt(k + 3) == 'e') {
+                sum++;
+                k++;
+            } else {
+                k++;
+            }
+        }
+        return sum;
+    }
 }
