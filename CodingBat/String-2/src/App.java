@@ -14,6 +14,21 @@ public class App {
         return ans;
     }
 
+    public int countHi(String str) {
+        int sum = 0;
+        int k = 0;
+        for (;;) {
+            k = str.indexOf("hi", k);
+            if (k != -1) {
+                sum++;
+                k++;
+            } else {
+                break;
+            }
+        }
+        return sum;
+    }
+
     public boolean catDog(String str) {
         int countCat = 0;
         int countDog = 0;
