@@ -71,4 +71,8 @@ public class App {
         }
         return sum;
     }
+
+    public boolean endOther(String a, String b) {
+        
+    }    
 }
