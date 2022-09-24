@@ -218,6 +218,8 @@ public class App {
         }
     }
 
+    // unlucky1 method 1
+    // 可读性略差的无脑判断
     public boolean unlucky1(int[] nums) {
         if (nums.length <= 1) {
             return false;
@@ -228,9 +230,9 @@ public class App {
                 return false;
             }
         } else {
-            if (nums[0] == 1 && nums[1] == 3 ||
-                    nums[1] == 1 && nums[2] == 3 ||
-                    nums[nums.length - 1] == 3
+            if (nums[0] == 1 && nums[1] == 3
+                    || nums[1] == 1 && nums[2] == 3
+                    || nums[nums.length - 1] == 3
                             && nums[nums.length - 2] == 1) {
                 return true;
             } else {
@@ -238,6 +240,21 @@ public class App {
             }
         }
     }
+
+    // unlucky1 method 2
+    // 带跳跃的一个循环
+    // 跳一下可以提升不少效率
+    // public boolean unlucky1(int nums[]) {
+    //     for (int i = 0; i < nums.length - 1; i++) {
+    //         if (i == 2) {
+    //             i = nums.length - 2;
+    //         }
+    //         if (nums[i] == 1 && nums[i] == 3) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
 
     public int[] make2(int[] a, int[] b) {
         int[] ans = new int[2];
