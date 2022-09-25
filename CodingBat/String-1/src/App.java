@@ -232,11 +232,11 @@ public class App {
 
     // startWord method 2
     // public String startWord(String str, String word) {
-    //     if (str.length() > 0 && (str.substring(1).indexOf(word.substring(1)) == 0)) {
-    //         return str.substring(0, word.length());
-    //     } else {
-    //         return "";
-    //     }
+    // if (str.length() > 0 && (str.substring(1).indexOf(word.substring(1)) == 0)) {
+    // return str.substring(0, word.length());
+    // } else {
+    // return "";
+    // }
     // }
 
     public String withoutX(String str) {
@@ -267,4 +267,29 @@ public class App {
         else
             return str;
     }
+    //withOutX2 method 2
+    // public String withoutX2(String str) {
+    //     if (str.length() >= 2 && str.substring(0, 2).equals("xx")) {
+    //         return str.substring(2, str.length());
+    //     }
+    //     if (str.length() >= 2 && str.substring(1, 2).equals("x")) {
+    //         return str.substring(0, 1) + str.substring(2, str.length());
+    //     }
+    //     if (str.length() >= 1 && str.substring(0, 1).equals("x")) {
+    //         return str.substring(1, str.length());
+    //     } else {
+    //         return str.substring(0, str.length());
+    //     }
+    // }
+
+    //withOutX2 method 3
+    // public String withoutX2(String str) {
+    //     if (str.indexOf("x", 1) == 1) {
+    //         str = str.substring(0, 1) + str.substring(2);
+    //     }
+    //     if (str.indexOf("x") == 0) {
+    //         str = str.substring(1);
+    //     }
+    //     return str;
+    // }
 }
