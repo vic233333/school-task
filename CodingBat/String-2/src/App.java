@@ -15,7 +15,13 @@ public class App {
     }
 
     public int countHi(String str) {
-       whuh
+        int k = 0;
+        int sum = 0;
+        while (str.indexOf("hi", k) != -1) {
+            sum++;
+            k = str.indexOf("hi", k) + 1;
+        }
+        return sum;
     }
 
     public boolean catDog(String str) {
