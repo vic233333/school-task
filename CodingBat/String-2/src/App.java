@@ -179,6 +179,10 @@ public class App {
       // return maxn.indexOf(minn, maxn.length() - minn.length()) != -1;
       
       //method 2 2
-      return maxn.substring(maxn.length() - minn.length()).equals(minn);
+      //return maxn.substring(maxn.length() - minn.length()).equals(minn);
+
+      //method 2 3
+      return a.indexOf(b, a.length() - b.length()) != -1;
+          || b.indexOf(a, b.length() - a.length()) != -1;  
     }
 }
