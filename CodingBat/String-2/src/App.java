@@ -64,21 +64,21 @@ public class App {
     }
 
     // catDog method 2
-    public boolean catDog(String str) {
-        int countCat = 0;
-        int countDog = 0;
-        for (int i = 0; i < str.length() - 2; i++) {
-            if (str.substring(i, i + 3).equals("cat")) {
-                countCat++;
-            }
-        }
-        for (int i = 0; i < str.length() - 2; i++) {
-            if (str.substring(i, i + 3).equals("dog")) {
-                countDog++;
-            }
-        }
-        return countCat == countDog;
-    }
+    // public boolean catDog(String str) {
+    // int countCat = 0;
+    // int countDog = 0;
+    // for (int i = 0; i < str.length() - 2; i++) {
+    // if (str.substring(i, i + 3).equals("cat")) {
+    // countCat++;
+    // }
+    // }
+    // for (int i = 0; i < str.length() - 2; i++) {
+    // if (str.substring(i, i + 3).equals("dog")) {
+    // countDog++;
+    // }
+    // }
+    // return countCat == countDog;
+    // }
 
     public int countCode(String str) {
         int sum = 0;
@@ -120,4 +120,10 @@ public class App {
         }
     }
 
+    public boolean xyzThere(String str) {
+        if (str.indexOf("xyz") != 0 && str.indexOf(".xzy") == -1) {
+            return true;
+        }
+        return false;
+    }
 }
