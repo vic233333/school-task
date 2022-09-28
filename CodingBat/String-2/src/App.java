@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
@@ -106,53 +104,49 @@ public class App {
         int bLen = b.length();
 
         if (aLen < bLen)
-          return b.substring(bLen - aLen).equals(a);
-        else 
-          return a.substring(aLen - bLen).equals(b);
+            return b.substring(bLen - aLen).equals(a);
+        else
+            return a.substring(aLen - bLen).equals(b);
     }
 
-    public boolean xyzThere(String str) {
-        if (str.indexOf("xyz") != 0 && str.indexOf(".xzy") == -1) {
-            return true;
-        }
-        return false;
-    }
-<<<<<<< HEAD
-
-    public boolean xyzThere(String str) {
-        if (str.indexOf("xyz") != 0 && str.indexOf(".xzy") == -1) {
-            return true;
-        }
-        return false;
-    }
-=======
-    
-    //endOther method 2
+    // endOther method 2
     // public boolean endOther(String a, String b)
     // {
-    //   String maxn, minn;
-    //   a = a.toLowerCase();
-    //   b = b.toLowerCase();
-    //   if (a.length() > b.length())
-    //   {
-    //     maxn = a.toLowerCase();
-    //     minn = b.toLowerCase();
-    //   }
-    //   else
-    //   {
-    //     maxn = b.toLowerCase();
-    //     minn = a.toLowerCase();
-    //   }
-      
-    //   //method 2 1
-    //   // return maxn.indexOf(minn, maxn.length() - minn.length()) != -1;
-      
-    //   //method 2 2
-    //   // return maxn.substring(maxn.length() - minn.length()).equals(minn);
-      
-    //   //method 2 3
-    //   return a.indexOf(b, a.length() - b.length()) != -1 
-    //       || b.indexOf(a, b.length() - a.length()) != -1;
+    // String maxn, minn;
+    // a = a.toLowerCase();
+    // b = b.toLowerCase();
+    // if (a.length() > b.length())
+    // {
+    // maxn = a.toLowerCase();
+    // minn = b.toLowerCase();
     // }
->>>>>>> c56365ed688e35c33a6c16f228bca3ff17a5b21e
+    // else
+    // {
+    // maxn = b.toLowerCase();
+    // minn = a.toLowerCase();
+    // }
+
+    // //method 2 1
+    // // return maxn.indexOf(minn, maxn.length() - minn.length()) != -1;
+
+    // //method 2 2
+    // // return maxn.substring(maxn.length() - minn.length()).equals(minn);
+
+    // //method 2 3
+    // return a.indexOf(b, a.length() - b.length()) != -1
+    // || b.indexOf(a, b.length() - a.length()) != -1;
+    // }
+
+    public boolean xyzThere(String str) {
+        boolean flag = false;
+        int index = 0;
+        while (str.indexOf("xyz", index) != -1) {
+            index = str.indexOf("xyz", index);
+            if (index == 0 || str.indexOf(".", index - 1) + 1 != index) {
+                flag = true;
+            }
+            index++;
+        }
+        return flag;
+    }
 }
