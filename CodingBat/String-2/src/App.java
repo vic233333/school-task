@@ -14,6 +14,7 @@ public class App {
         return ans;
     }
 
+    //countHi method 1
     public int countHi(String str) {
         int k = 0;
         int sum = 0;
@@ -23,6 +24,17 @@ public class App {
         }
         return sum;
     }
+
+    //countHi method 2
+    // public int countHi(String str) {
+    //     int count = 0;
+    //     for(int i = 0; i < str.length() - 1; i++) {
+    //         if (str.substring(i, i + 2).equals("hi")) {
+    //             count++;
+    //         }
+    //     }
+    //     return count;
+    // }
 
     public boolean catDog(String str) {
         int countCat = 0;
@@ -88,6 +100,7 @@ public class App {
             else
                 return false;
         }
-
     }
+
+
 }
