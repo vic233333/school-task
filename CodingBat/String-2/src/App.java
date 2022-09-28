@@ -97,6 +97,7 @@ public class App {
         return sum;
     }
 
+    // method 1
     public boolean endOther(String a, String b) {
         a = a.toLowerCase();
         int aLen = a.length();
@@ -119,5 +120,18 @@ public class App {
                 return false;
         }
     }
-
+    // method 2
+    public boolean endOther(String a, String b){
+        String maxn, minn;
+        if (a.length() > b.length()){
+            maxn = a.toLowerCase();
+            minn = b.toLowerCase();
+        }
+        else{
+            maxn = b.toLowerCase();
+            minn = a.toLowerCase();
+        }
+        return maxn.substring(maxn.length() - minn.length().equals(minn));
+        }
+    }
 }
