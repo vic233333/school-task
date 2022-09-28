@@ -14,7 +14,7 @@ public class App {
         return ans;
     }
 
-    //countHi method 1
+    // countHi method 1
     public int countHi(String str) {
         int k = 0;
         int sum = 0;
@@ -25,17 +25,18 @@ public class App {
         return sum;
     }
 
-    //countHi method 2
+    // countHi method 2
     // public int countHi(String str) {
-    //     int count = 0;
-    //     for(int i = 0; i < str.length() - 1; i++) {
-    //         if (str.substring(i, i + 2).equals("hi")) {
-    //             count++;
-    //         }
-    //     }
-    //     return count;
+    // int count = 0;
+    // for(int i = 0; i < str.length() - 1; i++) {
+    // if (str.substring(i, i + 2).equals("hi")) {
+    // count++;
+    // }
+    // }
+    // return count;
     // }
 
+    // catDog method 1
     public boolean catDog(String str) {
         int countCat = 0;
         int countDog = 0;
@@ -60,6 +61,23 @@ public class App {
             }
         }
         return countDog == countCat;
+    }
+
+    // catDog method 2
+    public boolean catDog(String str) {
+        int countCat = 0;
+        int countDog = 0;
+        for (int i = 0; i < str.length() - 2; i++) {
+            if (str.substring(i, i + 3).equals("cat")) {
+                countCat++;
+            }
+        }
+        for (int i = 0; i < str.length() - 2; i++) {
+            if (str.substring(i, i + 3).equals("dog")) {
+                countDog++;
+            }
+        }
+        return countCat == countDog;
     }
 
     public int countCode(String str) {
@@ -101,6 +119,5 @@ public class App {
                 return false;
         }
     }
-
 
 }
