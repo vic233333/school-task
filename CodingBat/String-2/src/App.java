@@ -97,7 +97,7 @@ public class App {
         return sum;
     }
 
-    // method 1
+    // endOther method 1
     public boolean endOther(String a, String b) {
         a = a.toLowerCase();
         int aLen = a.length();
@@ -105,84 +105,37 @@ public class App {
         b = b.toLowerCase();
         int bLen = b.length();
 
-        if (aLen < bLen) {
-            String temp = b.substring(bLen - aLen, bLen);
-            if (temp.compareTo(a) == 0)
-                return true;
-            else
-                return false;
-
-        } else {
-            String temp = a.substring(aLen - bLen, aLen);
-            if (temp.compareTo(b) == 0)
-                return true;
-            else
-                return false;
-        }
+        if (aLen < bLen)
+          return b.substring(bLen - aLen).equals(a);
+        else 
+          return a.substring(aLen - bLen).equals(b);
     }
-    // method 2
-    public boolean endOther(String a, String b){
-        String maxn, minn;
-        if (a.length() > b.length()){
-            maxn = a.toLowerCase();
-            minn = b.toLowerCase();
-        }
-        else{
-            maxn = b.toLowerCase();
-            minn = a.toLowerCase();
-        }
-        return maxn.substring(maxn.length() - minn.length().equals(minn));
-        }
-    }
-
-        // endOther method 1
-    // public boolean endOther(String a, String b) {
-    //     a = a.toLowerCase();
-    //     int aLen = a.length();
-
-    //     b = b.toLowerCase();
-    //     int bLen = b.length();
-
-    //     if (aLen < bLen) {
-    //         String temp = b.substring(bLen - aLen, bLen);
-    //         if (temp.compareTo(a) == 0)
-    //             return true;
-    //         else
-    //             return false;
-
-    //     } else {
-    //         String temp = a.substring(aLen - bLen, aLen);
-    //         if (temp.compareTo(b) == 0)
-    //             return true;
-    //         else
-    //             return false;
-    //     }
-
-    // }
     
     //endOther method 2
-    public boolean endOther(String a, String b)
-    {
-      String maxn, minn;
-      if (a.length() > b.length())
-      {
-        maxn = a.toLowerCase();
-        minn = b.toLowerCase();
-      }
-      else
-      {
-        maxn = b.toLowerCase();
-        minn = a.toLowerCase();
-      }
+    // public boolean endOther(String a, String b)
+    // {
+    //   String maxn, minn;
+    //   a = a.toLowerCase();
+    //   b = b.toLowerCase();
+    //   if (a.length() > b.length())
+    //   {
+    //     maxn = a.toLowerCase();
+    //     minn = b.toLowerCase();
+    //   }
+    //   else
+    //   {
+    //     maxn = b.toLowerCase();
+    //     minn = a.toLowerCase();
+    //   }
       
-      //method 2 1
-      // return maxn.indexOf(minn, maxn.length() - minn.length()) != -1;
+    //   //method 2 1
+    //   // return maxn.indexOf(minn, maxn.length() - minn.length()) != -1;
       
-      //method 2 2
-      //return maxn.substring(maxn.length() - minn.length()).equals(minn);
-
-      //method 2 3
-      return a.indexOf(b, a.length() - b.length()) != -1;
-          || b.indexOf(a, b.length() - a.length()) != -1;  
-    }
+    //   //method 2 2
+    //   // return maxn.substring(maxn.length() - minn.length()).equals(minn);
+      
+    //   //method 2 3
+    //   return a.indexOf(b, a.length() - b.length()) != -1 
+    //       || b.indexOf(a, b.length() - a.length()) != -1;
+    // }
 }
