@@ -134,4 +134,51 @@ public class App {
         return maxn.substring(maxn.length() - minn.length().equals(minn));
         }
     }
+
+        // endOther method 1
+    // public boolean endOther(String a, String b) {
+    //     a = a.toLowerCase();
+    //     int aLen = a.length();
+
+    //     b = b.toLowerCase();
+    //     int bLen = b.length();
+
+    //     if (aLen < bLen) {
+    //         String temp = b.substring(bLen - aLen, bLen);
+    //         if (temp.compareTo(a) == 0)
+    //             return true;
+    //         else
+    //             return false;
+
+    //     } else {
+    //         String temp = a.substring(aLen - bLen, aLen);
+    //         if (temp.compareTo(b) == 0)
+    //             return true;
+    //         else
+    //             return false;
+    //     }
+
+    // }
+    
+    //endOther method 2
+    public boolean endOther(String a, String b)
+    {
+      String maxn, minn;
+      if (a.length() > b.length())
+      {
+        maxn = a.toLowerCase();
+        minn = b.toLowerCase();
+      }
+      else
+      {
+        maxn = b.toLowerCase();
+        minn = a.toLowerCase();
+      }
+      
+      //method 2 1
+      // return maxn.indexOf(minn, maxn.length() - minn.length()) != -1;
+      
+      //method 2 2
+      return maxn.substring(maxn.length() - minn.length()).equals(minn);
+    }
 }
