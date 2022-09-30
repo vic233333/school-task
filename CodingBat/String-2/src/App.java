@@ -149,4 +149,17 @@ public class App {
         }
         return flag;
     }
+
+    public boolean bobThere(String str) {
+        boolean flag = false;
+        int index = 0;
+        while (str.indexOf("b", index) != -1) {
+            index = str.indexOf("b", index);
+            if (index == str.indexOf("b", index + 2) - 2) {
+                flag = true;
+            }
+            index += 3;
+        }
+        return flag;
+    }
 }
