@@ -207,9 +207,7 @@ public class App {
         }
         if (flag_b_bigger) {
             ans += b.substring(a.length());
-        }
-        else
-        {
+        } else {
             ans += a.substring(b.length());
         }
         return ans;
@@ -219,6 +217,14 @@ public class App {
         String ans = new String("");
         for (int i = 0; i < n; i++) {
             ans += str.substring(str.length() - n);
+        }
+        return ans;
+    }
+
+    public String repeatFront(String str, int n) {
+        String ans = new String("");
+        for (int i = n; i > 0; i--) {
+            ans += str.substring(0, i);
         }
         return ans;
     }
