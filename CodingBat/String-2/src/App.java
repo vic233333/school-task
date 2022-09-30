@@ -162,4 +162,32 @@ public class App {
         }
         return flag;
     }
+
+    // xyBalance method 1
+    public boolean xyBalance(String str) {
+        boolean flag_x = false;
+        boolean flag_y = false;
+        for (int i = str.length() - 1; i >= 0; i--) {
+            if (str.subSequence(i, i + 1).equals("y")) {
+                flag_y = true;
+            } else if (str.subSequence(i, i + 1).equals("x")) {
+                flag_x = true;
+            }
+            if (!flag_y && flag_x) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // xyBalance method 2
+    // public boolean xyBalance(String str) {
+    //     for (int i = 0; i < str.length(); i++) {
+    //         if (str.substring(i, i + 1).equals("x") &&
+    //                 str.indexOf("y", i) == -1) {
+    //                     return false;
+    //         }
+    //     }
+    //     return true;
+    // }
 }
