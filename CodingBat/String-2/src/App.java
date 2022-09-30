@@ -182,12 +182,44 @@ public class App {
 
     // xyBalance method 2
     // public boolean xyBalance(String str) {
-    //     for (int i = 0; i < str.length(); i++) {
-    //         if (str.substring(i, i + 1).equals("x") &&
-    //                 str.indexOf("y", i) == -1) {
-    //                     return false;
-    //         }
-    //     }
-    //     return true;
+    // for (int i = 0; i < str.length(); i++) {
+    // if (str.substring(i, i + 1).equals("x") &&
+    // str.indexOf("y", i) == -1) {
+    // return false;
     // }
+    // }
+    // return true;
+    // }
+
+    public String mixString(String a, String b) {
+        String minn;
+        boolean flag_b_bigger;// false 表示a大. true 表示b大
+        String ans = new String("");
+        if (a.length() > b.length()) {
+            minn = b;
+            flag_b_bigger = false;
+        } else {
+            minn = a;
+            flag_b_bigger = true;
+        }
+        for (int i = 0; i < minn.length(); i++) {
+            ans += a.substring(i, i + 1) + b.substring(i, i + 1);
+        }
+        if (flag_b_bigger) {
+            ans += b.substring(a.length());
+        }
+        else
+        {
+            ans += a.substring(b.length());
+        }
+        return ans;
+    }
+
+    public String repeatEnd(String str, int n) {
+        String ans = new String("");
+        for (int i = 0; i < n; i++) {
+            ans += str.substring(str.length() - n);
+        }
+        return ans;
+    }
 }
