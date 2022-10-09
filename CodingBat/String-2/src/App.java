@@ -214,8 +214,8 @@ public class App {
     public boolean xyzThere(String str) {
         str = " " + str;
         for (int i = 0; i < str.length() - 3; i++) {
-            if (!str.substring(i, i+1).equals(".") &&
-            str.substring(i+1, i+4).equals("xyz")) {
+            if (!str.substring(i, i + 1).equals(".") &&
+                    str.substring(i + 1, i + 4).equals("xyz")) {
                 return true;
             }
         }
