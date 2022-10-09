@@ -303,7 +303,7 @@ public class App {
         return ans;
     }
 
-    //repeatEnd method 1
+    // repeatEnd method 1
     public String repeatEnd(String str, int n) {
         String ans = new String("");
         for (int i = 0; i < n; i++) {
@@ -312,7 +312,7 @@ public class App {
         return ans;
     }
 
-    //repeatEnd method 2
+    // repeatEnd method 2
     public String repeatEnd(String str, int n) {
         String ans = new String("");
         String temp = str.substring(str.length() - n);
@@ -322,7 +322,7 @@ public class App {
         return ans;
     }
 
-    //repeatFront method 1
+    // repeatFront method 1
     public String repeatFront(String str, int n) {
         String ans = new String("");
         for (int i = n; i > 0; i--) {
@@ -331,14 +331,22 @@ public class App {
         return ans;
     }
 
-    //repeatFront method 2
+    // repeatFront method 2
     public String repeatFront(String str, int n) {
         String ans = new String("");
         int count = n;
         for (int i = 0; i < n; i++) {
             ans += str.substring(0, count);
-            count --;
+            count--;
         }
         return ans;
+    }
+
+    public String repeatSeparator(String word, String sep, int count) {
+        String ans = new String("");
+        for (int i = 0; i < count - 1; i++) {
+            ans += word + sep;
+        }
+        return ans + word;
     }
 }
