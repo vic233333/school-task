@@ -365,4 +365,12 @@ public class App {
         }
         return ans;
     }
+
+    public boolean prefixAgain(String str, int n) {
+        if (str.indexOf(str.substring(0, n), n) != -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
