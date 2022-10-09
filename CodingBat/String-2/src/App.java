@@ -347,6 +347,9 @@ public class App {
         for (int i = 0; i < count - 1; i++) {
             ans += word + sep;
         }
-        return ans + word;
+        if (count > 0) {
+            ans += word;
+        }
+        return ans;
     }
 }
