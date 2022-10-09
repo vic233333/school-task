@@ -342,6 +342,7 @@ public class App {
         return ans;
     }
 
+    // repeatSeparator method 1
     public String repeatSeparator(String word, String sep, int count) {
         String ans = new String("");
         for (int i = 0; i < count - 1; i++) {
@@ -349,6 +350,18 @@ public class App {
         }
         if (count > 0) {
             ans += word;
+        }
+        return ans;
+    }
+
+    // repeatSeparator method 2
+    public String repeatSeparator(String word, String sep, int count) {
+        String ans = new String("");
+        for (int i = 0; i < count; i++) {
+            ans += word;
+            if (i < count - 1) {
+                ans += sep;
+            }
         }
         return ans;
     }
