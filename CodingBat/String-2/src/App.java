@@ -210,7 +210,7 @@ public class App {
 
     // xyzThere method 3
     // 老师的做法
-    // 开头加一个空格避免越界
+    // 开头加一个空格避免对起始位置的"."进行重复判断
     public boolean xyzThere(String str) {
         str = " " + str;
         for (int i = 0; i < str.length() - 3; i++) {
