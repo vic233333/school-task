@@ -208,6 +208,20 @@ public class App {
         return false;
     }
 
+    // xyzThere method 3
+    // 老师的做法
+    // 开头加一个空格避免越界
+    public boolean xyzThere(String str) {
+        str = " " + str;
+        for (int i = 0; i < str.length() - 3; i++) {
+            if (!str.substring(i, i+1).equals(".") &&
+            str.substring(i+1, i+4).equals("xyz")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     // bobThere method 1
     // 我自己的想法：每次都寻找下一个b
     public boolean bobThere(String str) {
@@ -376,5 +390,12 @@ public class App {
         } else {
             return false;
         }
+    }
+
+    public boolean xyzMiddle(String str) {
+        int xyzIndex = str.indexOf("xyz");
+        return xyzIndex!=-1
+                &&(xyzIndex > n/2 - 2
+                || 
     }
 }
