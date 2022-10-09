@@ -322,10 +322,22 @@ public class App {
         return ans;
     }
 
+    //repeatFront method 1
     public String repeatFront(String str, int n) {
         String ans = new String("");
         for (int i = n; i > 0; i--) {
             ans += str.substring(0, i);
+        }
+        return ans;
+    }
+
+    //repeatFront method 2
+    public String repeatFront(String str, int n) {
+        String ans = new String("");
+        int count = n;
+        for (int i = 0; i < n; i++) {
+            ans += str.substring(0, count);
+            count --;
         }
         return ans;
     }
