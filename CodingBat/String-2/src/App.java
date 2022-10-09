@@ -264,6 +264,8 @@ public class App {
         return true;
     }
 
+    // mixString method 1
+    // 我的做法，我觉得很好
     public String mixString(String a, String b) {
         String minn;
         boolean flag_b_bigger;// false 表示a大. true 表示b大
@@ -282,6 +284,21 @@ public class App {
             ans += b.substring(a.length());
         } else {
             ans += a.substring(b.length());
+        }
+        return ans;
+    }
+
+    // mixString method 2
+    public String mixString(String a, String b) {
+        String ans = "";
+        int i = 0;
+        for (i = 0; i < a.length() && i < b.length(); i++) {
+            ans += a.substring(i, i + 1) + b.substring(i, i + 1);
+        }
+        if (i < a.length()) {
+            ans += a.substring(i);
+        } else {
+            ans += b.substring(i);
         }
         return ans;
     }
