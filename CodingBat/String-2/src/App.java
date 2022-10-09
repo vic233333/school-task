@@ -303,10 +303,21 @@ public class App {
         return ans;
     }
 
+    //repeatEnd method 1
     public String repeatEnd(String str, int n) {
         String ans = new String("");
         for (int i = 0; i < n; i++) {
             ans += str.substring(str.length() - n);
+        }
+        return ans;
+    }
+
+    //repeatEnd method 2
+    public String repeatEnd(String str, int n) {
+        String ans = new String("");
+        String temp = str.substring(str.length() - n);
+        for (int i = 0; i < n; i++) {
+            ans += temp;
         }
         return ans;
     }
