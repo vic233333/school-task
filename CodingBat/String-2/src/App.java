@@ -289,6 +289,7 @@ public class App {
     }
 
     // mixString method 2
+    // 老师的做法，简洁一点，但是可读性下降了
     public String mixString(String a, String b) {
         String ans = "";
         int i = 0;
@@ -313,6 +314,8 @@ public class App {
     }
 
     // repeatEnd method 2
+    // 基本和method 1 一样，但是多使用了一个temp字符串
+    // 省略了重复的substring
     public String repeatEnd(String str, int n) {
         String ans = new String("");
         String temp = str.substring(str.length() - n);
@@ -323,6 +326,7 @@ public class App {
     }
 
     // repeatFront method 1
+    // 单变量控制
     public String repeatFront(String str, int n) {
         String ans = new String("");
         for (int i = n; i > 0; i--) {
@@ -332,12 +336,11 @@ public class App {
     }
 
     // repeatFront method 2
+    // 双变量控制
     public String repeatFront(String str, int n) {
         String ans = new String("");
-        int count = n;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0, count = n; i < n; i++, count--) {
             ans += str.substring(0, count);
-            count--;
         }
         return ans;
     }
@@ -355,6 +358,7 @@ public class App {
     }
 
     // repeatSeparator method 2
+    // 泛用性更强的方案
     public String repeatSeparator(String word, String sep, int count) {
         String ans = new String("");
         for (int i = 0; i < count; i++) {
