@@ -437,4 +437,19 @@ public class App {
 
         return str.substring(start2, start2 + 3).equals("xyz");
     }
+
+    public String getSandwich(String str) {
+        int first = -1;
+        int last = -1;
+        int k = str.indexOf("bread");
+        first = k + 5;//+5 跳过bread
+        while (k != -1) {
+            last = k;// update
+            k = str.indexOf("bread", k + 1);
+        }
+        if (last >= first) {
+            return str.substring(first, last);
+        }
+        return "";
+    }
 }
