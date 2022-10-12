@@ -41,9 +41,9 @@ public class App {
     public int countHi(String str) {
         int sum = 0;
         int k = str.indexOf("hi");
-        while (i != -1) {
+        while (k != -1) {
             sum++;
-            i = str.indexOf("hi", k + 1);
+            k = str.indexOf("hi", k + 1);
         }
         return sum;
     }
