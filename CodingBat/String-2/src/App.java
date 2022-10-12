@@ -24,6 +24,7 @@ public class App {
     }
 
     // countHi method 1
+    // 我的跳指针写法
     // 我自己的想法：用k来控制寻找开始的点
     // 然后寻找下一个hi直到找不到为止
     public int countHi(String str) {
@@ -37,7 +38,19 @@ public class App {
     }
 
     // countHi method 2
-    // 老师一轮循环下来找hi
+    public int countHi(String str) {
+        int sum = 0;
+        int k = str.indexOf("hi");
+        while (i != -1) {
+            sum++;
+            i = str.indexOf("hi", k + 1);
+        }
+        return sum;
+    }
+
+    // countHi method 3
+    // 老师的遍历查找
+    // 一轮循环下来找hi
     // 感觉效率更差一些
     // 不过老老实实的
     public int countHi(String str) {
