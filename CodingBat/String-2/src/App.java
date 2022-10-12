@@ -442,7 +442,7 @@ public class App {
         int first = -1;
         int last = -1;
         int k = str.indexOf("bread");
-        first = k + 5;//+5 跳过bread
+        first = k + 5;// +5 跳过bread
         while (k != -1) {
             last = k;// update
             k = str.indexOf("bread", k + 1);
@@ -451,5 +451,18 @@ public class App {
             return str.substring(first, last);
         }
         return "";
+    }
+
+    public boolean sameStarChar(String str) {
+        int k = str.indexOf("*");
+        while (k != -1) {
+            if (k > 0 &&
+                    k < str.length() - 1 &&
+                    !str.substring(k - 1, k).equals(str.substring(k + 1, k + 2))) {
+                return false;
+            }
+            k = str.indexOf("*", k + 1);
+        }
+        return true;
     }
 }
