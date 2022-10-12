@@ -407,10 +407,34 @@ public class App {
         }
     }
 
+    // xyzMiddle method 1
+    // 老师的用abs的方法
+    // xyz的左侧减去xyz的右侧长度小于等于1
     public boolean xyzMiddle(String str) {
-        int xyzIndex = str.indexOf("xyz");
-        return xyzIndex!=-1
-                &&(xyzIndex > n/2 - 2
-                || 
+        int k = str.indexOf("xyz");
+        while (k != -1) {
+            if (Math.abs((str.length() - k) - (k + 3)) <= 1) {
+                return true;
+            }
+            k = str.indexOf("xyz", k + 1);
+        }
+        return false;
+    }
+
+    // 我的做法
+    // 找中间那个字符串是不是xyz
+    public boolean xyzMiddle(String str) {
+        if (str.length() < 3)
+            return false;
+
+        int start1 = str.length() / 2 - 2;
+        int start2 = str.length() / 2 - 1;
+
+        if (str.length() % 2 == 0) {
+            return str.substring(start1, start1 + 3).equals("xyz") ||
+                    str.substring(start2, start2 + 3).equals("xyz");
+        }
+
+        return str.substring(start2, start2 + 3).equals("xyz");
     }
 }
