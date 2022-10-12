@@ -38,6 +38,8 @@ public class App {
     }
 
     // countHi method 2
+    // 老师的跳指针
+    // 比我少搜了一遍，优雅一点
     public int countHi(String str) {
         int sum = 0;
         int k = str.indexOf("hi");
