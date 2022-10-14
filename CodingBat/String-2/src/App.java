@@ -473,4 +473,64 @@ public class App {
         }
         return res;
     }
+
+    // zipZap method 1
+    // for循环、累加法
+    public String zipZap(String str) {
+        int startZip = 0;
+        int endZip = 0;
+        String ans = new String("");
+        for (int i = 0; i < str.length() - 2; i++) {
+            if (str.substring(i, i + 1).equals("z") &&
+                    str.substring(i + 2, i + 3).equals("p")) {
+                startZip = i;
+                ans += str.substring(endZip, startZip + 1);
+                endZip = i + 2;
+            }
+        }
+        ans += str.substring(endZip);
+        return ans;
+    }
+
+    // zipZAP method 2
+    // for循环、i++跳过这组zip、update String
+    public String zipZap(String str) {
+        for (int i = 0; i < str.length() - 2; i++) {
+            if (str.substring(i, i + 1).equals("z") &&
+                    str.substring(i + 2, i + 3).equals("p")) {
+                str = str.substring(0, i + 1) + str.substring(i + 2);
+                i++;
+            }
+        }
+        return str;
+    }
+
+    // zipZap method 3
+    // while循环、update String
+    // 寻找z什么p
+    public String zipZap(String str) {
+        int k = str.indexOf("z");
+        while (k != -1) {
+            if (k + 2 < str.length() &&
+                    str.substring(k + 2, k + 3).equals("p")) {
+                str = str.substring(0, k + 1) + str.substring(k + 2);// update
+            }
+            k = str.indexOf("z", k + 1);
+        }
+        return str;
+    }
+
+    // zipZap method 4
+    // while循环、update String
+    // 判断这个z和下一个p距离是不是2
+    public String zipZap(String str) {
+        int k = str.indexOf("z");
+        while (k != -1) {
+            if (str.indexOf("p", k + 2) == k + 2) {
+                str = str.substring(0, k + 1) + str.substring(k + 2);// update
+            }
+            k = str.indexOf("z", k + 1);
+        }
+        return str;
+    }
 }
