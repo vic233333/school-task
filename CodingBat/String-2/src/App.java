@@ -476,6 +476,7 @@ public class App {
 
     // zipZap method 1
     // for循环、累加法
+    // 不需要掌握
     public String zipZap(String str) {
         int startZip = 0;
         int endZip = 0;
@@ -494,6 +495,7 @@ public class App {
 
     // zipZAP method 2
     // for循环、i++跳过这组zip、update String
+    // 不需要掌握
     public String zipZap(String str) {
         for (int i = 0; i < str.length() - 2; i++) {
             if (str.substring(i, i + 1).equals("z") &&
@@ -507,7 +509,7 @@ public class App {
 
     // zipZap method 3
     // while循环、update String
-    // 寻找z什么p
+    // 寻找z*p组合
     public String zipZap(String str) {
         int k = str.indexOf("z");
         while (k != -1) {
@@ -532,5 +534,36 @@ public class App {
             k = str.indexOf("z", k + 1);
         }
         return str;
+    }
+
+    // starOut method 1
+    public String starOut(String str) {
+        str = " " + str + " ";
+        int k = str.indexOf("*");
+        while (k != -1) {
+            if (str.indexOf("*", k + 1) == k + 1) {
+                str = str.substring(0, k + 1) + str.substring(k + 2);// delete next *
+            } else {// * + not a *
+                str = str.substring(0, k - 1) + str.substring(k + 2);
+            }
+            k = str.indexOf("*");
+        }
+        return str.trim();// 删除前后多余空格
+    }
+
+    // starOut method 2
+    public String starOut(String str) {
+        str = " " + str + " ";
+        int i = str.indexOf("*");
+        while (i != -1) {
+            int j = i + 1;
+            while (j < str.length() &&
+                    str.substring(j, j + 1).equals("*")) {
+                j++;
+            }
+            str = str.substring(0, i - 1) + str.substring(j + 1);
+            i = str.indexOf("*");
+        }
+        return str.trim();
     }
 }
