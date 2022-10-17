@@ -579,4 +579,16 @@ public class App {
         }
         return res;
     }
+
+    public String wordEnds(String str, String word) {
+        String ans = "";
+        str = " " + str + " ";
+        int k = str.indexOf(word);
+        while (k != -1) {
+            ans += str.substring(k - 1, k);
+            ans += str.substring(k + word.length(), k + word.length() + 1);
+            k = str.indexOf(word, k + 1);
+        }
+        return ans.trim();
+    }
 }
