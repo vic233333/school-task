@@ -580,6 +580,20 @@ public class App {
         return res;
     }
 
+    // wordEnd method 1
+    public String wordEnds(String str, String word) {
+        String ans = "";
+        str = " " + str + " ";
+        for (int i = 0; i < str.length() - word.length() - 1; i++) {
+            if (str.substring(i + 1, i + 1 + word.length()).equals(word)) {
+                ans += str.substring(i, i + 1);
+                ans += str.substring(i + 1 + word.length(), i + 1 + word.length() + 1);
+            }
+        }
+        return ans.trim();
+    }
+
+    // wordEnd method 2
     public String wordEnds(String str, String word) {
         String ans = "";
         str = " " + str + " ";
@@ -587,7 +601,7 @@ public class App {
         while (k != -1) {
             ans += str.substring(k - 1, k);
             ans += str.substring(k + word.length(), k + word.length() + 1);
-            k = str.indexOf(word, k + 1);
+            k = str.indexOf(word, k + word.length() + 1);
         }
         return ans.trim();
     }
