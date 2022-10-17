@@ -566,4 +566,17 @@ public class App {
         }
         return str.trim();
     }
+
+    public String plusOut(String str, String word) {
+        String res = new String("");
+        for (int i = 0; i < str.length(); i++) {
+            res += "+";
+        }
+        int i = str.indexOf(word);
+        while (i != -1) {
+            res = res.substring(0, i) + word + res.substring(i + word.length());
+            i = str.indexOf(word, i + word.length());
+        }
+        return res;
+    }
 }
