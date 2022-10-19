@@ -89,7 +89,6 @@ public class App {
         return sum;
     }
 
-
     // sum67 method 1
     // 跳指针
     public int sum67(int[] nums) {
@@ -125,5 +124,14 @@ public class App {
             }
         }
         return sum;
+    }
+
+    public boolean has22(int[] nums) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == 2 && nums[i + 1] == 2) {
+                return true;
+            }
+        }
+        return false;
     }
 }
