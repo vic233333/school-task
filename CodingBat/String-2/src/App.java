@@ -601,7 +601,7 @@ public class App {
         while (k != -1) {
             ans += str.substring(k - 1, k);
             ans += str.substring(k + word.length(), k + word.length() + 1);
-            k = str.indexOf(word, k + word.length() + 1);
+            k = str.indexOf(word, k + word.length());
         }
         return ans.trim();
     }
