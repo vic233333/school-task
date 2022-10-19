@@ -89,8 +89,10 @@ public class App {
         return sum;
     }
 
-    public int sum67(int[] nums)
-    {
+
+    // sum67 method 1
+    // 跳指针
+    public int sum67(int[] nums) {
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 6) {
@@ -101,6 +103,25 @@ public class App {
                 i = j;
             } else {
                 sum += nums[i];
+            }
+        }
+        return sum;
+    }
+
+    // sum67 method 2
+    // 用flag控制是否在区间内
+    public int sum67(int[] nums) {
+        int sum = 0;
+        boolean flag = false;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 6) {
+                flag = true;
+            }
+            if (!flag) {
+                sum += nums[i];
+            }
+            if (nums[i] == 7) {
+                flag = false;
             }
         }
         return sum;
