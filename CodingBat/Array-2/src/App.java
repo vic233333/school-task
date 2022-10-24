@@ -262,7 +262,51 @@ public class App {
         return count;
     }
 
+    public boolean has77(int[] nums) {
+        boolean flag2 = false;
+        boolean flag3 = false;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == 7 && nums[i + 1] == 7) {
+                flag2 = true;
+            }
+            if (i < nums.length - 2 && nums[i] == 7 && nums[i + 2] == 7) {
+                flag3 = true;
+            }
+        }
+        return flag2 || flag3;
+    }
+
+    public boolean has12(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1) {
+                int j = i;
+                while (j < nums.length && nums[j] != 2) {
+                    j++;
+                }
+                if (j < nums.length) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     // modThree method 1
+    public boolean modThree(int[] nums) {
+        boolean flag2 = false;
+        boolean flag3 = false;
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (nums[i] % 2 == 0 && nums[i + 1] % 2 == 0 && nums[i + 2] % 2 == 0) {
+                flag2 = true;
+            }
+            if (nums[i] % 2 == 1 && nums[i + 1] % 2 == 1 && nums[i + 2] % 2 == 1) {
+                flag3 = true;
+            }
+        }
+        return flag2 || flag3;
+    }
+
+    // modThree method 2
     public boolean modThree(int[] nums) {
         boolean flag2 = false;
         boolean flag3 = false;
