@@ -320,4 +320,25 @@ public class App {
         }
         return flag2 || flag3;
     }
+
+    // method 1
+    // @Enning_Zheng
+    public boolean haveThree(int[] nums) {
+        int count = 0;
+        boolean flag = false;
+        for(int i=0;i<nums.length;i++){
+          if(i<nums.length-1&&nums[i]==3&&nums[i+1]==3){
+            flag = true;
+          }
+          if(nums[i]==3){
+            count++;
+          }
+        }
+        if(count==3&&flag==false){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
 }
