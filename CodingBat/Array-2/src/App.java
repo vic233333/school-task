@@ -134,4 +134,17 @@ public class App {
         }
         return false;
     }
+
+    public boolean lucky13(int[] nums) {
+        boolean flag1 = false;
+        boolean flag3 = false;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1) {
+                flag1 = true;
+            }
+            if (nums[i] == 3) {
+                flag3 = true;
+        }
+        return flag1 == false && flag3 == false;
+    }
 }
