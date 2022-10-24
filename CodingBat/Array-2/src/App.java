@@ -193,8 +193,72 @@ public class App {
     public String[] fizzArray2(int n) {
         String[] arr = new String[n];
         for (int i = 0; i < arr.length; i++) {
-            arr[i]  = i + "";
+            arr[i] = i + "";
         }
         return arr;
+    }
+
+    public boolean no14(int[] nums) {
+        boolean flag1 = false;
+        boolean flag3 = false;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1) {
+                flag1 = true;
+            }
+            if (nums[i] == 4) {
+                flag3 = true;
+            }
+        }
+        return !flag1 || !flag3;
+    }
+
+    public boolean isEverywhere(int[] nums, int val) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] != val && nums[i + 1] != val) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // either24 method 1
+    public boolean either24(int[] nums) {
+        boolean flag2 = false;
+        boolean flag4 = false;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == 2 && nums[i + 1] == 2) {
+                flag2 = true;
+            }
+            if (nums[i] == 4 && nums[i + 1] == 4) {
+                flag4 = true;
+            }
+        }
+        return flag2 && !flag4 || flag4 && !flag2;
+    }
+
+    // either24 method 2
+    // 不同的判断方式
+    public boolean either24(int[] nums) {
+        boolean flag2 = false;
+        boolean flag4 = false;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == 2 && nums[i + 1] == 2) {
+                flag2 = true;
+            }
+            if (nums[i] == 4 && nums[1 + 1] == 4) {
+                flag4 = true;
+            }
+        }
+        return flag2 != flag4;
+    }
+
+    public int matchUp(int[] nums1, int[] nums2) {
+        int count = 0;
+        for (int i = 0; i < nums1.length; i++) {
+            if (Math.abs(nums1[i] - nums2[i]) <= 2 && nums1[i] != nums2[i]) {
+                count++;
+            }
+        }
+        return count;
     }
 }
