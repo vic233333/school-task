@@ -164,10 +164,10 @@ public class App {
         int count4 = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 1) {
-                count1 ++;
+                count1++;
             }
             if (nums[i] == 4) {
-                count4 ++;
+                count4++;
             }
         }
         return count1 > count4;
@@ -179,5 +179,14 @@ public class App {
             arr[i] = i;
         }
         return arr;
+    }
+
+    public boolean only14(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 1 && nums[i] != 4) {
+                return false;
+            }
+        }
+        return true;
     }
 }
