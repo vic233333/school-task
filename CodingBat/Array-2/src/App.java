@@ -403,4 +403,86 @@ public class App {
         }
         return arr;
     }
+
+    // shiftLeft method 1
+    public int[] shiftLeft(int[] nums) {
+        int[] arr = new int[nums.length];
+        for (int i = 1, j = 0; i < nums.length; i++, j++) {
+            arr[j] = nums[i];
+        }
+        if (arr.length > 0)
+            arr[arr.length - 1] = nums[0];
+        return arr;
+    }
+
+    // shiftLeft method 2
+    public int[] shiftLeft(int[] nums) {
+        if (nums.length == 0) {
+            return nums;
+        }
+        int temp = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            nums[i - 1] = nums[i];
+        }
+        nums[nums.length - 1] = temp;
+        return nums;
+    }
+
+    public int[] tenRun(int[] nums) {
+        int flag = -1;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 10 == 0) {
+                flag = i;
+            }
+            if (flag != -1) {// inside the run
+                nums[i] = nums[flag];
+            }
+        }
+        return nums;
+    }
+
+    public int[] pre4(int[] nums) {
+        int j = 0;
+        while (j < nums.length && nums[j] != 4) {
+            j++;
+        }
+        int[] arr = new int[j];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = nums[i];
+        }
+        return arr;
+    }
+
+    public int[] post4(int[] nums) {
+        int j = nums.length - 1;
+        while (j >= 0 && nums[j] != 4) {
+            j--;
+        }
+        int[] arr = new int[nums.length - j - 1];
+        for (int i = 0; i < arr.length; i++, j++) {
+            arr[i] = nums[j + 1];
+        }
+        return arr;
+    }
+
+    public int[] notAlone(int[] nums, int val) {
+        for (int i = 1; i < nums.length - 1; i++) {
+            if (nums[i] == val && nums[i - 1] != val && nums[i + 1] != val) {
+                nums[i] = Math.max(nums[i - 1], nums[i + 1]);
+            }
+        }
+        return nums;
+    }
+
+    public int[] zeroFront(int[] nums) {
+        int[] arr = new int[nums.length];
+        int j = arr.length - 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] != 0) {
+                arr[j] = nums[i];
+                j--;
+            }
+        }
+        return arr;
+    }
 }
