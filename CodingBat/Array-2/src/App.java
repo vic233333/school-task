@@ -390,9 +390,17 @@ public class App {
         for (int i = 0; i < nums.length - 2; i++) {
             if (nums[i + 2] == nums[i + 1] + 1 &&
                     nums[i + 1] == nums[i] + 1) {
-                        return true;
+                return true;
             }
         }
         return false;
+    }
+
+    public int[] fizzArray3(int start, int end) {
+        int[] arr = new int[end - start];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = start + i;
+        }
+        return arr;
     }
 }
