@@ -61,4 +61,35 @@ public class App {
         }
         return true;
     }
+
+    public boolean array2DAllRows100(int rows, int cols, int[] array) {
+        int[][] array2D = new int[rows][cols];
+        int idx = 0;
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                array2D[r][c] = array[idx];
+                idx++;
+            }
+        }
+        return array2DAllRows100B(array2D);
+    }
+
+    public boolean array2DAllRows100B(int[][] nums) {
+        if (nums.length == 0) {
+            return false;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            boolean flag = false;
+            for (int j = 0; j < nums[0].length; j++) {
+                if (nums[i][j] >= 100) {
+                    flag = true;
+                    j = nums[0].length;
+                }
+            }
+            if (!flag) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
