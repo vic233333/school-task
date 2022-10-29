@@ -137,4 +137,28 @@ public class App {
         }
         return sum * 1.0 / nums[0].length;
     }
+
+    public int array2DLongWords(int rows, int cols, String[] array, int len) {
+        String[][] array2D = new String[rows][cols];
+        int idx = 0;
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                array2D[r][c] = array[idx];
+                idx++;
+            }
+        }
+        return array2DLongWordsB(array2D, len);
+    }
+
+    public int array2DLongWordsB(String[][] words, int len) {
+        int sum = 0;
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words[0].length; j++) {
+                if (words[i][j].length() > len) {
+                    sum ++;
+                }
+            }
+        }
+        return sum;
+    }
 }
