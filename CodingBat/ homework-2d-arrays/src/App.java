@@ -79,17 +79,39 @@ public class App {
             return false;
         }
         for (int i = 0; i < nums.length; i++) {
-            boolean flag = false;
+            int sum_over_100 = 0;
             for (int j = 0; j < nums[0].length; j++) {
                 if (nums[i][j] >= 100) {
-                    flag = true;
-                    j = nums[0].length;
+                    sum_over_100++;
                 }
             }
-            if (!flag) {
+            if (sum_over_100 == 0) {
                 return false;
             }
         }
         return true;
+    }
+
+    public int array2DColumnSum(int rows, int cols, int[] array, int columnToSum) {
+        int[][] array2D = new int[rows][cols];
+        int idx = 0;
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                array2D[r][c] = array[idx];
+                idx++;
+            }
+        }
+        return array2DColumnSumB(array2D, columnToSum);
+    }
+
+    public int array2DColumnSumB(int[][] nums, int columnToSum) {
+        if (columnToSum >= nums[0].length) {
+            return -1;
+        }
+        int ans = 0;
+        for (int i = 0; i < nums.length; i++) {
+            ans += nums[i][columnToSum];
+        }
+        return ans;
     }
 }
