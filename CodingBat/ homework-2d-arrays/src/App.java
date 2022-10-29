@@ -186,4 +186,30 @@ public class App {
         }
         return ans;
     }
+
+    public int[] array2DColumnMins(int rows, int cols, int[] array) {
+        int[][] array2D = new int[rows][cols];
+        int idx = 0;
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                array2D[r][c] = array[idx];
+                idx++;
+            }
+        }
+        return array2DColumnMinsB(array2D);
+    }
+
+    public int[] array2DColumnMinsB(int[][] nums) {
+        int[] ans = new int[nums[0].length];
+        for (int j = 0; j < nums[0].length; j++) {
+            int minn = Integer.MAX_VALUE;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i][j] < minn) {
+                    minn = nums[i][j];
+                }
+            }
+            ans[j] = minn;
+        }
+        return ans;
+    }
 }
