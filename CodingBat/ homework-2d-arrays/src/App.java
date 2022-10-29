@@ -3,6 +3,9 @@ public class App {
         System.out.println("Hello, World!");
     }
 
+    // 两个方法为一组
+    // 因为codingbat不支持二维数组
+    // 第一个方法是为了支援二位数组用的
     public int array2DLowestEvenNumber(int rows, int cols, int[] array) {
         int[][] array2D = new int[rows][cols];
         int idx = 0;
@@ -30,5 +33,32 @@ public class App {
         } else {
             return minn;
         }
+    }
+
+    public boolean array2DOneWord(int rows, int cols, String[] array) {
+        String[][] array2D = new String[rows][cols];
+        int idx = 0;
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                array2D[r][c] = array[idx];
+                idx++;
+            }
+        }
+        return array2DOneWordB(array2D);
+    }
+
+    public boolean array2DOneWordB(String[][] words) {
+        if (words.length == 0) {
+            return false;
+        }
+        String flag = words[0][0];
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words[0].length; j++) {
+                if (!words[i][j].equals(flag)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
