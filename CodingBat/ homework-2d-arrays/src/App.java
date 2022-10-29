@@ -155,10 +155,35 @@ public class App {
         for (int i = 0; i < words.length; i++) {
             for (int j = 0; j < words[0].length; j++) {
                 if (words[i][j].length() > len) {
-                    sum ++;
+                    sum++;
                 }
             }
         }
         return sum;
+    }
+
+    public String array2DFirstChars(int rows, int cols, String[] array) {
+        String[][] array2D = new String[rows][cols];
+        int idx = 0;
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                array2D[r][c] = array[idx];
+                idx++;
+            }
+        }
+        return array2DFirstCharsB(array2D);
+    }
+
+    public String array2DFirstCharsB(String[][] words) {
+        if (words.length <= 1) {
+            return "?";
+        }
+        String ans = "";
+        for (int i = 1; i < words.length; i += 2) {
+            for (int j = 0; j < words[0].length; j++) {
+                ans += words[i][j].substring(0, 1);
+            }
+        }
+        return ans;
     }
 }
