@@ -105,7 +105,7 @@ public class App {
     }
 
     public int array2DColumnSumB(int[][] nums, int columnToSum) {
-        if (columnToSum >= nums[0].length) {
+        if (columnToSum >= nums[0].length || columnToSum < 0) {
             return -1;
         }
         int ans = 0;
@@ -113,5 +113,28 @@ public class App {
             ans += nums[i][columnToSum];
         }
         return ans;
+    }
+
+    public double array2DRowAverage(int rows, int cols, int[] array, int rowToAverage) {
+        int[][] array2D = new int[rows][cols];
+        int idx = 0;
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                array2D[r][c] = array[idx];
+                idx++;
+            }
+        }
+        return array2DRowAverageB(array2D, rowToAverage);
+    }
+
+    public double array2DRowAverageB(int[][] nums, int rowToAverage) {
+        if (rowToAverage >= nums.length || rowToAverage < 0) {
+            return -1.0;
+        }
+        int sum = 0;
+        for (int i = 0; i < nums[0].length; i++) {
+            sum += nums[rowToAverage][i];
+        }
+        return sum * 1.0 / nums[0].length;
     }
 }
