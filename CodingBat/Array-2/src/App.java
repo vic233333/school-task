@@ -245,7 +245,7 @@ public class App {
             if (nums[i] == 2 && nums[i + 1] == 2) {
                 flag2 = true;
             }
-            if (nums[i] == 4 && nums[1 + 1] == 4) {
+            if (nums[i] == 4 && nums[i + 1] == 4) {
                 flag4 = true;
             }
         }
