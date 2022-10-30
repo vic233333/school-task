@@ -1,11 +1,14 @@
+/*
+* 链接：https://codingbat.com/home/tlsmith2@wsfcs.k12.nc.us/homework-2d-arrays
+* 两个方法为一组
+* 因为codingbat不支持二维数组
+* 第一个方法是为了支援二位数组用的
+*/
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
     }
 
-    // 两个方法为一组
-    // 因为codingbat不支持二维数组
-    // 第一个方法是为了支援二位数组用的
     public int array2DLowestEvenNumber(int rows, int cols, int[] array) {
         int[][] array2D = new int[rows][cols];
         int idx = 0;
