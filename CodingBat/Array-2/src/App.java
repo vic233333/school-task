@@ -428,6 +428,7 @@ public class App {
         return nums;
     }
 
+    // tenRun method 1
     public int[] tenRun(int[] nums) {
         int flag = -1;
         for (int i = 0; i < nums.length; i++) {
@@ -436,6 +437,23 @@ public class App {
             }
             if (flag != -1) {// inside the run
                 nums[i] = nums[flag];
+            }
+        }
+        return nums;
+    }
+
+    // tenRun method 2
+    public int[] tenRun(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 10 == 0) {
+                int j = i + 1;
+                while (j < nums.length && nums[j] % 10 != 0) {
+                    nums[j] = nums[i];
+                    j++;
+                }
+                if (j < nums.length) {
+                    i = j - 1;
+                }
             }
         }
         return nums;
