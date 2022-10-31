@@ -82,13 +82,13 @@ public class App {
             return false;
         }
         for (int i = 0; i < nums.length; i++) {
-            int sum_over_100 = 0;
+            boolean flag = false;
             for (int j = 0; j < nums[0].length; j++) {
                 if (nums[i][j] >= 100) {
-                    sum_over_100++;
+                    flag = true;
                 }
             }
-            if (sum_over_100 == 0) {
+            if (!flag) {
                 return false;
             }
         }
