@@ -24,9 +24,10 @@ public class App {
     // scoresClump method 1
     public boolean scoresClump(int[] scores) {
         for (int i = 0; i < scores.length - 2; i++) {
-            if (scores[i + 2] - scores[i + 1] <= 2 &&
-                    scores[i + 1] - scores[i] <= 2 &&
-                    scores[i + 2] - scores[i] <= 2) {
+            int t1 = scores[i] - scores[i + 1];
+            int t2 = scores[i + 1] - scores[i + 2];
+            int t3 = scores[i] - scores[i + 2];
+            if (Math.abs(t1) <= 2 && Math.abs(t2) <= 2 && Math.abs(t3) <= 2) {
                 return true;
             }
         }
@@ -44,4 +45,5 @@ public class App {
         }
         return false;
     }
+
 }
