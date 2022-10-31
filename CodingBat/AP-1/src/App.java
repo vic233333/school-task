@@ -122,4 +122,28 @@ public class App {
         }
         return true;
     }
+
+    public int[] copyEvens(int[] nums, int count) {
+        int[] array = new int[count];
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 2 == 0 && j < array.length) {
+                array[j] = nums[i];
+                j++;
+            }
+        }
+        return array;
+    }
+
+    public int matchUp(String[] a, String[] b) {
+        int sum = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i].length() > 0 && b[i].length() > 0 &&
+                    a[i].substring(0, 1).equals(
+                            b[i].substring(0, 1))) {
+                sum++;
+            }
+        }
+        return sum;
+    }
 }
