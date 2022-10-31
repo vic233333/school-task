@@ -46,4 +46,16 @@ public class App {
         return false;
     }
 
+    public int scoresAverage(int[] scores) {
+        int sum1 = 0;
+        int sum2 = 0;
+        for (int i = 0; i < scores.length; i++) {
+            if (i < scores.length / 2) {
+                sum1 += scores[i];
+            } else {
+                sum2 += scores[i];
+            }
+        }
+        return Math.max(sum1, sum2) / (scores.length / 2);
+    }
 }
