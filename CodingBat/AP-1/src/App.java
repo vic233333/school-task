@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
@@ -76,6 +79,14 @@ public class App {
         }
         return ans;
     }
-    
-    
+
+    public List wordsWithoutList(String[] words, int len) {
+        List<String> ans = new ArrayList<String>();
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() != len) {
+                ans.add(words[i]);
+            }
+        }
+        return ans;
+    }
 }
