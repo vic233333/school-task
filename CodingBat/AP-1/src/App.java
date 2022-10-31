@@ -91,6 +91,7 @@ public class App {
     }
 
     // hasOne method 1
+    // 数位分离
     public boolean hasOne(int n) {
         while (n != 0) {
             int d = n % 10;// 每一位数字
@@ -104,8 +105,11 @@ public class App {
     }
 
     // hasOne method 2
+    // 转换为String后处理
     public boolean hasOne(int n) {
         String trans = "" + n;
         return trans.indexOf("1") != -1;
     }
+
+
 }
