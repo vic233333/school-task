@@ -89,4 +89,23 @@ public class App {
         }
         return ans;
     }
+
+    // hasOne method 1
+    public boolean hasOne(int n) {
+        while (n != 0) {
+            int d = n % 10;// 每一位数字
+            // %表示取余数
+            if (d == 1) {
+                return true;
+            }
+            n /= 10;// 去掉个位数
+        }
+        return false;
+    }
+
+    // hasOne method 2
+    public boolean hasOne(int n) {
+        String trans = "" + n;
+        return trans.indexOf("1") != -1;
+    }
 }
