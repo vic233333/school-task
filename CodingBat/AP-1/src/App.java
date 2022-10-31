@@ -111,5 +111,15 @@ public class App {
         return trans.indexOf("1") != -1;
     }
 
-
+    public boolean dividesSelf(int n) {
+        int num = n;
+        while (n > 0) {
+            int d = n % 10;
+            if (d == 0 || num % d != 0) {
+                return false;
+            }
+            n /= 10;
+        }
+        return true;
+    }
 }
