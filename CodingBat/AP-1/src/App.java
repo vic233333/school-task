@@ -59,7 +59,7 @@ public class App {
         return Math.max(sum1, sum2) / (scores.length / 2);
     }
 
-    public int wordscount(String[] words, int len) {
+    public int wordsCount(String[] words, int len) {
         int count = 0;
         for (int i = 0; i < words.length; i++) {
             if (words[i].length() == len) {
@@ -68,4 +68,14 @@ public class App {
         }
         return count;
     }
+
+    public String[] wordsFront(String[] words, int n) {
+        String[] ans = new String[n];
+        for (int i = 0; i < n; i++) {
+            ans[i] = words[i];
+        }
+        return ans;
+    }
+    
+    
 }
