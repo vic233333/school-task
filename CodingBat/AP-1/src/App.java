@@ -58,4 +58,14 @@ public class App {
         }
         return Math.max(sum1, sum2) / (scores.length / 2);
     }
+
+    public int wordscount(String[] words, int len) {
+        int count = 0;
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() == len) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
