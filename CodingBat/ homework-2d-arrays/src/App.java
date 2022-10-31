@@ -131,7 +131,7 @@ public class App {
     }
 
     public double array2DRowAverageB(int[][] nums, int rowToAverage) {
-        if (rowToAverage >= nums.length || rowToAverage < 0) {
+        if (rowToAverage >= nums.length || rowToAverage < 0 || nums.length == 0) {
             return -1.0;
         }
         int sum = 0;
