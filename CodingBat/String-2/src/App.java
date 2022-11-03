@@ -474,7 +474,7 @@ public class App {
             k = str.indexOf("bread", k + 5);
         }
         // 最后一片面包的位置一定会在第一个后面
-        if (last >= first) {
+        if (last > first) {
             return str.substring(first, last);
         }
         return "";
