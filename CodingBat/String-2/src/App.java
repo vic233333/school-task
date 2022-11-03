@@ -421,6 +421,7 @@ public class App {
         return false;
     }
 
+    // xyzMiddle method 2
     // 我的做法
     // 找中间那个字符串是不是xyz
     public boolean xyzMiddle(String str) {
