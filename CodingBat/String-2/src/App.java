@@ -413,8 +413,10 @@ public class App {
     public boolean xyzMiddle(String str) {
         int k = str.indexOf("xyz"); // 寻找xyz第一次出现的位置
         while (k != -1) { // 如果找到了xyz就进行循环
-            // str.length() - k 表示xyz和左侧字符的长度
-            // k + 3            表示xyz和右侧字符的长度
+            /*
+             * str.length() - k 表示xyz和左侧字符的长度
+             * k + 3 表示xyz和右侧字符的长度
+             */
             if (Math.abs((str.length() - k) - (k + 3)) <= 1) {
                 return true;
             }
@@ -443,14 +445,35 @@ public class App {
     }
 
     public String getSandwich(String str) {
-        int first = -1;
-        int last = -1;
+        int first = -1; // 第一片面包的位置
+        int last = -1; // 最后一片面包的位置
         int k = str.indexOf("bread");
-        first = k + 5;// +5 跳过bread
+        // 跳过bread
+        // 这边+5是因为bread有5个字
+        // 这样可以把指针挪到bread后面
+        // 才能够找到bread后面夹的内容
+        //
+        // 如果不+5
+        // 那么后面找到的内容会包含第一个bread
+        first = k + 5;
         while (k != -1) {
-            last = k;// update
-            k = str.indexOf("bread", k + 1);
+            // 把这一次找到的bread的位置赋给last
+            // 保证last存的是上一次查找的bread的位置
+            // 因为现在指针已经在bread的b上
+            // 已经是包含内容的末尾
+            // 所以不用进行操作
+            last = k;
+            // 接下来跳指针更新k
+            // 如果刚刚没有把k赋值给last
+            // 那么bread的位置就丢失了
+            // 循环的结束条件是k==-1
+            // 所以退出循环的时候
+            // k一定会等于-1
+            // 所以一定需要把值保存到last
+            // 不然后面无法找到上一次循环时k的值
+            k = str.indexOf("bread", k + 5);
         }
+        // 最后一片面包的位置一定会在第一个后面
         if (last >= first) {
             return str.substring(first, last);
         }
