@@ -411,11 +411,14 @@ public class App {
     // 老师的用abs的方法
     // xyz的左侧减去xyz的右侧长度小于等于1
     public boolean xyzMiddle(String str) {
-        int k = str.indexOf("xyz");
-        while (k != -1) {
+        int k = str.indexOf("xyz"); // 寻找xyz第一次出现的位置
+        while (k != -1) { // 如果找到了xyz就进行循环
+            // str.length() - k 表示xyz和左侧字符的长度
+            // k + 3            表示xyz和右侧字符的长度
             if (Math.abs((str.length() - k) - (k + 3)) <= 1) {
                 return true;
             }
+            // 跳指正，寻找下一个xyz
             k = str.indexOf("xyz", k + 1);
         }
         return false;
