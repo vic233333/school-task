@@ -74,4 +74,21 @@ public class M20122222 {
         }
         return true;
     }
+
+    // array2DAllRows100B method 4
+    // 不符合条件就把位号往后移动
+    // 如果位号移动到尾了
+    // 就代表没找到
+    public static boolean array2DAllRows100B(int[][] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            int j = 0;
+            while (j < nums[i].length && nums[i][j] < 100) {
+                j++;
+            }
+            if (j == nums[i].length) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
