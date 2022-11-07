@@ -21,6 +21,7 @@ public class M20122222 {
         return (flag_2 && (!flag_1 || !flag_4));
     }
 
+    // array2DAllRows100B method 1
     public static boolean array2DAllRows100B(int[][] nums) {
         if (nums.length == 0) {
             return false;
@@ -33,6 +34,22 @@ public class M20122222 {
                 }
             }
             if (!flag) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // array2DAllRows100B method 2
+    public static boolean array2DAllRows100B(int[][] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            int maxn = Integer.MIN_VALUE;
+            for (int j = 0; j < nums[0].length; j++) {
+                if (nums[i][j] >= maxn) {
+                    maxn = nums[i][j];
+                }
+            }
+            if (maxn < 100) {
                 return false;
             }
         }
