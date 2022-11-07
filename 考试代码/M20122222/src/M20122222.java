@@ -22,6 +22,7 @@ public class M20122222 {
     }
 
     // array2DAllRows100B method 1
+    // 常规每一行做反例分析
     public static boolean array2DAllRows100B(int[][] nums) {
         if (nums.length == 0) {
             return false;
@@ -41,6 +42,7 @@ public class M20122222 {
     }
 
     // array2DAllRows100B method 2
+    // 找每一行的最大值
     public static boolean array2DAllRows100B(int[][] nums) {
         for (int i = 0; i < nums.length; i++) {
             int maxn = Integer.MIN_VALUE;
@@ -50,6 +52,23 @@ public class M20122222 {
                 }
             }
             if (maxn < 100) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // array2DAllRows100B method 3
+    // 找到最大值所在的位号
+    public static boolean array2DAllRows100B(int[][] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            int maxnIndex = 0;
+            for (int j = 1; j < nums[0].length; j++) {
+                if (nums[i][j] >= nums[i][maxnIndex]) {
+                    maxnIndex = j;
+                }
+            }
+            if (nums[i][maxnIndex] < 100) {
                 return false;
             }
         }
