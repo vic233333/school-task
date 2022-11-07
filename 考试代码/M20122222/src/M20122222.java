@@ -91,4 +91,24 @@ public class M20122222 {
         }
         return true;
     }
+
+    public static String getSandwich(String str) {
+        int i = str.indexOf("bread");
+        if (i != -1) {
+            str = str.substring(i);
+        }
+        // delete front
+        int last = -1;
+        i = str.indexOf("bread");
+        while (i != -1) {
+            str = str.substring(0, i) + str.substring(i + 5);
+            last = i;
+            i = str.indexOf("bread");
+        }
+        if (last != -1) {
+            return str.substring(0, last);
+        } else {
+            return "";
+        }
+    }
 }
