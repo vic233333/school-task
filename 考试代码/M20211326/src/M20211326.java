@@ -107,6 +107,8 @@ public class M20211326 {
         return true;
     }
 
+    // getSandwich method 1
+    // 跳指针
     public static String getSandwich(String str) {
         int i = str.indexOf("bread");
         if (i != -1) {
@@ -125,5 +127,20 @@ public class M20211326 {
         } else {
             return "";
         }
+    }
+
+    // getSandwich method 2
+    // 遍历
+    public static String getSandwich(String str) {
+        String result = "";
+        for (int i = 0; i < array.length - 4; i++) {
+            if (str.substring(i, i + 5).equals("bread")) {
+                int j = str.indexOf("bread", i + 5);
+                if (j != -1) {
+                    result += str.substring(i + 5, j);
+                }
+            }
+        }
+        return result;
     }
 }
