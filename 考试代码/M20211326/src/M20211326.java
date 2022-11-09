@@ -1,8 +1,10 @@
-public class M20122222 {
+public class M20211326 {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
     }
 
+    // no14 method 1
+    // 常规做法，用一堆的boolean
     public static boolean no14(int[] nums) {
         boolean flag_1 = false;
         boolean flag_2 = false;
@@ -19,6 +21,19 @@ public class M20122222 {
             }
         }
         return (flag_2 && (!flag_1 || !flag_4));
+    }
+
+    // no14 method 2
+    // 转换成String后用indexOf判断
+    public static void no14(int[] nums) {
+        String result = "";
+        for (int i = 0; i < nums.length; i++) {
+            // 注意这边要多加一个空格防止多位数被判断为个位数
+            result += result + nums[i] + " ";
+        }
+        return (result.indexOf("2 ") != -1 &&
+                (result.indexOf("1 ") == -1 ||
+                        result.indexOf("4 ") == -1));
     }
 
     // array2DAllRows100B method 1
