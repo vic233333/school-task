@@ -108,7 +108,7 @@ public class M20211326 {
     }
 
     // getSandwich method 1
-    // 跳指针
+    // 跳指针，改原数组
     public static String getSandwich(String str) {
         int i = str.indexOf("bread");
         if (i != -1) {
@@ -140,6 +140,20 @@ public class M20211326 {
                     result += str.substring(i + 5, j);
                 }
             }
+        }
+        return result;
+    }
+
+    // getSandwich method 3
+    // 双针，跳指针
+    public static String getSandwich(String str) {
+        String result = "";
+        int i = str.indexOf("bread");
+        int j = str.indexOf("bread", i + 1);
+        while (i != -1 && j != -1) {
+            result += str.substring(i + 5, j);
+            i = j;
+            j = str.indexOf("bread", i + 1);
         }
         return result;
     }
