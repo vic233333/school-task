@@ -7,7 +7,7 @@
  * 		    Handles responding to simple words and phrases 
  * </li></ul>
  * This version uses a nested if to handle default responses.
- * @author Laurie White
+ * @author 20211326
  * @version April 2012
  */
 public class Magpie2
@@ -31,16 +31,25 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.indexOf("no") >= 0)
+		if (statement.indexOf("no") >= 0)//在说到no的时候
 		{
 			response = "Why so negative?";
 		}
 		else if (statement.indexOf("mother") >= 0
 				|| statement.indexOf("father") >= 0
 				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+				|| statement.indexOf("brother") >= 0)//你提到了家人对吧
 		{
 			response = "Tell me more about your family.";
+		}
+		else if (statement.indexOf("cat") >= 0
+				|| statement.indexOf("dog") >= 0)//小动物可爱捏
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (statement.trim().length() == 0)//给我干沉默了
+		{
+			response = "Say something, please.";
 		}
 		else
 		{
@@ -55,7 +64,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 4;//设置情况数量
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
