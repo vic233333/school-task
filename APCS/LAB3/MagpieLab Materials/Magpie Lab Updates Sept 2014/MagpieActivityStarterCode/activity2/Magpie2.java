@@ -64,7 +64,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;//设置情况数量
+		final int NUMBER_OF_RESPONSES = 6;//设置情况数量
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -84,6 +84,14 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4)// 俺寻思行
+		{
+			response = "waghhhhhhhhh!";
+		}
+		else if (whichResponse == 5)// 代码跑起来了
+		{
+			response = "ohhhhhhhhhhh!";
 		}
 
 		return response;
