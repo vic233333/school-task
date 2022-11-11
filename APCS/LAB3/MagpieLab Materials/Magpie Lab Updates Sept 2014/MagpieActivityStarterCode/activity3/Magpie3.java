@@ -5,7 +5,7 @@
  *    Uses advanced search for keywords 
  * </li></ul> 
  *    
- * @author Laurie White
+ * @author 20211326
  * @version April 2012
  */
 public class Magpie3
@@ -68,11 +68,25 @@ public class Magpie3
 	 * @return the index of the first occurrence of goal in
 	 *         statement or -1 if it's not found
 	 */
-	private int findKeyword(String statement, String goal,
+	private static int findKeyword(String statement, String goal,
 			int startPos)
 	{
 		String phrase = statement.trim().toLowerCase();
 		goal = goal.toLowerCase();
+		phrase = " " + phrase + " ";
+		int i = phrase.indexOf(goal, startPos + 1);
+		while (i != -1) {
+			String before = phrase.substring(i - 1, i);
+			String after = phrase.substring(i + goal.length(), i + goal.length() + 1);
+			if (((before.compareTo("a") < 0) || (before
+					.compareTo("z") > 0)) // before is not a
+											// letter
+					&& ((after.compareTo("a") < 0) || (after
+							.compareTo("z") > 0))) {
+				return i - 1;
+			}
+			i = phrase.indexOf(goal, i + 1);
+		}
 
 		// The only change to incorporate the startPos is in
 		// the line below
