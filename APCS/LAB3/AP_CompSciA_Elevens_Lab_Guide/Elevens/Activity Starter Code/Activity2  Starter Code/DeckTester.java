@@ -8,6 +8,14 @@ public class DeckTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		String str = new String("A");
+		Card cardOne = new Card("A", "Heart", 1);
+		Card cardTwo = new Card("A", "Heart", 1);
+		Card cardThree = new Card("J", "Spade", 1);
+		System.out.println(cardOne);
+		System.out.println(cardTwo);
+		System.out.println(cardThree);
+		System.out.println(cardOne.matches(cardTwo));
+		System.out.println(cardOne.matches(cardThree));
 	}
 }
