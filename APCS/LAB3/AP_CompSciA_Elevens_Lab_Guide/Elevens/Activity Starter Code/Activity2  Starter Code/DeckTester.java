@@ -3,19 +3,21 @@
  */
 public class DeckTester {
 
-	/**
-	 * The main method in this class checks the Deck operations for consistency.
-	 *	@param args is not used.
-	 */
-	public static void main(String[] args) {
-		String str = new String("A");
-		Card cardOne = new Card("A", "Heart", 1);
-		Card cardTwo = new Card("A", "Heart", 1);
-		Card cardThree = new Card("J", "Spade", 1);
-		System.out.println(cardOne);
-		System.out.println(cardTwo);
-		System.out.println(cardThree);
-		System.out.println(cardOne.matches(cardTwo));
-		System.out.println(cardOne.matches(cardThree));
-	}
+    /**
+     * The main method in this class checks the Deck operations for consistency.
+     *  @param args is not used.
+     */
+    public static void main(String[] args) {
+      
+        String[] ranks1 = {"jack","queen","king","A","2","3","4","5","6","7","8","9","10"};
+        String[] suits = {"spades","hearts","diamonds","clubs"};
+        int[] pointValues = {10,10,10,11,2,3,4,5,6,7,8,9,10};
+        Deck d = new Deck(ranks,suits,pointValues);
+        
+        
+        for(int i = 0;i < 5;i++){
+        d.deal();
+        }
+        System.out.println(d);
+    }
 }
