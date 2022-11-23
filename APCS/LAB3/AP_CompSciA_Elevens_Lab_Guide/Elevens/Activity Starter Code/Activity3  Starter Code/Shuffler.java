@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -9,15 +11,15 @@ public class Shuffler {
 	 */
 	private static final int SHUFFLE_COUNT = 1;
 
-
 	/**
 	 * Tests shuffling methods.
+	 * 
 	 * @param args is not used.
 	 */
 	public static void main(String[] args) {
 		System.out.println("Results of " + SHUFFLE_COUNT +
-								 " consecutive perfect shuffles:");
-		int[] values1 = {0, 1, 2, 3};
+				" consecutive perfect shuffles:");
+		int[] values1 = { 0, 1, 2, 3 };
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
 			perfectShuffle(values1);
 			System.out.print("  " + j + ":");
@@ -29,8 +31,8 @@ public class Shuffler {
 		System.out.println();
 
 		System.out.println("Results of " + SHUFFLE_COUNT +
-								 " consecutive efficient selection shuffles:");
-		int[] values2 = {0, 1, 2, 3};
+				" consecutive efficient selection shuffles:");
+		int[] values2 = { 0, 1, 2, 3, 4, 5, 6, 7 };
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
 			selectionShuffle(values2);
 			System.out.print("  " + j + ":");
@@ -39,18 +41,50 @@ public class Shuffler {
 			}
 			System.out.println();
 		}
+		selectionSort(values2);
+		System.out.println(Arrays.toString(values2));
 		System.out.println();
 	}
 
+	public static void selectionSort(int[] n) {
+		for (int i = 0; i < n.length; i++) {
+			int max = i;
+			// find max
+			for (int j = i + 1; j < n.length; j++) {
+				if (n[j] > n[max]) {
+					max = j;
+				}
+			}
+			// swap
+			int temp = n[i];
+			n[i] = n[max];
+			n[max] = temp;
+
+		}
+	}
 
 	/**
 	 * Apply a "perfect shuffle" to the argument.
 	 * The perfect shuffle algorithm splits the deck in half, then interleaves
 	 * the cards in one half with the cards in the other.
+	 * 
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void perfectShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int[] shuffled = new int[values.length];
+		int k = 0;
+		for (int j = 0; j < (values.length - 1) / 2 + 1; j++) {
+			shuffled[k] = values[j];
+			k = k + 2;
+		}
+		k = 1;
+		for (int j = (values.length - 1) / 2 + 1; j < values.length; j++) {
+			shuffled[k] = values[j];
+			k = k + 2;
+		}
+		for (int i = 0; i < shuffled.length; i++) {
+			values[i] = shuffled[i];
+		}
 	}
 
 	/**
@@ -62,9 +96,16 @@ public class Shuffler {
 	 * selected and add it to the selected cards.
 	 * An efficient version of this algorithm makes use of arrays to avoid
 	 * searching for an as-yet-unselected card.
+	 * 
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		for (int k = values.length - 1; k >= 0; k--) {
+			int r = (int) (Math.random() * (k + 1));
+			int temp = values[k];
+			values[k] = values[r];
+			values[r] = temp;
+		}
 	}
 }
