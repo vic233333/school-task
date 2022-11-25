@@ -101,11 +101,47 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-		for (int k = values.length - 1; k >= 0; k--) {
-			int r = (int) (Math.random() * (k + 1));
-			int temp = values[k];
-			values[k] = values[r];
-			values[r] = temp;
+		/*
+		 * method 1
+		 * for (int k = values.length - 1; k >= 0; k--) {
+		 * int r = (int) (Math.random() * (k + 1));
+		 * int temp = values[k];
+		 * values[k] = values[r];
+		 * values[r] = temp;
+		 * }
+		 */
+		/* method 2 */
+		List<Integer> suffleList = new ArrayList<Integer>();
+		for (int i = 0; i < values.length; i++) {
+			suffleList.add(values[i]);
 		}
+		for (int i = 0; i < values.length; i++) {
+			int k = (int) (Math.random() * suffleList.size());
+			values[i] = suffleList.remove(k);
+		}
+	}
+
+	public static String flip() {
+		int k = (int) (Math.random() * 3);
+		if (k == 0 || k == 1) {
+			return "head";
+		} else {
+			return "tail";
+		}
+	}
+
+	public static void testFlip() {
+		int count_head = 0;
+		int count_tail = 0;
+		for (int i = 0; i < 1000; i++) {
+			String temp = flip();
+			if (temp.equals("head")) {
+				count_head++;
+			} else {
+				count_tail++;
+			}
+		}
+		System.out.println("head" + count_head);
+		System.out.println("tail" + count_tail);
 	}
 }
