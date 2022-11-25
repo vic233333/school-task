@@ -167,4 +167,18 @@ public class Shuffler {
 		System.out.println(arePermutations(array_1, array_2));
 		System.out.println(arePermutations(array_1, array_3));
 	}
+
+	public static void sort(int[] values) {
+		for (int k = values.length - 1; k >= 0; k--) {
+			int maxn_index = k;
+			for (int j = 0; j < k; j++) {
+				if (values[j] > values[maxn_index]) {
+					maxn_index = j;
+				}
+			}
+			int temp = values[k];
+			values[k] = values[maxn_index];
+			values[maxn_index] = temp;
+		}
+	}
 }
