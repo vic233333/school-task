@@ -144,4 +144,27 @@ public class Shuffler {
 		System.out.println("head" + count_head);
 		System.out.println("tail" + count_tail);
 	}
+
+	public static boolean arePermutations(int[] a, int[] b) {
+		for (int i = 0; i < a.length; i++) {
+			boolean flag = false;
+			for (int k = 0; k < b.length; k++) {
+				if (a[i] == b[k]) {
+					flag = true;
+				}
+			}
+			if (flag == false) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public static void testP() {
+		int[] array_1 = new int[] { 1, 2, 3, 4 };
+		int[] array_2 = new int[] { 2, 1, 3, 4 };
+		int[] array_3 = new int[] { 1, 4, 2, 5 };
+		System.out.println(arePermutations(array_1, array_2));
+		System.out.println(arePermutations(array_1, array_3));
+	}
 }
