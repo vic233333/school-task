@@ -184,6 +184,7 @@ public class ElevensBoard {
 	 *         false otherwise.
 	 */
 	public boolean isLegal(List<Integer> selectedCards) {
+		return true;
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
 	}
 
@@ -196,6 +197,7 @@ public class ElevensBoard {
 	 *         false otherwise.
 	 */
 	public boolean anotherPlayIsPossible() {
+		return true;
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
 	}
 
