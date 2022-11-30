@@ -14,5 +14,13 @@ public class test {
         for (int i = 0; i < gameList.size(); i++) {
             System.out.println(gameList.get(i));
         }
+        printCards(game);
+    }
+
+    public static void printCards(ElevensBoard board) {
+        List<Integer> cIndexes = board.cardIndexes();
+        for (int i = 0; i < cIndexes.size(); i++) {
+            System.out.println(board.cardAt(cIndexes.get(i)));
+        }
     }
 }
