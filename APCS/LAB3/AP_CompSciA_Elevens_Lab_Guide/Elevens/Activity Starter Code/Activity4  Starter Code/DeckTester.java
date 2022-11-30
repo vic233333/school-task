@@ -52,5 +52,12 @@ public class DeckTester {
 		System.out.println();
 
 		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+		String[] ranks1 = {"A", "2", "3","4","5","6"};
+		String[] suits1 = {"blue", "red"};
+		int[] pointValues1 = {1, 2, 3, 4, 5, 6};
+		Deck d1 = new Deck(ranks1, suits1, pointValues1);
+		System.out.println(d1);
+		d1.shuffle();
+		System.out.println(d1);
 	}
 }
