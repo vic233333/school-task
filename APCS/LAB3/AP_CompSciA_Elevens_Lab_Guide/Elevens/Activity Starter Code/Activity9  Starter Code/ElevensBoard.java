@@ -78,7 +78,6 @@ public class ElevensBoard extends Board {
 	 *         contain an 11-pair; false otherwise.
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
 		for (int i = 0; i < selectedCards.size(); i++) {
 			for (int j = i + 1; j < selectedCards.size(); j++) {
 				int cPI = cardAt(selectedCards.get(i)).pointValue();
@@ -101,6 +100,21 @@ public class ElevensBoard extends Board {
 	 *         include a jack, a queen, and a king; false otherwise.
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		boolean flag_jack = false;
+		boolean flag_queen = false;
+		boolean flag_king = false;
+		for (int i = 0; i < selectedCards.size(); i++) {
+			String rank = cardAt(selectedCards.get(i)).rank();
+			if (rank.equals("jack")) {
+				flag_jack = true;
+			}
+			if (rank.equals("queen")) {
+				flag_queen = true;
+			}
+			if (rank.equals("king")) {
+				flag_king = true;
+			}
+		}
+		return flag_jack && flag_queen && flag_king;
 	}
 }
