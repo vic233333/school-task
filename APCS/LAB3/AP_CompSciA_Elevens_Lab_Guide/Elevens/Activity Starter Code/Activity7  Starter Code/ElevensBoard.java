@@ -14,21 +14,18 @@ public class ElevensBoard {
 	/**
 	 * The ranks of the cards for this game to be sent to the deck.
 	 */
-	private static final String[] RANKS =
-		{"ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"};
+	private static final String[] RANKS = { "ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen",
+			"king" };
 
 	/**
 	 * The suits of the cards for this game to be sent to the deck.
 	 */
-	private static final String[] SUITS =
-		{"spades", "hearts", "diamonds", "clubs"};
+	private static final String[] SUITS = { "spades", "hearts", "diamonds", "clubs" };
 
 	/**
 	 * The values of the cards for this game to be sent to the deck.
 	 */
-	private static final int[] POINT_VALUES =
-		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0};
-
+	private static final int[] POINT_VALUES = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0 };
 
 	/**
 	 * The cards on this board.
@@ -44,7 +41,6 @@ public class ElevensBoard {
 	 * Flag used to control debugging print statements.
 	 */
 	private static final boolean I_AM_DEBUGGING = false;
-
 
 	/**
 	 * Creates a new <code>ElevensBoard</code> instance.
@@ -72,6 +68,7 @@ public class ElevensBoard {
 	 * Accesses the size of the board.
 	 * Note that this is not the number of cards it contains,
 	 * which will be smaller near the end of a winning game.
+	 * 
 	 * @return the size of the board
 	 */
 	public int size() {
@@ -80,6 +77,7 @@ public class ElevensBoard {
 
 	/**
 	 * Determines if the board is empty (has no cards).
+	 * 
 	 * @return true if this board is empty; false otherwise.
 	 */
 	public boolean isEmpty() {
@@ -94,6 +92,7 @@ public class ElevensBoard {
 	/**
 	 * Deal a card to the kth position in this board.
 	 * If the deck is empty, the kth card is set to null.
+	 * 
 	 * @param k the index of the card to be dealt.
 	 */
 	public void deal(int k) {
@@ -102,6 +101,7 @@ public class ElevensBoard {
 
 	/**
 	 * Accesses the deck's size.
+	 * 
 	 * @return the number of undealt cards left in the deck.
 	 */
 	public int deckSize() {
@@ -110,6 +110,7 @@ public class ElevensBoard {
 
 	/**
 	 * Accesses a card on the board.
+	 * 
 	 * @return the card at position k on the board.
 	 * @param k is the board position of the card to return.
 	 */
@@ -119,8 +120,9 @@ public class ElevensBoard {
 
 	/**
 	 * Replaces selected cards on the board by dealing new cards.
+	 * 
 	 * @param selectedCards is a list of the indices of the
-	 *        cards to be replaced.
+	 *                      cards to be replaced.
 	 */
 	public void replaceSelectedCards(List<Integer> selectedCards) {
 		for (Integer k : selectedCards) {
@@ -146,6 +148,7 @@ public class ElevensBoard {
 
 	/**
 	 * Generates and returns a string representation of this board.
+	 * 
 	 * @return the string version of this board.
 	 */
 	public String toString() {
@@ -159,6 +162,7 @@ public class ElevensBoard {
 	/**
 	 * Determine whether or not the game has been won,
 	 * i.e. neither the board nor the deck has any more cards.
+	 * 
 	 * @return true when the current game has been won;
 	 *         false otherwise.
 	 */
@@ -179,6 +183,7 @@ public class ElevensBoard {
 	 * In Elevens, the legal groups are (1) a pair of non-face cards
 	 * whose values add to 11, and (2) a group of three cards consisting of
 	 * a jack, a queen, and a king in some order.
+	 * 
 	 * @param selectedCards the list of the indices of the selected cards.
 	 * @return true if the selected cards form a valid group for removal;
 	 *         false otherwise.
@@ -193,6 +198,7 @@ public class ElevensBoard {
 	 * In Elevens, there is a legal play if the board contains
 	 * (1) a pair of non-face cards whose values add to 11, or (2) a group
 	 * of three cards consisting of a jack, a queen, and a king in some order.
+	 * 
 	 * @return true if there is a legal play left on the board;
 	 *         false otherwise.
 	 */
@@ -200,7 +206,6 @@ public class ElevensBoard {
 		return true;
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
 	}
-
 
 	/**
 	 * Deal cards to this board to start the game.
@@ -213,11 +218,12 @@ public class ElevensBoard {
 
 	/**
 	 * Check for an 11-pair in the selected cards.
-	 * @param selectedCards selects a subset of this board.  It is list
+	 * 
+	 * @param selectedCards selects a subset of this board. It is list
 	 *                      of indexes into this board that are searched
 	 *                      to find an 11-pair.
 	 * @return true if the board entries in selectedCards
-	 *              contain an 11-pair; false otherwise.
+	 *         contain an 11-pair; false otherwise.
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
 		return true;
@@ -226,11 +232,12 @@ public class ElevensBoard {
 
 	/**
 	 * Check for a JQK in the selected cards.
-	 * @param selectedCards selects a subset of this board.  It is list
+	 * 
+	 * @param selectedCards selects a subset of this board. It is list
 	 *                      of indexes into this board that are searched
 	 *                      to find a JQK group.
 	 * @return true if the board entries in selectedCards
-	 *              include a jack, a queen, and a king; false otherwise.
+	 *         include a jack, a queen, and a king; false otherwise.
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
 		return true;
