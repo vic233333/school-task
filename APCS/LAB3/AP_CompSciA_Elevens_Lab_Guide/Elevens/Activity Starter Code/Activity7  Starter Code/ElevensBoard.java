@@ -56,7 +56,7 @@ public class ElevensBoard {
 			System.out.println(deck);
 			System.out.println("----------");
 		}
-		dealMyCards();
+		// dealMyCards();
 	}
 
 	/**
