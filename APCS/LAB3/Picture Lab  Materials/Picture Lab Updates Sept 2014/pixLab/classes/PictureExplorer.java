@@ -14,94 +14,156 @@ import javax.swing.border.*;
  * in or
  * out. You can also type in a row and column value to see the color at that
  * location.
- * 
+ * <p>
  * Originally created for the Jython Environment for Students (JES).
  * Modified to work with DrJava by Barbara Ericson
  * Also modified to show row and columns by Barbara Ericson
- * 
+ *
  * @author Keith McDermottt, gte047w@cc.gatech.edu
  * @author Barb Ericson ericson@cc.gatech.edu
  */
 public class PictureExplorer implements MouseMotionListener, ActionListener, MouseListener {
 
 	// current indicies
-	/** row index */
+	/**
+	 * row index
+	 */
 	private int rowIndex = 0;
-	/** column index */
+	/**
+	 * column index
+	 */
 	private int colIndex = 0;
 
 	// main GUI
-	/** window to hold GUI */
+	/**
+	 * window to hold GUI
+	 */
 	private JFrame pictureFrame;
-	/** window that allows the user to scroll to see a large picture */
+	/**
+	 * window that allows the user to scroll to see a large picture
+	 */
 	private JScrollPane scrollPane;
 
 	// GUI components
-	/** column label */
+	/**
+	 * column label
+	 */
 	private JLabel colLabel;
-	/** column previous button */
+	/**
+	 * column previous button
+	 */
 	private JButton colPrevButton;
-	/** row previous button */
+	/**
+	 * row previous button
+	 */
 	private JButton rowPrevButton;
-	/** column next button */
+	/**
+	 * column next button
+	 */
 	private JButton colNextButton;
-	/** row next button */
+	/**
+	 * row next button
+	 */
 	private JButton rowNextButton;
-	/** row label */
+	/**
+	 * row label
+	 */
 	private JLabel rowLabel;
-	/** text field to show column index */
+	/**
+	 * text field to show column index
+	 */
 	private JTextField colValue;
-	/** text field to show row index */
+	/**
+	 * text field to show row index
+	 */
 	private JTextField rowValue;
-	/** red value label */
+	/**
+	 * red value label
+	 */
 	private JLabel rValue;
-	/** green value label */
+	/**
+	 * green value label
+	 */
 	private JLabel gValue;
-	/** blue value label */
+	/**
+	 * blue value label
+	 */
 	private JLabel bValue;
-	/** color swatch label */
+	/**
+	 * color swatch label
+	 */
 	private JLabel colorLabel;
-	/** panel to show the color swatch */
+	/**
+	 * panel to show the color swatch
+	 */
 	private JPanel colorPanel;
 
 	// menu components
-	/** menu bar */
+	/**
+	 * menu bar
+	 */
 	private JMenuBar menuBar;
-	/** zoom menu */
+	/**
+	 * zoom menu
+	 */
 	private JMenu zoomMenu;
-	/** 25% zoom level */
+	/**
+	 * 25% zoom level
+	 */
 	private JMenuItem twentyFive;
-	/** 50% zoom level */
+	/**
+	 * 50% zoom level
+	 */
 	private JMenuItem fifty;
-	/** 75% zoom level */
+	/**
+	 * 75% zoom level
+	 */
 	private JMenuItem seventyFive;
-	/** 100% zoom level */
+	/**
+	 * 100% zoom level
+	 */
 	private JMenuItem hundred;
-	/** 150% zoom level */
+	/**
+	 * 150% zoom level
+	 */
 	private JMenuItem hundredFifty;
-	/** 200% zoom level */
+	/**
+	 * 200% zoom level
+	 */
 	private JMenuItem twoHundred;
-	/** 500% zoom level */
+	/**
+	 * 500% zoom level
+	 */
 	private JMenuItem fiveHundred;
 
-	/** The picture being explored */
+	/**
+	 * The picture being explored
+	 */
 	private DigitalPicture picture;
 
-	/** The image icon used to display the picture */
+	/**
+	 * The image icon used to display the picture
+	 */
 	private ImageIcon scrollImageIcon;
 
-	/** The image display */
+	/**
+	 * The image display
+	 */
 	private ImageDisplay imageDisplay;
 
-	/** the zoom factor (amount to zoom) */
+	/**
+	 * the zoom factor (amount to zoom)
+	 */
 	private double zoomFactor;
 
-	/** the number system to use, 0 means starting at 0, 1 means starting at 1 */
+	/**
+	 * the number system to use, 0 means starting at 0, 1 means starting at 1
+	 */
 	private int numberBase = 0;
 
 	/**
 	 * Public constructor
-	 * 
+	 *
 	 * @param picture the picture to explore
 	 */
 	public PictureExplorer(DigitalPicture picture) {
@@ -122,7 +184,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Set the title of the frame
-	 * 
+	 *
 	 * @param title the title to use in the JFrame
 	 */
 	public void setTitle(String title) {
@@ -295,7 +357,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Create the pixel location panel
-	 * 
+	 *
 	 * @param labelFont the font for the labels
 	 * @return the location panel
 	 */
@@ -352,7 +414,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Create the color information panel
-	 * 
+	 *
 	 * @param labelFont the font to use for labels
 	 * @return the color information panel
 	 */
@@ -470,7 +532,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 	/**
 	 * Zooms in the on picture by scaling the image.
 	 * It is extremely memory intensive.
-	 * 
+	 *
 	 * @param factor the amount to zoom by
 	 */
 	public void zoom(double factor) {
@@ -503,7 +565,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Called when the mouse is dragged (button held down and moved)
-	 * 
+	 *
 	 * @param e the mouse event
 	 */
 	public void mouseDragged(MouseEvent e) {
@@ -512,11 +574,11 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Method to check if the given x and y are in the picture
-	 * 
+	 *
 	 * @param column the horizontal value
 	 * @param row    the vertical value
 	 * @return true if the row and column are in the picture
-	 *         and false otherwise
+	 * and false otherwise
 	 */
 	private boolean isLocationInPicture(int column, int row) {
 		boolean result = false; // the default is false
@@ -530,7 +592,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 	/**
 	 * Method to display the pixel information from the passed x and y but
 	 * also converts x and y from strings
-	 * 
+	 *
 	 * @param xString the x value as a string from the user
 	 * @param yString the y value as a string from the user
 	 */
@@ -552,7 +614,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Method to display pixel information for the passed x and y
-	 * 
+	 *
 	 * @param pictureX the x value in the picture
 	 * @param pictureY the y value in the picture
 	 */
@@ -585,7 +647,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Method to display pixel information based on a mouse event
-	 * 
+	 *
 	 * @param e a mouse event
 	 */
 	private void displayPixelInformation(MouseEvent e) {
@@ -620,7 +682,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Method called when the mouse is moved with no buttons down
-	 * 
+	 *
 	 * @param e the mouse event
 	 */
 	public void mouseMoved(MouseEvent e) {
@@ -628,7 +690,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Method called when the mouse is clicked
-	 * 
+	 *
 	 * @param e the mouse event
 	 */
 	public void mouseClicked(MouseEvent e) {
@@ -637,7 +699,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Method called when the mouse button is pushed down
-	 * 
+	 *
 	 * @param e the mouse event
 	 */
 	public void mousePressed(MouseEvent e) {
@@ -646,7 +708,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Method called when the mouse button is released
-	 * 
+	 *
 	 * @param e the mouse event
 	 */
 	public void mouseReleased(MouseEvent e) {
@@ -654,7 +716,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Method called when the component is entered (mouse moves over it)
-	 * 
+	 *
 	 * @param e the mouse event
 	 */
 	public void mouseEntered(MouseEvent e) {
@@ -662,7 +724,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
 	/**
 	 * Method called when the mouse moves over the component
-	 * 
+	 *
 	 * @param e the mouse event
 	 */
 	public void mouseExited(MouseEvent e) {
@@ -745,7 +807,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 		 * Method to get the next component for focus
 		 */
 		public Component getComponentAfter(Container focusCycleRoot,
-				Component aComponent) {
+										   Component aComponent) {
 			if (aComponent.equals(colValue))
 				return rowValue;
 			else
@@ -756,7 +818,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 		 * Method to get the previous component for focus
 		 */
 		public Component getComponentBefore(Container focusCycleRoot,
-				Component aComponent) {
+											Component aComponent) {
 			if (aComponent.equals(colValue))
 				return rowValue;
 			else

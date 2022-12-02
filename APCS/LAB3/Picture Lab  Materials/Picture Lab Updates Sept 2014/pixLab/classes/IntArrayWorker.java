@@ -1,10 +1,12 @@
 public class IntArrayWorker {
-	/** two dimensional matrix */
+	/**
+	 * two dimensional matrix
+	 */
 	private int[][] matrix = null;
 
 	/**
 	 * set the matrix to the passed one
-	 * 
+	 *
 	 * @param theMatrix the one to use
 	 */
 	public void setMatrix(int[][] theMatrix) {
@@ -13,7 +15,7 @@ public class IntArrayWorker {
 
 	/**
 	 * Method to return the total
-	 * 
+	 *
 	 * @return the total of the values in the array
 	 */
 	public int getTotal() {
@@ -60,7 +62,7 @@ public class IntArrayWorker {
 
 	/**
 	 * Method to return the total using a nested for-each loop
-	 * 
+	 *
 	 * @return the total of the values in the array
 	 */
 	public int getTotalNested() {

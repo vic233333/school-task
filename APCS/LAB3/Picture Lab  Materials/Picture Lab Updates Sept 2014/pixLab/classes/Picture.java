@@ -10,7 +10,7 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
  * A class that represents a picture. This class inherits from
  * SimplePicture and allows the student to add functionality to
  * the Picture class.
- * 
+ *
  * @author Barbara Ericson ericson@cc.gatech.edu
  */
 public class Picture extends SimplePicture {
@@ -29,7 +29,7 @@ public class Picture extends SimplePicture {
 
 	/**
 	 * Constructor that takes a file name and creates the picture
-	 * 
+	 *
 	 * @param fileName the name of the file to create the picture from
 	 */
 	public Picture(String fileName) {
@@ -39,7 +39,7 @@ public class Picture extends SimplePicture {
 
 	/**
 	 * Constructor that takes the width and height
-	 * 
+	 *
 	 * @param height the height of the desired picture
 	 * @param width  the width of the desired picture
 	 */
@@ -51,7 +51,7 @@ public class Picture extends SimplePicture {
 	/**
 	 * Constructor that takes a picture and creates a
 	 * copy of that picture
-	 * 
+	 *
 	 * @param copyPicture the picture to copy
 	 */
 	public Picture(Picture copyPicture) {
@@ -61,7 +61,7 @@ public class Picture extends SimplePicture {
 
 	/**
 	 * Constructor that takes a buffered image
-	 * 
+	 *
 	 * @param image the buffered image to use
 	 */
 	public Picture(BufferedImage image) {
@@ -72,9 +72,9 @@ public class Picture extends SimplePicture {
 
 	/**
 	 * Method to return a string with information about this picture.
-	 * 
+	 *
 	 * @return a string with information about the picture such as fileName,
-	 *         height and width.
+	 * height and width.
 	 */
 	public String toString() {
 		String output = "Picture, filename " + getFileName() +
@@ -84,7 +84,9 @@ public class Picture extends SimplePicture {
 
 	}
 
-	/** Method to set the blue to 0 */
+	/**
+	 * Method to set the blue to 0
+	 */
 	public void zeroBlue() {
 		Pixel[][] pixels = this.getPixels2D();
 		for (Pixel[] rowArray : pixels) {
@@ -113,7 +115,9 @@ public class Picture extends SimplePicture {
 		}
 	}
 
-	/** Mirror just part of a picture of a temple */
+	/**
+	 * Mirror just part of a picture of a temple
+	 */
 	public void mirrorTemple() {
 		int mirrorPoint = 276;
 		Pixel leftPixel = null;
@@ -137,13 +141,13 @@ public class Picture extends SimplePicture {
 	 * copy from the passed fromPic to the
 	 * specified startRow and startCol in the
 	 * current picture
-	 * 
+	 *
 	 * @param fromPic  the picture to copy from
 	 * @param startRow the start row to copy to
 	 * @param startCol the start col to copy to
 	 */
 	public void copy(Picture fromPic,
-			int startRow, int startCol) {
+					 int startRow, int startCol) {
 		Pixel fromPixel = null;
 		Pixel toPixel = null;
 		Pixel[][] toPixels = this.getPixels2D();
@@ -159,7 +163,9 @@ public class Picture extends SimplePicture {
 		}
 	}
 
-	/** Method to create a collage of several pictures */
+	/**
+	 * Method to create a collage of several pictures
+	 */
 	public void createCollage() {
 		Picture flower1 = new Picture("flower1.jpg");
 		Picture flower2 = new Picture("flower2.jpg");
@@ -177,7 +183,7 @@ public class Picture extends SimplePicture {
 
 	/**
 	 * Method to show large changes in color
-	 * 
+	 *
 	 * @param edgeDist the distance for finding edges
 	 */
 	public void edgeDetection(int edgeDist) {
