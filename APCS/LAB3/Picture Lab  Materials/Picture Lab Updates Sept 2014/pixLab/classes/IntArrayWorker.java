@@ -38,6 +38,18 @@ public class IntArrayWorker {
 		return count;
 	}
 
+	public int getLargest() {
+		int maxn = Integer.MIN_VALUE;
+		for (int r = 0; r < matrix.length; r++) {
+			for (int c = 0; c < matrix[0].length; c++) {
+				if (matrix[r][c] > maxn) {
+					maxn = matrix[r][c];
+				}
+			}
+		}
+		return maxn;
+	}
+
 	/**
 	 * Method to return the total using a nested for-each loop
 	 * 
