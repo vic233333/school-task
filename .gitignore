@@ -5,6 +5,7 @@
 
 # BlueJ files
 *.ctxt
+*.bluej
 # BlueJ自动生成的文档也不传了
 .doc/
 
