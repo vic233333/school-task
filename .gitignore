@@ -5,6 +5,8 @@
 
 # BlueJ files
 *.ctxt
+# BlueJ自动生成的文档也不传了
+.doc/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/# Package Files #
