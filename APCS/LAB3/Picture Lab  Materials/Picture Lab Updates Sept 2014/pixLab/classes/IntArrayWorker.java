@@ -50,6 +50,14 @@ public class IntArrayWorker {
 		return maxn;
 	}
 
+	public int getColTotal(int col) {
+		int sum = 0;
+		for (int r = 0; r < matrix.length; r++) {
+			sum += matrix[r][col];
+		}
+		return sum;
+	}
+
 	/**
 	 * Method to return the total using a nested for-each loop
 	 * 
