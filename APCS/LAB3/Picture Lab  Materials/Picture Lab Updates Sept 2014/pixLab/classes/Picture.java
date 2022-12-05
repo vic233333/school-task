@@ -126,8 +126,7 @@ public class Picture extends SimplePicture {
 	/**
 	 * 灰度
 	 */
-	public void grayScale()
-	{
+	public void grayScale() {
 		Pixel[][] pixels = this.getPixels2D();
 		for (int r = 0; r < pixels.length; r++) {
 			for (int c = 0; c < pixels[0].length; c++) {
@@ -136,6 +135,21 @@ public class Picture extends SimplePicture {
 				pixelAtRC.setRed(averageColor);
 				pixelAtRC.setGreen(averageColor);
 				pixelAtRC.setBlue(averageColor);
+			}
+		}
+	}
+
+	/**
+	 * 修正水下照片
+	 * 即削弱蓝绿色提升红色
+	 */
+	public void fixUnderWater() {
+		Pixel[][] pixels = getPixels2D();
+		for (int r = 0; r < pixels.length; r++) {
+			for (int c = 0; c < pixels[0].length; c++) {
+				pixels[r][c].setRed(pixels[r][c].getRed() * 2); //把红色*2
+				pixels[r][c].setBlue(pixels[r][c].getBlue() / 2); //把蓝色/2
+				pixels[r][c].setGreen(pixels[r][c].getGreen() / 2); //把蓝色/2
 			}
 		}
 	}
