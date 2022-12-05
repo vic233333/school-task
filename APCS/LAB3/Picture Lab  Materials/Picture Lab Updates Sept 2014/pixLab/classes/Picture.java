@@ -124,6 +124,23 @@ public class Picture extends SimplePicture {
 	}
 
 	/**
+	 * 灰度
+	 */
+	public void grayScale()
+	{
+		Pixel[][] pixels = this.getPixels2D();
+		for (int r = 0; r < pixels.length; r++) {
+			for (int c = 0; c < pixels[0].length; c++) {
+				Pixel pixelAtRC = pixels[r][c];
+				int averageColor = (pixelAtRC.getRed() + pixelAtRC.getBlue() + pixelAtRC.getGreen());
+				pixelAtRC.setRed(averageColor);
+				pixelAtRC.setGreen(averageColor);
+				pixelAtRC.setBlue(averageColor);
+			}
+		}
+	}
+
+	/**
 	 * Method that mirrors the picture around a
 	 * vertical mirror in the center of the picture
 	 * from left to right
