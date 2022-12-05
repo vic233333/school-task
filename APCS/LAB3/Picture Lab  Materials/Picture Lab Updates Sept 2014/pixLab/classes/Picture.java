@@ -96,12 +96,29 @@ public class Picture extends SimplePicture {
 		}
 	}
 
-	public void keepOnlyBlue(){
+	/**
+	 * 提取蓝色通道
+	 */
+	public void keepOnlyBlue() {
 		Pixel[][] pixels = this.getPixels2D();
 		for (int r = 0; r < pixels.length; r++) {
 			for (int c = 0; c < pixels[0].length; c++) {
 				pixels[r][c].setRed(0);
 				pixels[r][c].setGreen(0);
+			}
+		}
+	}
+
+	/**
+	 * 反色
+	 */
+	public void negate() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (int r = 0; r < pixels.length; r++) {
+			for (int c = 0; c < pixels[0].length; c++) {
+				pixels[r][c].setRed(255 - pixels[r][c].getRed());
+				pixels[r][c].setGreen(255 - pixels[r][c].getGreen());
+				pixels[r][c].setBlue(255 - pixels[r][c].getBlue());
 			}
 		}
 	}

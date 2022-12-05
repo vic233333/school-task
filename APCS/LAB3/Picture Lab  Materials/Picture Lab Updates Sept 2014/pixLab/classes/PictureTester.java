@@ -17,11 +17,23 @@ public class PictureTester {
 		beach.explore();
 	}
 
-	public static void testKeepOnlyBlue()
-	{
+	/**
+	 * Method to test keepOnlyBlue
+	 */
+	public static void testKeepOnlyBlue() {
 		Picture beach = new Picture("beach.jpg");
 		beach.explore();
 		beach.keepOnlyBlue();
+		beach.explore();
+	}
+
+	/**
+	 * Method to test negate
+	 */
+	public static void testNegate() {
+		Picture beach = new Picture("beach.jpg");
+		beach.explore();
+		beach.negate();
 		beach.explore();
 	}
 
@@ -72,10 +84,10 @@ public class PictureTester {
 		// and comment out the ones you don't want
 		// to run
 		//testZeroBlue();
-		testKeepOnlyBlue();
+//		testKeepOnlyBlue();
 		//testKeepOnlyRed();
 		//testKeepOnlyGreen();
-		//testNegate();
+		testNegate();
 		//testGrayscale();
 		//testFixUnderwater();
 		//testMirrorVertical();
