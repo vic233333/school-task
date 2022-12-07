@@ -70,8 +70,7 @@ public class PictureTester {
 	/**
 	 * Method to test mirrorHorizontal
 	 */
-	public static void testMirrorHorizontal()
-	{
+	public static void testMirrorHorizontal() {
 		Picture caterpillar = new Picture("caterpillar.jpg");
 		caterpillar.explore();
 		caterpillar.mirrorHorizontal();
@@ -81,8 +80,7 @@ public class PictureTester {
 	/**
 	 * Method to test mirrorDiagonal
 	 */
-	public static void testMirrorDiagonal()
-	{
+	public static void testMirrorDiagonal() {
 		Picture caterpillar = new Picture("caterpillar.jpg");
 		caterpillar.explore();
 		caterpillar.mirrorDiagonal();
