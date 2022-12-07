@@ -109,8 +109,8 @@ public class PictureTester {
 		//testKeepOnlyGreen();
 //		testNegate();
 //		testGrayscale();
-		testFixUnderwater();
-		//testMirrorVertical();
+//		testFixUnderwater();
+		testMirrorVertical();
 		//testMirrorTemple();
 		//testMirrorArms();
 		//testMirrorGull();
