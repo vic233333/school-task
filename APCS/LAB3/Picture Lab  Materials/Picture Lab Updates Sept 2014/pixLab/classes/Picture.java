@@ -215,7 +215,23 @@ public class Picture extends SimplePicture {
 		}
 	}
 
-
+	/**
+	 * Mirror for snowman.jpg
+	 */
+	public void mirrorSnowman()
+	{
+		Pixel[][] pixels = getPixels2D();
+		for (int r = 156; r < 192; r++) {
+			for (int c = 109; c < 167; c++) {
+				pixels[192 * 2 - r][c].setColor(pixels[r][c].getColor());
+			}
+		}
+		for (int r = 156; r < 192; r++) {
+			for (int c = 109; c < 167; c++) {
+				pixels[192 * 2 - r][c].setColor(pixels[r][c].getColor());
+			}
+		}
+	}
 
 	/**
 	 * Mirror just part of a picture of a temple

@@ -90,6 +90,16 @@ public class PictureTester {
 	}
 
 	/**
+	 * Method to test mirrorSnowman
+	 */
+	public static void testMirrorSnowman() {
+		Picture temple = new Picture("snowman.jpg");
+		temple.explore();
+		temple.mirrorSnowman();
+		temple.explore();
+	}
+
+	/**
 	 * Method to test mirrorTemple
 	 */
 	public static void testMirrorTemple() {
@@ -134,7 +144,8 @@ public class PictureTester {
 //		testFixUnderwater();
 //		testMirrorVertical();
 //		testMirrorHorizontal();
-		testMirrorHorizontal();
+//		testMirrorHorizontal();
+		testMirrorSnowman();
 		//testMirrorTemple();
 		//testMirrorArms();
 		//testMirrorGull();
