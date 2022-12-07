@@ -100,6 +100,16 @@ public class PictureTester {
 	}
 
 	/**
+	 * Method to test mirrorGull
+	 */
+	public static void testMirrorSeagull() {
+		Picture temple = new Picture("seagull.jpg");
+		temple.explore();
+		temple.mirrorSeagull();
+		temple.explore();
+	}
+
+	/**
 	 * Method to test mirrorTemple
 	 */
 	public static void testMirrorTemple() {
@@ -145,7 +155,8 @@ public class PictureTester {
 //		testMirrorVertical();
 //		testMirrorHorizontal();
 //		testMirrorHorizontal();
-		testMirrorSnowman();
+//		testMirrorSnowman();
+		testMirrorSeagull();
 		//testMirrorTemple();
 		//testMirrorArms();
 		//testMirrorGull();

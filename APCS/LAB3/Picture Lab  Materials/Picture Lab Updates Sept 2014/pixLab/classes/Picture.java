@@ -1,17 +1,12 @@
 import java.awt.*;
-import java.awt.font.*;
-import java.awt.geom.*;
 import java.awt.image.BufferedImage;
-import java.text.*;
-import java.util.*;
-import java.util.List; // resolves problem with java.awt.List and java.util.List
 
 /**
  * A class that represents a picture. This class inherits from
  * SimplePicture and allows the student to add functionality to
  * the Picture class.
  *
- * @author Barbara Ericson ericson@cc.gatech.edu
+ * @author Barbara Ericson ddbb520db@163.com
  */
 public class Picture extends SimplePicture {
 	///////////////////// constructors //////////////////////////////////
@@ -178,8 +173,7 @@ public class Picture extends SimplePicture {
 	 * horizontal mirror in the center of the picture
 	 * from up to down
 	 */
-	public void mirrorHorizontal()
-	{
+	public void mirrorHorizontal() {
 		Pixel[][] pixels = this.getPixels2D();
 		Pixel upPixel = null;
 		Pixel downPixel = null;
@@ -188,7 +182,7 @@ public class Picture extends SimplePicture {
 		for (int row = 0; row < height / 2; row++) {
 			for (int col = 0; col < width; col++) {
 				upPixel = pixels[row][col];
-				downPixel = pixels[height - 1 -row][col];
+				downPixel = pixels[height - 1 - row][col];
 				downPixel.setColor(upPixel.getColor());
 			}
 		}
@@ -199,16 +193,14 @@ public class Picture extends SimplePicture {
 	 * diagonal mirror in the center of the picture
 	 * from left up to right down
 	 */
-	public void mirrorDiagonal()
-	{
+	public void mirrorDiagonal() {
 		Pixel[][] pixels = this.getPixels2D();
 		int height = pixels.length;
 		int width = pixels[0].length;
 		int square = Math.min(height, width);
 		for (int r = 0; r < square; r++) {
 			for (int c = 0; c < square; c++) {
-				if (r>=c)
-				{
+				if (r >= c) {
 					pixels[c][r].setColor(pixels[r][c].getColor());
 				}
 			}
@@ -218,8 +210,7 @@ public class Picture extends SimplePicture {
 	/**
 	 * Mirror for snowman.jpg
 	 */
-	public void mirrorSnowman()
-	{
+	public void mirrorSnowman() {
 		Pixel[][] pixels = getPixels2D();
 		for (int r = 156; r < 192; r++) {
 			for (int c = 109; c < 167; c++) {
@@ -232,6 +223,19 @@ public class Picture extends SimplePicture {
 			}
 		}
 	}
+
+	/**
+	 * Mirror for gull.jpg
+	 */
+	public void mirrorSeagull() {
+		Pixel[][] pixels = getPixels2D();
+		for (int r = 231; r < 323; r++) {
+			for (int c = 233; c < 343; c++)
+				pixels[r][360 * 2 - c].setColor(pixels[r][c].getColor());
+		}
+
+	}
+
 
 	/**
 	 * Mirror just part of a picture of a temple
