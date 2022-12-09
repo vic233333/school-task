@@ -1,6 +1,14 @@
 // A-2, (a)
 
-public class Cat extends Pet {
+import java.util.*;
 
+public class Cat extends Pet {
+	public Cat(String name) {
+		super(name);
+	}
+
+	public String speak() {
+		
+	}
 }
 
