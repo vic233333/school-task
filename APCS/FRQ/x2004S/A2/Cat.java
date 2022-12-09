@@ -1,7 +1,6 @@
-  // A-2, (a)
+// A-2, (a)
 
-public class Cat extends Pet
-{
- 
+public class Cat extends Pet {
+
 }
 

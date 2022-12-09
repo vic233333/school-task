@@ -1,20 +1,23 @@
 import java.util.ArrayList;
 
-public class Kennel
-{
-  private ArrayList petList;
+public class Kennel {
+	private ArrayList petList;
 
-  public Kennel() { petList = new ArrayList(); }
-  public void add(Pet pet) { petList.add(pet); }
+	public Kennel() {
+		petList = new ArrayList();
+	}
 
-  // A-2, (c)
+	public void add(Pet pet) {
+		petList.add(pet);
+	}
 
-  public void allSpeak()
-  {
-  
-      
-  }
+	// A-2, (c)
 
-  
+	public void allSpeak() {
+
+
+	}
+
+
 }
 

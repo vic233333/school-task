@@ -1,6 +1,5 @@
-  // A-2, (b)
+// A-2, (b)
 
-public class LoudDog extends Dog
-{
-  
+public class LoudDog extends Dog {
+
 }
