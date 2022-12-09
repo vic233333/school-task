@@ -127,6 +127,15 @@ public class PictureTester {
 	}
 
 	/**
+	 * Method to test carteMyCollage method
+	 */
+	public static void testCarteMyCollage() {
+		Picture canvas = new Picture("640x480.jpg");
+		canvas.carteMyCollage();
+		canvas.explore();
+	}
+
+	/**
 	 * Method to test the collage method
 	 */
 	public static void testCopyOtherToThis() {

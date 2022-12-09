@@ -289,6 +289,7 @@ public class Picture extends SimplePicture {
 
 	/**
 	 * 把另一张图片的一部分粘贴到这个
+	 * 老师写的函数名是copy1
 	 *
 	 * @param fromPic        原始图片
 	 * @param startRowOrigin 原始图片开始行
@@ -331,6 +332,19 @@ public class Picture extends SimplePicture {
 		this.copy(flower2, 500, 0);
 		this.mirrorVertical();
 		this.write("collage.jpg");
+	}
+
+
+	/**
+	 * 创建自己的小花花边框图片，左右各5朵
+	 */
+	public void carteMyCollage() {
+		Picture flower1 = new Picture("flower1.jpg");
+		for (int i = 0; i < 5; i++) { // 粘贴5次
+			this.copyOtherToThis(flower1, 40 * i, 0, 0, 30, 30, 65);
+		}
+		this.mirrorVertical();
+		this.explore();
 	}
 
 	/**
