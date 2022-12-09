@@ -136,7 +136,7 @@ public class PictureTester {
 	}
 
 	/**
-	 * Method to test the collage method
+	 * Method to test copyOtherToThis method
 	 */
 	public static void testCopyOtherToThis() {
 		Picture canvas = new Picture("flower2.jpg");
