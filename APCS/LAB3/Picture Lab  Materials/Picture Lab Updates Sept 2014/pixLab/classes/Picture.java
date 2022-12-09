@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -281,6 +283,34 @@ public class Picture extends SimplePicture {
 				fromPixel = fromPixels[fromRow][fromCol];
 				toPixel = toPixels[toRow][toCol];
 				toPixel.setColor(fromPixel.getColor());
+			}
+		}
+	}
+
+	/**
+	 * 把另一张图片的一部分粘贴到这个
+	 *
+	 * @param fromPic        原始图片
+	 * @param startRowOrigin 原始图片开始行
+	 * @param startColOrigin 原始图片开始列
+	 * @param endRowOrigin   原始图片结束行
+	 * @param endColOrigin   原始图片结束列
+	 * @param startColThis   目标图片开始行
+	 * @param startRolThis   目标图片开始列
+	 */
+	public void copyOtherToThis(Picture fromPic,
+								int startRowOrigin, int startColOrigin,
+								int endRowOrigin, int endColOrigin,
+								int startRolThis, int startColThis) {
+		Pixel[][] toPixels = this.getPixels2D();
+		Pixel[][] fromPixels = fromPic.getPixels2D();
+		for (int rolThis = startRolThis, rOrigin = startRowOrigin;
+			 rolThis < endRowOrigin && rOrigin < toPixels.length;
+			 rolThis++, rOrigin++) {
+			for (int c = startColThis, c1 = startColOrigin;
+				 c < endColOrigin && c1 < toPixels[0].length;
+				 c++, c1++) {
+				toPixels[rOrigin][c1].setColor(fromPixels[rolThis][c].getColor());
 			}
 		}
 	}

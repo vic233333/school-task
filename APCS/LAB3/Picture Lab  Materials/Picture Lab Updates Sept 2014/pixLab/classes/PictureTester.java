@@ -127,6 +127,17 @@ public class PictureTester {
 	}
 
 	/**
+	 * Method to test the collage method
+	 */
+	public static void testCopyOtherToThis() {
+		Picture canvas = new Picture("flower2.jpg");
+		Picture flower1 = new Picture("flower1.jpg");
+		flower1.explore();
+		canvas.copyOtherToThis(flower1, 0, 0, 0, 30, 30, 65);
+		canvas.explore();
+	}
+
+	/**
 	 * Method to test edgeDetection
 	 */
 	public static void testEdgeDetection() {
