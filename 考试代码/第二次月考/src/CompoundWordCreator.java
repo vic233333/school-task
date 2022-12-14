@@ -36,7 +36,20 @@ public class CompoundWordCreator {
 	}
 
 	private void addCompoundWords(List<String> compoundWords, int letterSum) {
-		/* to be completed in part (b) */
+		for (int i = 0; i < wordList.size(); i++) {
+			for (int j = 0; j < wordList.size(); j++) {
+				String ti = wordList.get(i);
+				String tj = wordList.get(j);
+				if (ti.length() + tj.length() == letterSum) {
+					if (inDictionary(ti + tj)) {
+						compoundWords.add(ti + tj);
+					}
+					if (inDictionary(tj + ti)) {
+						compoundWords.add(tj + ti);
+					}
+				}
+			}
+		}
 	}
 
 	/**
