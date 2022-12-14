@@ -70,7 +70,12 @@ public class CompoundWordCreator {
 	 * 3 <= w.length() <= findMaxLength().
 	 */
 	public List<String> buildWords() {
-		/* to be completed in part (c) */
+		List<String> res = new ArrayList<Stirng>();
+		int maxn = findMaxLength(); // 这还需要自己找调用真是依托答辩
+		for (int i = 3; i < maxn; i++) {
+			addCompoundWords(res, i);
+		}
+		return res;
 	}
 // Constructors, other methods, and instance variables are not shown.
 }
