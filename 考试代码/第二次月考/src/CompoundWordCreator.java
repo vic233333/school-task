@@ -18,15 +18,16 @@ public class CompoundWordCreator {
 	private int deleteString(String str) {
 		int count = 0;
 		for (int i = 0; i < wordList.size(); i++) {
-			String temp = wordlist.get(i):int j = temp, index0f (str);
-			while (i != -1) {
-				temp = temp.substring(0, i) + temp.substring(i + str.length0)).
-				count++:
-				j = str.index0f(str);
-				wordList.set(i, temp);
-				return count;
+			String temp = wordList.get(i);
+			int k = temp.indexOf(str);
+			while (k != -1) {
+				temp = temp.substring(0, k) + temp.substring(k + str.length());
+				count++;
+				k = temp.indexOf(str);
 			}
+			wordList.set(k, temp);
 		}
+		return count;
 	}
 
 	/**
@@ -69,7 +70,7 @@ public class CompoundWordCreator {
 	 * 3 <= w.length() <= findMaxLength().
 	 */
 	public List<String> buildWords() {
-		List<String> res = new ArrayList<Stirng>();
+		List<String> res = new ArrayList<String>();
 		int maxn = findMaxLength(); // 这还需要自己找调用真是依托答辩
 		for (int i = 3; i < maxn; i++) {
 			addCompoundWords(res, i);
