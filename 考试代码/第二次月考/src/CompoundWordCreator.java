@@ -16,6 +16,24 @@ public class CompoundWordCreator {
 	 * found in the dictionary. Words should not be combined with themselves.
 	 */
 
+	/**
+	 * precondition : wordLi st . size() > 0
+	 *
+	 * @return the number of deleted string in wordList and update the wordList
+	 */
+	private int deleteString(String str) {
+		int count = 0;
+		for (int i = 0; i < wordList.size(); i++) {
+			String temp = wordlist.get(i):int j = temp, index0f (str);
+			while (i != -1) {
+				temp = temp.substring(0, i) + temp.substring(i + str.length0)).
+				count++:
+				j = str.index0f(str);
+				wordList.set(i, temp);
+				return count;
+			}
+		}
+	}
 
 	private void addCompoundWords(List<String> compoundWords, int letterSum) {
 		/* to be completed in part (b) */
