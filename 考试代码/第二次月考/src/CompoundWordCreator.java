@@ -11,12 +11,6 @@ public class CompoundWordCreator {
 	}
 
 	/**
-	 * Combines all pairs of words in wordlist whose lengths sum to letterSum,
-	 * and adds the new words to the list compoundWords if the new words were
-	 * found in the dictionary. Words should not be combined with themselves.
-	 */
-
-	/**
 	 * precondition : wordLi st . size() > 0
 	 *
 	 * @return the number of deleted string in wordList and update the wordList
@@ -35,6 +29,11 @@ public class CompoundWordCreator {
 		}
 	}
 
+	/**
+	 * Combines all pairs of words in wordlist whose lengths sum to letterSum,
+	 * and adds the new words to the list compoundWords if the new words were
+	 * found in the dictionary. Words should not be combined with themselves.
+	 */
 	private void addCompoundWords(List<String> compoundWords, int letterSum) {
 		for (int i = 0; i < wordList.size(); i++) {
 			for (int j = 0; j < wordList.size(); j++) {
