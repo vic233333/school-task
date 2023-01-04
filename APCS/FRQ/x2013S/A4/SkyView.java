@@ -23,7 +23,34 @@ public class SkyView {
 	 *                scanned have been copied to view and are ordered as
 	 *                in the original rectangular area of sky.
 	 */
-	// 实验一：row/col order for 2d
+
+	/**
+	 * 判断该行是否反向填充
+	 * 推荐
+	 */
+	public SkyView(int numRows, int numCols, double scanned[]) {
+		view = new double[numRows][numCols];
+		int i = 0;
+		for (int r = 0; r < view.length; r++) {
+			// row start
+			if (r % 2 == 0) {
+				for (int c = 0; c < view[0].length; c++) {
+					view[r][c] = scanned[i];
+					i++;
+				}
+			} else {
+				for (int c = view[0].length - 1; c >= 0; c--) {
+					view[r][c] = scanned[i];
+					i++;
+				}
+			}
+			// row stop
+		}
+	}
+
+	/**
+	 * 实验一：row/col order for 2d
+	 */
 	public SkyView(int numRows, int numCols, double[] scanned) {
 		view = new double[numRows][numCols];
 		int i = 0;
@@ -49,7 +76,10 @@ public class SkyView {
 		}
 	}
 
-	// 实验二for ld，换算法+蛇形填充
+	/**
+	 * 实验二for ld，换算法+蛇形填充
+	 * 推荐
+	 */ 
 	public SkyView(int numRows, int numCols, double[] scanned) {
 		view = new double[numRows][numCols];
 		int r, c;
