@@ -79,7 +79,7 @@ public class SkyView {
 	/**
 	 * 实验二for ld，换算法+蛇形填充
 	 * 推荐
-	 */ 
+	 */
 	public SkyView(int numRows, int numCols, double[] scanned) {
 		view = new double[numRows][numCols];
 		int r, c;
@@ -118,7 +118,15 @@ public class SkyView {
 	 */
 	public double getAverage(int startRow, int endRow,
 			int startCol, int endCol) {
-
+		double sum = 0;
+		int count = 0;
+		for (int r = startRow; r <= endRow; r++) {
+			for (int c = startCol; c <= endCol; c++) {
+				sum += view[r][c];
+				count++;
+			}
+		}
+		return sum / count;
 	}
 
 	/*******************************************************************************/
