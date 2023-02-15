@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+/*推荐*/
 public class SeatingChart_method1 {
 	/**
 	 * seats[rl[cl represents the Student in row r and column c in the classroom.
