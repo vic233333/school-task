@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-
-/*推荐*/
-public class SeatingChart_method1 {
+/*不推荐*/
+public class SeatingChart_method2 {
 	/**
 	 * seats[r][c] represents the Student in row r and column c in the classroom.
 	 */
@@ -21,22 +19,26 @@ public class SeatingChart_method1 {
 	 *             empty seats (represented by null).
 	 *             studentList is unchanged.
 	 */
-	public SeatingChart_method1(Student[] studentList, int rows, int cols) {
+	public SeatingChart_method2(Student[] studentList, int rows, int cols) {
 		seats = new Student[rows][cols];
-		ArrayList<Student> stu = new ArrayList<Student>();
-		for (int i = 0; i < rows * cols; i++) {
+		Student[] arr = new Student[rows * cols];
+		for (int i = 0; i < arr.length; i++) {
 			if (i < studentList.length) {
-				stu.add(studentList[i]);
+				arr[i] = studentList[i];
 			} else {
-				stu.add(null);
+				arr[i] = null;
 			}
 		}
-		for (int r = 0; r < seats.length; r++) {
+		int i = arr.length - 1;
+		for (int r = 0; r < seats.length; r++)
 			for (int c = 0; c < seats[0].length; c++) {
-				int ran = (int) (Math.random() * (stu.size()));
-				seats[r][c] = stu.remove(ran);
+				int ran = (int) (Math.random() * i);
+				seats[r][c] = arr[ran];
+				Student temp = arr[i];
+				arr[i] = arr[ran];
+				arr[ran] = temp;
+				i--;
 			}
-		}
 	}
 
 	/**
