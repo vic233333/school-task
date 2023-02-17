@@ -14,6 +14,4 @@ public class RandomLetterChooser extends RandomStringChooser {
 		return letters;
 	}
 
-
 }
-

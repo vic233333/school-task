@@ -2,27 +2,21 @@ import java.util.ArrayList;
 
 public class RandomStringChooser {
 
-	private String[] arr;
-	private int range;
+	private ArrayList<String> arrayList;
 
 	public RandomStringChooser(String[] wordArray) {
-		arr = new String[wordArray.length];
-		range = arr.length - 1;
+		arrayList = new ArrayList<String>();
 		for (int i = 0; i < wordArray.length; i++) {
-			arr[i] = wordArray[i];
+			arrayList.add(wordArray[i]);
 		}
 	}
 
 	public String getNext() {
-		if (range == 0) {
+		if (arrayList.size() == 0) {
 			return "NONE";
 		} else {
-			int rand = (int) (Math.random() * arr.length);
-			String temp = arr[rand];
-			arr[rand] = arr[range];
-			arr[range] = temp;
-			range = range - 1;
-			return temp;
+			int rand = (int) (Math.random() * arrayList.size());
+			return arrayList.remove(rand);
 		}
 	}
 }
