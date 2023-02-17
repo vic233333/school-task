@@ -14,7 +14,7 @@ public class SeatingChart {
 	 * Creates a seating chart with the given number of rows and columns from the
 	 * students in
 	 * studentList. Empty seats in the seating chart are represented by null.
-	 * 
+	 *
 	 * @param rows the number of rows of seats in the classroom
 	 * @param cols the number of columns of seats in the classroom
 	 *             Precondition: rows > 0; cols > 0;
@@ -67,20 +67,36 @@ public class SeatingChart {
 		}
 	}
 
-	/********************** Part (b) *********************/
+	/**
+	 * method 3
+	 */
+	public SeatingChart(List<Student> studentList, int rows, int cols) {
+		seats = new Student[rows][cols];
+		for (int i = 0; i < studentList.size(); i++) {
+			int r = (int) (Math.random() * rows);
+			int c = (int) (Math.random() * cols);
+			while (seats[r][c] != null) {
+				r = (int) (Math.random() * rows);
+				c = (int) (Math.random() * cols);
+			}
+			seats[r][c] = studentList.get(i);
+		}
+	}
+
+	/********************** Part (b) *********************/  
 
 	/**
 	 * Removes students who have more than a given number of absences from the
 	 * seating chart, replacing those entries in the seating chart with null
 	 * and returns the number of students removed.
-	 * 
+	 *
 	 * @param allowedAbsences an integer >= 0
 	 * @return number of students removed from seats
-	 *         Postcondition:
-	 *         - All students with allowedAbsences or fewer are in their original
-	 *         positions in seat
-	 *         - No student in seats has more than allowedAbsences absences.
-	 *         - Entries without students contain null.
+	 * Postcondition:
+	 * - All students with allowedAbsences or fewer are in their original
+	 * positions in seat
+	 * - No student in seats has more than allowedAbsences absences.
+	 * - Entries without students contain null.
 	 */
 	public int removeAbsentStudents(int allowedAbsences) {
 		int count = 0;
@@ -121,7 +137,7 @@ public class SeatingChart {
 				new Student("Glen", 2),
 				new Student("Fran", 6),
 				new Student("David", 1),
-				new Student("Danny", 3) };
+				new Student("Danny", 3)};
 
 		List<Student> roster = Arrays.asList(students);
 		SeatingChart chart = new SeatingChart(roster, 3, 4);
