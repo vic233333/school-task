@@ -15,18 +15,18 @@ public class Data {
 	public void repopulate() {
 		for (int r = 0; r < grid.length; r++) {
 			for (int c = 0; c < grid[0].length; c++) {
-				/*法一(不必掌握)：用 do while 语句写，简洁*/
+				/*法一(不必掌握😅)：用 do while 语句写，简洁*/
 				int randomNum;
 				do {
-					randomNum = (int) (Math.random() * MAX + 1);
+					randomNum = (int) (Math.random() * MAX) + 1;
 				} while (randomNum % 10 == 0 && randomNum % 100 != 0);
 				//do while 是先执行一遍循环再判断是否循环
 				grid[r][c] = randomNum;
 
-				/*法二(常规做法)：用 while 语句写。*/
-				int rand = (int) (Math.random() * MAX + 1);// 先定义并random一遍储值
+				/*法二(常规做法🤩)：用 while 语句写。*/
+				int rand = (int) (Math.random() * MAX) + 1;// 先定义并random一遍储值
 				while (rand % 10 == 0 && rand % 100 != 0) { // 判断条件
-					rand = (int) (Math.random() * MAX + 1); // 不符合进入循坏重新random
+					rand = (int) (Math.random() * MAX) + 1; // 不符合进入循坏重新random
 				}
 				grid[r][c] = rand;
 			}
@@ -36,14 +36,49 @@ public class Data {
 	/* Part (b) */
 
 	/**
-	 * Returns the number of columns in grid that are in increasing order, as
-	 * described
-	 * in part (b)
+	 * Returns the number of columns in grid that are in increasing order,
+	 * as described in part (b)
 	 * Precondition: grid is not null.
 	 * grid has at least one element.
 	 */
+	/*method 1*/
 	public int countIncreasingCols() {
+		int r;
+		int count = 0;
+		for (int c = 0; c < grid[0].length; c++) {
+			for (r = 0; r < grid.length; r++) {
+				if (grid[r][c] > grid[r + 1][c]) {
+					r = grid.length + 10;
+					break;
+					// "break;" 和 "r = grid.length + 10;" 任选其一
+				}
+				if (r == grid.length - 1) {
+					count++;
+				}
+			}
+		}
+		return count;
+	}
 
+	/**
+	 * Returns the number of columns in grid that are in increasing order,
+	 * as described in part (b)
+	 * Precondition: grid is not null.
+	 * grid has at least one element.
+	 */
+	/*method 2*/
+	public int countIncreasingCols() {
+		int count = 0;
+		for (int c = 0; c < grid[0].length; c++) {
+			int r = 0;
+			while (r < grid.length - 1 && grid[r + 1][c] >= grid[r][c]) {
+				r++;
+			}
+			if (r == grid.length - 1) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	/* Test */
