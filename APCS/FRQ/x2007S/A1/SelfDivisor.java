@@ -10,8 +10,15 @@ public class SelfDivisor {
 	 * false otherwise
 	 */
 	public static boolean isSelfDivisor(int number) {
-
-
+		int n = number;
+		while (number > 0) {
+			int dig = number % 10;
+			if (dig == 0 || n % dig != 0) {
+				return false;
+			}
+			number = number / 10;
+		}
+		return true;
 	}
 
 	/* Part (b) */
