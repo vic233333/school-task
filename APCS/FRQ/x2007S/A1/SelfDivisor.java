@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class SelfDivisor {
 	/* Part (a) */
 
@@ -21,8 +23,42 @@ public class SelfDivisor {
 	 *              Precondition: num > 0
 	 * @return an array containing the first num integers >= start that are self-divisors
 	 */
+	/* method 1*/
 	public static int[] firstNumSelfDivisors(int start, int num) {
+		int[] arr = new int[num];
+		int sd = start - 1;
+		for (int i = 0; i < arr.length; i++) {
+			sd = sd + 1;
+			while (!isSelfDivisor(sd)) {
+				sd = sd + 1;
+			}
+			arr[i] = sd;
+		}
+		return arr;
+	}
 
+	/**
+	 * @param start starting point for values to be checked
+	 *              Precondition: start > 0
+	 * @param num   the size of the array to be returned
+	 *              Precondition: num > 0
+	 * @return an array containing the first num integers >= start that are self-divisors
+	 */
+	/* method 2*/
+	public static int[] firstNumSelfDivisors(int start, int num) {
+		int[] arr = new int[num];
+		ArrayList<Integer> al = new ArrayList<Integer>();
+		int sd = start;
+		while (al.size() <= num) {
+			if (isSelfDivisor(sd)) {
+				al.add(sd);
+			}
+			sd++;
+		}
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = al.get(i);
+		}
+		return arr;
 	}
 
 	/****************/
