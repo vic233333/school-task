@@ -15,7 +15,7 @@ public class Data {
 	public void repopulate() {
 		for (int r = 0; r < grid.length; r++) {
 			for (int c = 0; c < grid[0].length; c++) {
-				/*法一(不必掌握😅)：用 do while 语句写，简洁*/
+				/*method 1 (不必掌握😅)：用 do while 语句写，简洁*/
 				int randomNum;
 				do {
 					randomNum = (int) (Math.random() * MAX) + 1;
@@ -23,7 +23,7 @@ public class Data {
 				//do while 是先执行一遍循环再判断是否循环
 				grid[r][c] = randomNum;
 
-				/*法二(常规做法🤩)：用 while 语句写。*/
+				/*method 2 (常规做法🤩)：用 while 语句写*/
 				int rand = (int) (Math.random() * MAX) + 1;// 先定义并random一遍储值
 				while (rand % 10 == 0 && rand % 100 != 0) { // 判断条件
 					rand = (int) (Math.random() * MAX) + 1; // 不符合进入循坏重新random
@@ -33,6 +33,25 @@ public class Data {
 		}
 	}
 
+	/*method 3 (常规做法😋)把随机数表放到ArrayList里面，并且用校验法检验每个随机数*/
+	public void repopulate() {
+		ArrayList<Integer> al = new ArrayList<Integer>(); // 随机数表
+		int ran = (int) (Math.random() * MAX) + 1;
+		while (al.size() <= grid.length * grid[0].length) { // 循环直至al被填充到指定长度为止
+			if (ran % 10 == 0 && ran % 100 != 0) { // 校验
+				al.add(ran);
+			}
+			ran = (int) (Math.random() * MAX) + 1; // 重新随机，为下一次循环做准备
+		}
+		int i = 0;
+		// 把al的内容全部复制到数组里面
+		for (int r = 0; r < grid.length; r++) {
+			for (int c = 0; c < grid[0].length; c++) {
+				grid[r][c] = al.get(i);
+				i++;
+			}
+		}
+	}
 	/* Part (b) */
 
 	/**
