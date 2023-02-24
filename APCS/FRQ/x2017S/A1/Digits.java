@@ -13,6 +13,7 @@ public class Digits {
 	 * Constructs a Digits object that represents num.
 	 * Precondition: num >= 0
 	 */
+	/* method 1: 把num数为分离存到ArrayList里面*/
 	public Digits(int num) {
 		digitList = new ArrayList<Integer>();
 		if (num == 0) {
@@ -22,6 +23,23 @@ public class Digits {
 			int dig = num % 10;
 			digitList.add(0, dig);
 			num = num / 10;
+		}
+	}
+
+	/**
+	 * Constructs a Digits object that represents num.
+	 * Precondition: num >= 0
+	 */
+	/* method 2: 把num转换成String（不建议使用）*/
+	public Digits(int num) {
+		digitList = new ArrayList<Integer>();
+		if (num == 0) {
+			digitList.add(0);
+		}
+		String s = num + "";
+		for (int i = 0; i < s.length(); i++) {
+			int dig = Integer.valueOf(s.substring(i, i + 1));
+			digitList.add(dig);
 		}
 	}
 
