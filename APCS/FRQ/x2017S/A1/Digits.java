@@ -3,7 +3,8 @@ import java.util.ArrayList;
 public class Digits {
 	/**
 	 * The list of digits from the number used to construct this object.
-	 * The digits appear in the list in the same order in which they appear in the original number.
+	 * The digits appear in the list in the same order in which they appear in the
+	 * original number.
 	 */
 	private ArrayList<Integer> digitList;
 
@@ -13,7 +14,7 @@ public class Digits {
 	 * Constructs a Digits object that represents num.
 	 * Precondition: num >= 0
 	 */
-	/* method 1: 把num数为分离存到ArrayList里面*/
+	/* method 1: 把num数为分离存到ArrayList里面 */
 	public Digits(int num) {
 		digitList = new ArrayList<Integer>();
 		if (num == 0) {
@@ -30,7 +31,7 @@ public class Digits {
 	 * Constructs a Digits object that represents num.
 	 * Precondition: num >= 0
 	 */
-	/* method 2: 把num转换成String（不建议使用）*/
+	/* method 2: 把num转换成String（不建议使用） */
 	public Digits(int num) {
 		digitList = new ArrayList<Integer>();
 		if (num == 0) {
@@ -43,7 +44,8 @@ public class Digits {
 		}
 	}
 
-	/*  int a = Integer.parseInt(str);
+	/*
+	 * int a = Integer.parseInt(str);
 	 * int b = Integer.valueOf(str).intValue()
 	 */
 
@@ -54,11 +56,17 @@ public class Digits {
 	/**************** Part (b) ****************/
 
 	/**
-	 * Returns true if the digits in this Digits object are in strictly increasing order;
+	 * Returns true if the digits in this Digits object
+	 * are in strictly increasing order;
 	 * false otherwise.
 	 */
 	public boolean isStrictlyIncreasing() {
-
+		for (int i = 0; i < digitList.size() - 1; i++) {
+			if (digitList.get(i) >= digitList.get(i + 1)) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	public static void main(String[] args) {
