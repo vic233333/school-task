@@ -1,3 +1,5 @@
+import java.io.File;
+
 public class RouteCipher {
 	/**
 	 * A two-dimensional array of single-character strings, instantiated in the
@@ -62,8 +64,36 @@ public class RouteCipher {
 	 * @return the encrypted message;
 	 *         if message is the empty string, returns the empty string
 	 */
+	/* method 1 */
 	public String encryptMessage(String message) {
+		String str = "";
+		while (message.length() > 0) {
+			fillBlock(message);
+			str = str + encryptBlock();
+			if (message.length() > numRows * numCols) {
+				message = message.substring(numRows * numCols);
+			} else {
+				message = "";
+			}
+		}
+		return str;
+	}
 
+	/**
+	 * Encrypts a message.
+	 * 
+	 * @param message the string to be encrypted
+	 * @return the encrypted message;
+	 *         if message is the empty string, returns the empty string
+	 */
+	/* method 2 */
+	public String encryptMessage(String message) {
+		String str = "";
+		for (int i = 0; i < message.length(); i = i + numRows * numCols) {
+			fillBlock(message.substring(i));
+			str = str + encryptBlock();
+		}
+		return str;
 	}
 
 	public static void main(String[] args) {
