@@ -20,15 +20,57 @@ public class ArrayTester {
 	 * Precondition: arr1 and arr2 have the same length.
 	 * Postcondition: arr1 and arr2 are unchanged.
 	 */
+	/* method1 用break */
 	public static boolean hasAllValues(int[] arr1, int[] arr2) {
 		for (int i = 0; i < arr1.length; i++) {
 			boolean flag = false;
 			for (int j = 0; j < arr2.length; j++) {
-				if(arr1[i] == arr2[j]){
+				if (arr1[i] == arr2[j]) {
 					flag = true;
 				}
 			}
 			if (!flag) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Returns true if and only if every value in arr1 appears in arr2.
+	 * Precondition: arr1 and arr2 have the same length.
+	 * Postcondition: arr1 and arr2 are unchanged.
+	 */
+	/* method2 碰到条件退出循环，结束后判断循环次数 */
+	public static boolean hasAllValues(int[] arr1, int[] arr2) {
+		for (int i = 0; i < arr2.length; i++) {
+			int j = 0;
+			while (j < arr1.length && arr2[i] != arr1[j]) {
+				j++;
+			}
+			if (j == arr1.length) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Returns true if and only if every value in arr1 appears in arr2.
+	 * Precondition: arr1 and arr2 have the same length.
+	 * Postcondition: arr1 and arr2 are unchanged.
+	 */
+	/* method3 不用break，手动break */
+	public static boolean hasAl1Values(int[] arr1, int[] arr2) {
+		for (int i = 0; i < arr1.length; i++) {
+			int j;
+			for (j = 0; j < arr2.length; j++) {
+				if (arr1[i] == arr2[j]) {
+					j = arr2.length + 10;
+					// break
+				}
+			}
+			if (j == arr2.length) {
 				return false;
 			}
 		}
