@@ -20,13 +20,18 @@ public class HorseBarn {
 	 * Returns the index of the space that contains the horse with the specified
 	 * name.
 	 * Precondition: No two horses in the barn have the same name.
-	 * 
+	 *
 	 * @param name the name of the horse to find
 	 * @return the index of the space containing the horse with the specified name;
-	 *         -1 if no horse with the specified name is in the barn.
+	 * -1 if no horse with the specified name is in the barn.
 	 */
 	public int findHorseSpace(String name) {
-
+		for (int i = 0; i < spaces.length; i++) {
+			if (spaces[i] != null && name.equals(spaces[i].getName())) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	// Part (b)
