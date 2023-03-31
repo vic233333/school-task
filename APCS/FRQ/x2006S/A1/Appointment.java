@@ -1,26 +1,25 @@
-public class Appointment
-{
-  private TimeInterval time;
+public class Appointment {
+	private TimeInterval time;
 
-  public Appointment(TimeInterval time)
-  {
-    this.time = time;
-  }
+	public Appointment(TimeInterval time) {
+		this.time = time;
+	}
 
-  // returns the time interval of this Appointment
-  public TimeInterval getTime() 
-  {  return time; }
+	// returns the time interval of this Appointment
+	public TimeInterval getTime() {
+		return time;
+	}
 
-  /*** Part (a) ***/
+	/*** Part (a) ***/
 
-  // returns true if the time interval of this Appointment
-  // overlaps with the time interval of other;
-  // otherwise, returns false
-  public boolean conflictsWith(Appointment other)
-  {
-    
-  }
+	// returns true if the time interval of this Appointment
+	// overlaps with the time interval of other;
+	// otherwise, returns false
+	public boolean conflictsWith(Appointment other) {
+		return other.getTime().overlapsWith(this.getTime());
+	}
 
-  public String toString()
-  { return time.toString(); }
+	public String toString() {
+		return time.toString();
+	}
 }
