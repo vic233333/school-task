@@ -12,7 +12,11 @@ public class Statistician {
 	 * @return an array of numTosses values
 	 */
 	public static int[] getCubeTosses(NumberCube cube, int numTosses) {
-
+		int[] arr = new int[numTosses];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = cube.toss();
+		}
+		return arr;
 	}
 
 	// *************************************************
