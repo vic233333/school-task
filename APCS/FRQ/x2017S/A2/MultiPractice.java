@@ -28,7 +28,7 @@ public class MultiPractice implements StudyPractice {
 		StudyPractice p2 = new MultiPractice(4, 12);
 		p2.nextProblem();
 		System.out.println(p2.getProblem()); // 4 TIMES 13
-		System.out.println(p2.getProblem()); // 4 TIMES 13
+		System.out.println(p2.getProblem()); // 4 TIMES 14
 		p2.nextProblem();
 		p2.nextProblem();
 		System.out.println(p2.getProblem()); // 4 TIMES 15
