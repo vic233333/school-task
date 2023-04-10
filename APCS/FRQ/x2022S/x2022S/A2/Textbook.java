@@ -1,8 +1,8 @@
 public class Textbook extends Book {
 	private int edition;
 
-	public Textbook(String str, double price, int edition1) {
-		super(str, price);
+	public Textbook(String title1, double price1, int edition1) {
+		super(title1, price1);
 		edition = edition1;
 	}
 
@@ -14,7 +14,7 @@ public class Textbook extends Book {
 		return super.getBookInfo() + "-" + edition;
 	}
 
-	public boolean canSubstituteFor(Textbook str) {
-		return str.getTitle().equals(getTitle()) && str.getEdition() < getEdition();
+	public boolean canSubstituteFor(Textbook other) {
+		return other.getTitle().equals(getTitle()) && other.getEdition() < getEdition();
 	}
 }
