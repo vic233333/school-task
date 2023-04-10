@@ -31,16 +31,10 @@ public class Phrase {
 	 * If the nth occurrence does not exist, the current phrase is unchanged.
 	 * Precondition: str.length() > 0 and n > 0
 	 */
-	public int replaceNthOccurrence(String str, int n, String repl) {
-		int index = findNthOccurrence(str, n + 1);
-		while (index != -1) {
-			n++;
-			index = findNthOccurrence(str, n + 1);
-		}
-		if (n != 0) {
-			return findNthOccurrence(str, n);
-		} else {
-			return -1;
+	public void replaceNthOccurrence(String str, int n, String repl) {
+		int k = findNthOccurrence(str, n);
+		if (k != -1) {
+			currentPhrase = currentPhrase.substring(0, k) + repl + currentPhrase.substring(k + str.length());
 		}
 	}
 
@@ -97,6 +91,15 @@ public class Phrase {
 			}
 		}
 		return -1;
+	}
+
+	/* method 5*/
+	public int findLastOccurrence(String str) {
+		int n = 1;
+		while (findNthOccurrence(str, n) != -1) {
+			n++;
+		}
+		return findNthOccurrence(str, n);
 	}
 
 	/**
