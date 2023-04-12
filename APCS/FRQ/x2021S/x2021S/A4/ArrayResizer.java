@@ -9,11 +9,9 @@ public class ArrayResizer {
 	 * Postcondition: array2D is unchanged.
 	 */
 	public static boolean isNonZeroRow(int[][] array2D, int r) {
-		for (int r1 = 0; r1 < array2D.length; r1++) {
-			for (int c = 0; c < array2D[0].length; c++) {
-				if (array2D[r1][c] == 0) {
-					return false;
-				}
+		for (int c = 0; c < array2D[0].length; c++) {
+			if (array2D[r][c] == 0) {
+				return false;
 			}
 		}
 		return true;
@@ -40,8 +38,20 @@ public class ArrayResizer {
 	 * Postcondition: array2D is unchanged.
 	 */
 	public static int[][] resize(int[][] array2D) {
-
+		int[][] ans = new int[numNonZeroRows(array2D)][array2D[0].length];
+		int i = 0;
+		for (int r = 0; r < array2D.length; r++) {
+			if (isNonZeroRow(array2D, r) == true) {
+				for (int c = 0; c < array2D[r].length; c++) {
+					ans[i][c] = array2D[r][c];
+				}
+				i++;
+			}
+		}
+		return ans;
 	}
+
+}
 
 	/***************** Test *****************/
 
