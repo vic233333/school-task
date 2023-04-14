@@ -1,5 +1,7 @@
 /* A4 */
 
+import java.util.ArrayList;
+
 public class ArrayResizer {
 	/* Part (a) */
 
@@ -37,6 +39,7 @@ public class ArrayResizer {
 	 * Precondition: array2D contains at least one column and at least one row with no zeros.
 	 * Postcondition: array2D is unchanged.
 	 */
+	/* method 1: 使用isNonZeroRow*/
 	public static int[][] resize(int[][] array2D) {
 		int[][] ans = new int[numNonZeroRows(array2D)][array2D[0].length];
 		int i = 0;
@@ -51,7 +54,29 @@ public class ArrayResizer {
 		return ans;
 	}
 
-}
+	/* method 2: 不使用isNonZeroRow*/
+	public static int[][] resize(int[][] array2D) {
+		ArrayList<Integer> nonZero = new ArrayList<Integer>();
+		// 判断每一行是否符合非零条件
+		for (int r = 0; r < array2D.length; r++) {
+			if (isNonZeroRow(array2D, r)) {
+				for (int c = 0; c < array2D[0].length; c++) {
+					nonZero.add(array2D[r][c]);
+				}
+			}
+		}
+		// 一变二复制到二位数组
+		int[][] ans = new int[nonZero.size() / array2D[0].length][array2D[0].length];
+		int i = 0;
+		for (int r = 0; r < ans.length; r++) {
+			for (int c = 0; c < ans[0].length; c++) {
+				ans[r][c] = nonZero.get(i);
+				i++;
+			}
+		}
+		return ans;
+	}
+
 
 	/***************** Test *****************/
 
