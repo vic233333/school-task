@@ -5,7 +5,7 @@ public class Advance extends Ticket {
 
 	public Advance(int d) {
 		days = d;
-	}
+	} 
 
 
 	public double getPrice() {
