@@ -1,6 +1,6 @@
 
-public class UnderGra extends Student
-{public UnderGra(String n,String g,int[] s){
+public class UnderGra extends Student {
+    public UnderGra(String n, String g, int[] s) {
         //super(n,g,s);
         super();
         setName(n);
@@ -8,10 +8,11 @@ public class UnderGra extends Student
         setScore(s);
 
     }
+
     //overriding
-    public void computeGra(){
+    public void computeGra() {
         super.computeGra();
-        if(getAve()>=90){
+        if (getAve() >= 90) {
             setGrade("good");
         }
     }
