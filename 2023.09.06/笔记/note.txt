@@ -1,0 +1,45 @@
+# string 定义
+String <name>=new String("your string here");
+
+## 知识点
+### 索引
+string中的每一个字母都有编号，且从0开始
+    例如：
+    h e l l o
+    0 1 2 3 4
+### 不可更改性
+string定义并赋值后不可更改
+
+## 比较：
+<name>.equals(<name2>)
+相同时返回True
+
+## 长度：
+<name>.length()
+返回长度
+
+## 切割子字符串
+<name>.substring(i,j)
+i为起始位,j为终值位（不提供j时默认切到底）
+切割时包含i，不包含j
+i+切割个数=j
+切割的时候不会影响本来的字符串
+    例如：
+    hello
+    01234
+    切割i=1,j=4时，输出ell（包含e，不包含o）
+
+## 寻找索引
+<name>.indexOf("",i)
+引号内填写查找的内容，i表示开始查找的索引（包含）
+返回索引值
+    例如：
+    hello
+    01234
+    当使用indexOf("l"),返回2
+    使用indexOf("l",2),返回2
+    使用indexOf("l",3),返回3
+    使用indexOf("l",4),返回3
+
+int 定义式：
+int <name>=<value>;
