@@ -1,0 +1,8 @@
+# 内置随机数
+Math.random()
+生成[0,1)小数
+int rand=(int)(Math.random()*<time>);
+
+# 扫描输入
+Scanner <name>=new Scanner(System.in);
+int x=sn.nextInt;
