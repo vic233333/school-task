@@ -38,8 +38,16 @@ public class App {
     }
 
     public String withoutEnd(String str) {
-        int end = str.length() >= 2 ? str.length() - 1 : str.length();
-        int first = str.length() >= 2 ? 1 : 0;
+        int end = 0;
+        int first=0;
+        if(str.length()>=2){
+            end=str.length()-1;
+            first=1;
+        }
+        else{
+            end=str.length();
+            first=0;
+        }
         return str.substring(first, end);
     }
 
@@ -78,17 +86,29 @@ public class App {
     }
 
     public String withouEnd2(String str) {
-        return str.length() >= 2 ? str.substring(1, str.length() - 1) : "";
+        if(str.length()>2){
+            return str.substring(1,str.length()-1);
+        }
+        else{
+            return "";
+        }
     }
+
 
     public String middleTwo(String str) {
         return str.substring(str.length() / 2 - 1, str.length() / 2 + 1);
     }
 
     public boolean endsLy(String str) {
-        int first = str.length() >= 2 ? str.length() - 2 : 0;
-        String extra = str.substring(first);
-        return extra.equals("ly");
+        int first=0;
+        if(str.length()>=2){
+            first=str.length()-2;
+        }
+        else{
+            first=0;
+        }
+        String ret=str.substring(first);
+        return ret.equals("ly");
     }
 
     public String nTwice(String str, int n) {
@@ -97,9 +117,13 @@ public class App {
     }
 
     public String twoChar(String str, int index) {
-        index = index + 2 > str.length() ? 0 : index;
-        index = index < 0 ? 0 : index;
-        return str.substring(index, index + 2);
+        if(index+2>str.length()){
+            index=0;
+        }
+        if(index<0){
+            index=0;
+        }
+        return str.substring(index,index+2);
     }
 
     public String middleThree(String str) {
