@@ -1,8 +1,8 @@
 /*
 * 链接：https://codingbat.com/home/tlsmith2@wsfcs.k12.nc.us/homework-2d-arrays
 * 两个方法为一组
-* 因为codingbat不支持二维数组
 * 第一个方法是为了支援二位数组用的
+* 因为codingbat不支持二维数组
 */
 public class App {
     public static void main(String[] args) throws Exception {
@@ -131,7 +131,7 @@ public class App {
     }
 
     public double array2DRowAverageB(int[][] nums, int rowToAverage) {
-        if (rowToAverage >= nums.length || rowToAverage < 0 || nums.length == 0) {
+        if (rowToAverage >= nums.length || rowToAverage < 0 || nums.length == 1) {
             return -1.0;
         }
         int sum = 0;
