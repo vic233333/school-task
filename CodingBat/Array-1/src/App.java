@@ -65,6 +65,10 @@ public class App {
         return numsCopy;
     }
 
+    /**
+     * maxEnd3 method 1:
+     * Normal if branch
+     */
     public int[] maxEnd3(int[] nums) {
         int maxn = 0;
         if (nums[0] > nums[nums.length - 1]) {
@@ -72,6 +76,19 @@ public class App {
         } else {
             maxn = nums[nums.length - 1];
         }
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = maxn;
+        }
+        return nums;
+    }
+
+    /**
+     * maxEnd3 method 1:
+     * Use Math.max() and Math.min()
+     */
+    public int[] maxEnd3(int[] nums) {
+        int maxn = 0;
+        maxn = Math.max(nums[0], nums[nums.length - 1]);
         for (int i = 0; i < nums.length; i++) {
             nums[i] = maxn;
         }

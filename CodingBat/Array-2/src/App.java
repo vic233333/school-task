@@ -13,7 +13,10 @@ public class App {
         return sum;
     }
 
-    // bigDiff method 1
+    /**
+     * bigDiff method 1:
+     * Normal if branch
+     */
     public int bigDiff(int[] nums) {
         int maxn = nums[0];
         int minn = nums[0];
@@ -28,7 +31,10 @@ public class App {
         return maxn - minn;
     }
 
-    // bigDiff method 2
+    /**
+     * bigDiff method 2:
+     * Use Math.max() and Math.min()
+     */
     public int bigDiff(int[] nums) {
         int maxn = nums[0];
         int minn = nums[0];
@@ -51,13 +57,15 @@ public class App {
         return (sum - maxn - minn) / (nums.length - 2);
     }
 
-    // sum13 method 1
-    // 双循环、跳指针
-    // 吐槽：早上写的时候脑子不太清楚
-    // 其实想的就是老师这个写法
-    // 但是我又不愿意多写一个if和else
-    // 可惜还是写不出来
-    // 最后还是写了一个
+    /**
+     * sum13 method 1:
+     * 双循环、跳指针
+     * 吐槽：早上写的时候脑子不太清楚
+     * 其实想的就是老师这个写法
+     * 但是我又不愿意多写一个if和else
+     * 可惜还是写不出来
+     * 最后还是写了一个
+     */
     public int sum13(int[] nums) {
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -74,9 +82,11 @@ public class App {
         return sum;
     }
 
-    // sum13 method 2
-    // 单循环
-    // 单判断
+    /**
+     * sum13 method 2:
+     * 单循环
+     * 单判断
+     */
     public int sum13(int[] nums) {
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -89,8 +99,10 @@ public class App {
         return sum;
     }
 
-    // sum67 method 1
-    // 跳指针
+    /**
+     * sum67 method 1:
+     * 跳指针
+     */
     public int sum67(int[] nums) {
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -107,8 +119,10 @@ public class App {
         return sum;
     }
 
-    // sum67 method 2
-    // 用flag控制是否在区间内
+    /**
+     * sum67 method 2:
+     * 用flag控制是否在区间内
+     */
     public int sum67(int[] nums) {
         int sum = 0;
         boolean flag = false;
@@ -146,7 +160,7 @@ public class App {
                 flag3 = true;
             }
         }
-        return flag1 == false && flag3 == false;
+        return !flag1 && !flag3;
     }
 
     public boolean sum28(int[] nums) {
@@ -221,7 +235,11 @@ public class App {
         return true;
     }
 
-    // either24 method 1
+    /**
+     * either24 method 1:
+     * 存在连续的两个2但没有连续的两个4，
+     * 或者存在连续的两个4但没有连续的两个2
+     */
     public boolean either24(int[] nums) {
         boolean flag2 = false;
         boolean flag4 = false;
@@ -236,8 +254,11 @@ public class App {
         return flag2 && !flag4 || flag4 && !flag2;
     }
 
-    // either24 method 2
-    // 不同的判断方式
+    /**
+     * either24 method 2:
+     * 既然连续两个的2和4不能同时存在，
+     * 那么直接不等为True即可
+     */
     public boolean either24(int[] nums) {
         boolean flag2 = false;
         boolean flag4 = false;
@@ -291,7 +312,6 @@ public class App {
         return false;
     }
 
-    // modThree method 1
     public boolean modThree(int[] nums) {
         boolean flag2 = false;
         boolean flag3 = false;
@@ -306,23 +326,12 @@ public class App {
         return flag2 || flag3;
     }
 
-    // modThree method 2
-    public boolean modThree(int[] nums) {
-        boolean flag2 = false;
-        boolean flag3 = false;
-        for (int i = 0; i < nums.length - 2; i++) {
-            if (nums[i] % 2 == 0 && nums[i + 1] % 2 == 0 && nums[i + 2] % 2 == 0) {
-                flag2 = true;
-            }
-            if (nums[i] % 2 == 1 && nums[i + 1] % 2 == 1 && nums[i + 2] % 2 == 1) {
-                flag3 = true;
-            }
-        }
-        return flag2 || flag3;
-    }
-
-    // method 1
-    // @Enning_Zheng
+    /**
+     * method 1:
+     * Normal return
+     *
+     * @author Enning_Zheng
+     */
     public boolean haveThree(int[] nums) {
         int count = 0;
         boolean flag = false;
@@ -334,8 +343,7 @@ public class App {
                 count++;
             }
         }
-        // 此处不够简洁
-        // 可以参考method2
+        /*此处不够简洁，可以参考method2*/
         if (count == 3 && flag == false) {
             return true;
         } else {
@@ -343,7 +351,10 @@ public class App {
         }
     }
 
-    // haveThree method 2
+    /**
+     * haveThree method 2
+     * Compact return logic
+     */
     public boolean haveThree(int[] nums) {
         int count = 0;
         boolean found = false;
@@ -355,7 +366,7 @@ public class App {
                 count++;
             }
         }
-        return count == 3 && found == false;
+        return count == 3 && !found;
     }
 
     public boolean twoTwo(int[] nums) {
@@ -371,10 +382,7 @@ public class App {
                 return false;
             }
         }
-        if (nums.length == 1 && nums[0] == 2) {
-            return false;
-        }
-        return true;
+        return nums.length != 1 || nums[0] != 2;
     }
 
     public boolean sameEnds(int[] nums, int len) {
@@ -404,7 +412,10 @@ public class App {
         return arr;
     }
 
-    // shiftLeft method 1
+    /**
+     * shiftLeft method 1:
+     * Additional array
+     */
     public int[] shiftLeft(int[] nums) {
         int[] arr = new int[nums.length];
         for (int i = 1, j = 0; i < nums.length; i++, j++) {
@@ -415,7 +426,10 @@ public class App {
         return arr;
     }
 
-    // shiftLeft method 2
+    /**
+     * shiftLeft method 2
+     * Change in original array
+     */
     public int[] shiftLeft(int[] nums) {
         if (nums.length == 0) {
             return nums;
@@ -428,21 +442,27 @@ public class App {
         return nums;
     }
 
-    // tenRun method 1
+    /**
+     * tenRun method 1:
+     * Use one loop
+     */
     public int[] tenRun(int[] nums) {
-        int flag = -1;
+        int flag = -1;//previous required nums[i]
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] % 10 == 0) {
                 flag = i;
             }
-            if (flag != -1) {// inside the run
+            if (flag != -1) {
                 nums[i] = nums[flag];
             }
         }
         return nums;
     }
 
-    // tenRun method 2
+    /**
+     * tenRun method 2:
+     * Use two loops
+     */
     public int[] tenRun(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] % 10 == 0) {
@@ -451,7 +471,7 @@ public class App {
                     nums[j] = nums[i];
                     j++;
                 }
-                if (j < nums.length) {
+                if (j < nums.length) {// update i to skip processed section
                     i = j - 1;
                 }
             }
