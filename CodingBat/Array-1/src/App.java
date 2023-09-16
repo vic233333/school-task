@@ -243,30 +243,11 @@ public class App {
         } else if (nums.length == 2) {
             if (nums[0] == 1 && nums[1] == 3) {
                 return true;
-            } else {
-                return false;
             }
         } else {
             if (nums[0] == 1 && nums[1] == 3
                     || nums[1] == 1 && nums[2] == 3
-                    || nums[nums.length - 1] == 3
-                    && nums[nums.length - 2] == 1) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
-
-    //     unlucky1 method 2
-//     带跳跃的一个循环
-//     跳一下可以提升不少效率
-    public boolean unlucky1(int nums[]) {
-        for (int i = 0; i < nums.length - 1; i++) {
-            if (i == 2) {
-                i = nums.length - 2;
-            }
-            if (nums[i] == 1 && nums[i] == 3) {
+                    || nums[nums.length - 1] == 3 && nums[nums.length - 2] == 1) {
                 return true;
             }
         }
