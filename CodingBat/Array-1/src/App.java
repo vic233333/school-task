@@ -279,10 +279,12 @@ public class App {
         int[] ans = new int[lengthAns];
         int k = 0;
         if (a.length >= 1) {
-            ans[k++] = a[0];
+            ans[k] = a[0];
+            k++;
         }
         if (b.length >= 1) {
-            ans[k++] = b[0];
+            ans[k] = b[0];
+            k++;
         }
         return ans;
     }
