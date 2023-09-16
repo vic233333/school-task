@@ -58,16 +58,20 @@ public class App {
     }
 
     public int[] reverse3(int[] nums) {
-        int[] nums_copy = new int[nums.length];
+        int[] numsCopy = new int[nums.length];
         for (int i = nums.length - 1, j = 0; i >= 0; i--, j++) {
-            nums_copy[i] = nums[j];
+            numsCopy[i] = nums[j];
         }
-        return nums_copy;
+        return numsCopy;
     }
 
     public int[] maxEnd3(int[] nums) {
         int maxn = 0;
-        maxn = nums[0] > nums[nums.length - 1] ? nums[0] : nums[nums.length - 1];
+        if (nums[0] > nums[nums.length - 1]) {
+            maxn = nums[0];
+        } else {
+            maxn = nums[nums.length - 1];
+        }
         for (int i = 0; i < nums.length; i++) {
             nums[i] = maxn;
         }
@@ -79,19 +83,22 @@ public class App {
             return 0;
         } else if (nums.length == 1) {
             return nums[0];
-
         } else {
             return nums[0] + nums[1];
         }
     }
 
     public int[] middleWay(int[] a, int[] b) {
-        int[] ans = new int[] { a[a.length / 2], b[b.length / 2] };
+        int[] ans = new int[2];
+        ans[0] = a[a.length / 2];
+        ans[1] = b[b.length / 2];
         return ans;
     }
 
     public int[] makeEnds(int[] nums) {
-        int[] ans = new int[] { nums[0], nums[nums.length - 1] };
+        int[] ans = new int[2];
+        ans[0] = nums[0];
+        ans[1] = nums[nums.length - 1];
         return ans;
     }
 
@@ -114,7 +121,7 @@ public class App {
     }
 
     public int[] makeLast(int[] nums) {
-        int ans[] = new int[nums.length * 2];
+        int[] ans = new int[nums.length * 2];
         ans[ans.length - 1] = nums[nums.length - 1];
         return ans;
     }
@@ -155,15 +162,19 @@ public class App {
     }
 
     public int[] biggerTwo(int[] a, int[] b) {
-        int sum_a = 0;
-        int sum_b = 0;
+        int sumA = 0;
+        int sumB = 0;
         for (int i = 0; i < a.length; i++) {
-            sum_a += a[i];
+            sumA += a[i];
         }
         for (int j = 0; j < b.length; j++) {
-            sum_b += b[j];
+            sumB += b[j];
         }
-        return sum_a >= sum_b ? a : b;
+        if (sumA >= sumB) {
+            return a;
+        } else {
+            return b;
+        }
     }
 
     public int[] makeMiddle(int[] nums) {
@@ -201,9 +212,15 @@ public class App {
 
     public int maxTriple(int[] nums) {
         int maxn = Integer.MIN_VALUE;
-        maxn = nums[0] > maxn ? nums[0] : maxn;
-        maxn = nums[nums.length / 2] > maxn ? nums[nums.length / 2] : maxn;
-        maxn = nums[nums.length - 1] > maxn ? nums[nums.length - 1] : maxn;
+        if (nums[0] > maxn) {
+            maxn = nums[0];
+        }
+        if (nums[nums.length / 2] > maxn) {
+            maxn = nums[nums.length / 2];
+        }
+        if (nums[nums.length - 1] > maxn) {
+            maxn = nums[nums.length - 1];
+        }
         return maxn;
     }
 
@@ -233,7 +250,7 @@ public class App {
             if (nums[0] == 1 && nums[1] == 3
                     || nums[1] == 1 && nums[2] == 3
                     || nums[nums.length - 1] == 3
-                            && nums[nums.length - 2] == 1) {
+                    && nums[nums.length - 2] == 1) {
                 return true;
             } else {
                 return false;
@@ -241,48 +258,44 @@ public class App {
         }
     }
 
-    // unlucky1 method 2
-    // 带跳跃的一个循环
-    // 跳一下可以提升不少效率
-    // public boolean unlucky1(int nums[]) {
-    //     for (int i = 0; i < nums.length - 1; i++) {
-    //         if (i == 2) {
-    //             i = nums.length - 2;
-    //         }
-    //         if (nums[i] == 1 && nums[i] == 3) {
-    //             return true;
-    //         }
-    //     }
-    //     return false;
-    // }
+    //     unlucky1 method 2
+//     带跳跃的一个循环
+//     跳一下可以提升不少效率
+    public boolean unlucky1(int nums[]) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (i == 2) {
+                i = nums.length - 2;
+            }
+            if (nums[i] == 1 && nums[i] == 3) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public int[] make2(int[] a, int[] b) {
         int[] ans = new int[2];
         int k = 0;
-        for (int i : a) {
-            if (k >= 2) {
-                break;
-            }
-            ans[k++] = i;
+        for (int i = 0; i < a.length && k < 2; i++) {
+            ans[k] = a[i];
+            k++;
         }
-        for (int i : b) {
-            if (k >= 2) {
-                break;
-            }
-            ans[k++] = i;
+        for (int i = 0; i < b.length && k < 2; i++) {
+            ans[k] = b[i];
+            k++;
         }
         return ans;
     }
 
     public int[] front11(int[] a, int[] b) {
-        int lenans = 2;
+        int lengthAns = 2;
         if (a.length < 1) {
-            lenans--;
+            lengthAns--;
         }
         if (b.length < 1) {
-            lenans--;
+            lengthAns--;
         }
-        int[] ans = new int[lenans];
+        int[] ans = new int[lengthAns];
         int k = 0;
         if (a.length >= 1) {
             ans[k++] = a[0];
