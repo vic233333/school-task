@@ -15,6 +15,7 @@ public class App {
 
     /**
      * bigDiff method 1:
+     * <p>
      * Normal if branch
      */
     public int bigDiff(int[] nums) {
@@ -33,7 +34,10 @@ public class App {
 
     /**
      * bigDiff method 2:
+     * <p>
      * Use Math.max() and Math.min()
+     * <p>
+     * NOT RECOMMENDED: Math.max() and Math.min() DO NOT occur in AP CSA
      */
     public int bigDiff(int[] nums) {
         int maxn = nums[0];
@@ -59,7 +63,9 @@ public class App {
 
     /**
      * sum13 method 1:
-     * 双循环、跳指针
+     * <p>
+     * Double loop and jumping index
+     * <p>
      * 吐槽：早上写的时候脑子不太清楚
      * 其实想的就是老师这个写法
      * 但是我又不愿意多写一个if和else
@@ -84,8 +90,8 @@ public class App {
 
     /**
      * sum13 method 2:
-     * 单循环
-     * 单判断
+     * <p>
+     * Single loop and single if branch
      */
     public int sum13(int[] nums) {
         int sum = 0;
@@ -101,7 +107,8 @@ public class App {
 
     /**
      * sum67 method 1:
-     * 跳指针
+     * <p>
+     * Jumping index
      */
     public int sum67(int[] nums) {
         int sum = 0;
@@ -121,7 +128,8 @@ public class App {
 
     /**
      * sum67 method 2:
-     * 用flag控制是否在区间内
+     * <p>
+     * Use flag to control boundary
      */
     public int sum67(int[] nums) {
         int sum = 0;
@@ -237,6 +245,7 @@ public class App {
 
     /**
      * either24 method 1:
+     * <p>
      * 存在连续的两个2但没有连续的两个4，
      * 或者存在连续的两个4但没有连续的两个2
      */
@@ -256,6 +265,7 @@ public class App {
 
     /**
      * either24 method 2:
+     * <p>
      * 既然连续两个的2和4不能同时存在，
      * 那么直接不等为True即可
      */
@@ -328,6 +338,7 @@ public class App {
 
     /**
      * method 1:
+     * <p>
      * Normal return
      *
      * @author Enning_Zheng
@@ -352,7 +363,8 @@ public class App {
     }
 
     /**
-     * haveThree method 2
+     * haveThree method 2:
+     * <p>
      * Compact return logic
      */
     public boolean haveThree(int[] nums) {
@@ -414,6 +426,7 @@ public class App {
 
     /**
      * shiftLeft method 1:
+     * <p>
      * Additional array
      */
     public int[] shiftLeft(int[] nums) {
@@ -427,7 +440,8 @@ public class App {
     }
 
     /**
-     * shiftLeft method 2
+     * shiftLeft method 2:
+     * <p>
      * Change in original array
      */
     public int[] shiftLeft(int[] nums) {
@@ -444,6 +458,7 @@ public class App {
 
     /**
      * tenRun method 1:
+     * <p>
      * Use one loop
      */
     public int[] tenRun(int[] nums) {
@@ -461,6 +476,7 @@ public class App {
 
     /**
      * tenRun method 2:
+     * <p>
      * Use two loops
      */
     public int[] tenRun(int[] nums) {

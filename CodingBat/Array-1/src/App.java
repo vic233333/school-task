@@ -67,6 +67,7 @@ public class App {
 
     /**
      * maxEnd3 method 1:
+     * <p>
      * Normal if branch
      */
     public int[] maxEnd3(int[] nums) {
@@ -84,7 +85,10 @@ public class App {
 
     /**
      * maxEnd3 method 1:
+     * <p>
      * Use Math.max() and Math.min()
+     * <p>
+     * NOT RECOMMENDED: Math.max() and Math.min() DO NOT occur in AP CSA
      */
     public int[] maxEnd3(int[] nums) {
         int maxn = 0;
@@ -252,8 +256,6 @@ public class App {
         }
     }
 
-    // unlucky1 method 1
-    // 可读性略差的无脑判断
     public boolean unlucky1(int[] nums) {
         if (nums.length <= 1) {
             return false;

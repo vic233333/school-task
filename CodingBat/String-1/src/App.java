@@ -28,7 +28,12 @@ public class App {
     }
 
     public String firstTwo(String str) {
-        int end = Math.min(str.length(), 2);
+        int end;
+        if (str.length() < 2) {
+            end = str.length();
+        } else {
+            end = 2;
+        }
         return str.substring(0, end);
     }
 
@@ -51,7 +56,7 @@ public class App {
     }
 
     public String comboString(String a, String b) {
-        if (a.length() < b.length()) {// 交换两个字符串
+        if (a.length() < b.length()) {// switch two String
             String temp;
             temp = a;
             a = b;
@@ -299,7 +304,7 @@ public class App {
      * <p>
      * Use charAt() method
      * <p>
-     * NOT RECOMMEND: charAt() will DO NOT occur in AP CSA
+     * NOT RECOMMEND: charAt() DO NOT occur in AP CSA
      */
     public String withoutX2(String str) {
         if (str.length() == 0 || str.length() < 2 && str.charAt(0) == 'x')
