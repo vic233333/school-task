@@ -240,6 +240,7 @@ public class App {
 
     /**
      * startWord method 1:
+     * <p>
      * Normal way
      */
     public String startWord(String str, String word) {
@@ -258,6 +259,7 @@ public class App {
 
     /**
      * startWord method 2:
+     * <p>
      * More compact way
      */
     public String startWord(String str, String word) {
@@ -292,10 +294,13 @@ public class App {
         }
     }
 
-    /**withOutX2 method 1:
+    /**
+     * withOutX2 method 1:
+     * <p>
      * Use charAt() method
-     * NOT RECOMMEND: charAt() will not occur in AP CSA
-     * */
+     * <p>
+     * NOT RECOMMEND: charAt() will DO NOT occur in AP CSA
+     */
     public String withoutX2(String str) {
         if (str.length() == 0 || str.length() < 2 && str.charAt(0) == 'x')
             return "";
@@ -309,33 +314,37 @@ public class App {
             return str;
     }
 
-    /**withOutX2 method 2:
+    /**
+     * withOutX2 method 2:
+     * <p>
      * Normal way
      */
     public String withoutX2(String str) {
-         if (str.length() >= 2 && str.substring(0, 2).equals("xx")) {
-             return str.substring(2);
-         }
-         if (str.length() >= 2 && str.substring(1, 2).equals("x")) {
-             return str.substring(0, 1) + str.substring(2);
-         }
-         if (str.length() >= 1 && str.substring(0, 1).equals("x")) {
-             return str.substring(1);
-         } else {
-             return str.substring(0, str.length());
-         }
-     }
+        if (str.length() >= 2 && str.substring(0, 2).equals("xx")) {
+            return str.substring(2);
+        }
+        if (str.length() >= 2 && str.substring(1, 2).equals("x")) {
+            return str.substring(0, 1) + str.substring(2);
+        }
+        if (str.length() >= 1 && str.substring(0, 1).equals("x")) {
+            return str.substring(1);
+        } else {
+            return str.substring(0, str.length());
+        }
+    }
 
-    /**withOutX2 method 3:
+    /**
+     * withOutX2 method 3:
+     * <p>
      * More compact way
-     * */
-     public String withoutX2(String str) {
-         if (str.indexOf("x", 1) == 1) {
-             str = str.substring(0, 1) + str.substring(2);
-         }
-         if (str.indexOf("x") == 0) {
-             str = str.substring(1);
-         }
-         return str;
-     }
+     */
+    public String withoutX2(String str) {
+        if (str.indexOf("x", 1) == 1) {
+            str = str.substring(0, 1) + str.substring(2);
+        }
+        if (str.indexOf("x") == 0) {
+            str = str.substring(1);
+        }
+        return str;
+    }
 }
