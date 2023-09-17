@@ -24,7 +24,13 @@ public class App {
         return false;
     }
 
-    // scoresClump method 1
+    /**
+     * scoresClump method 1:
+     * <p>
+     * Use Math.max() and Math.min()
+     * <p>
+     * NOT RECOMMENDED: Math.max() and Math.min() DO NOT occur in AP CSA
+     */
     public boolean scoresClump(int[] scores) {
         for (int i = 0; i < scores.length - 2; i++) {
             int t1 = scores[i] - scores[i + 1];
@@ -37,7 +43,13 @@ public class App {
         return false;
     }
 
-    // scoresClump method 2
+    /**
+     * scoresClump method 2:
+     * <p>
+     * Use Math.max() and Math.min()
+     * <p>
+     * NOT RECOMMENDED: Math.max() and Math.min() DO NOT occur in AP CSA
+     */
     public boolean scoresClump(int[] scores) {
         for (int i = 0; i < scores.length - 2; 1++) {
             int max = Math.max(scores[i], Math.max(scores[i + 1], scores[i + 2]));
@@ -59,7 +71,13 @@ public class App {
                 sum2 += scores[i];
             }
         }
-        return Math.max(sum1, sum2) / (scores.length / 2);
+        int ans;
+        if (sum1 > sum2) {
+            ans = sum1 / (scores.length / 2);
+        } else {
+            ans = sum2 / (scores.length / 2);
+        }
+        return ans;
     }
 
     public int wordsCount(String[] words, int len) {
@@ -90,8 +108,11 @@ public class App {
         return ans;
     }
 
-    // hasOne method 1
-    // 数位分离
+    /**
+     * hasOne method 1:
+     * <p>
+     * Digit separation
+     */
     public boolean hasOne(int n) {
         while (n != 0) {
             int d = n % 10;// 每一位数字
@@ -104,8 +125,11 @@ public class App {
         return false;
     }
 
-    // hasOne method 2
-    // 转换为String后处理
+    /**
+     * hasOne method 2:
+     * <p>
+     * Convert to String and process
+     */
     public boolean hasOne(int n) {
         String trans = "" + n;
         return trans.indexOf("1") != -1;
