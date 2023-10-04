@@ -39,7 +39,7 @@ public class App {
      * <p>
      * NOT RECOMMENDED: Math.max() and Math.min() DO NOT occur in AP CSA
      */
-    public int bigDiff(int[] nums) {
+    public int bigDiff2(int[] nums) {
         int maxn = nums[0];
         int minn = nums[0];
         for (int i = 0; i < nums.length; i++) {
@@ -93,7 +93,7 @@ public class App {
      * <p>
      * Single loop and single if branch
      */
-    public int sum13(int[] nums) {
+    public int sum132(int[] nums) {
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 13) {
@@ -131,7 +131,7 @@ public class App {
      * <p>
      * Use flag to control boundary
      */
-    public int sum67(int[] nums) {
+    public int sum672(int[] nums) {
         int sum = 0;
         boolean flag = false;
         for (int i = 0; i < nums.length; i++) {
@@ -269,7 +269,7 @@ public class App {
      * 既然连续两个的2和4不能同时存在，
      * 那么直接不等为True即可
      */
-    public boolean either24(int[] nums) {
+    public boolean either242(int[] nums) {
         boolean flag2 = false;
         boolean flag4 = false;
         for (int i = 0; i < nums.length - 1; i++) {
@@ -367,7 +367,7 @@ public class App {
      * <p>
      * Compact return logic
      */
-    public boolean haveThree(int[] nums) {
+    public boolean haveThree2(int[] nums) {
         int count = 0;
         boolean found = false;
         for (int i = 0; i < nums.length; i++) {
@@ -444,7 +444,7 @@ public class App {
      * <p>
      * Change in original array
      */
-    public int[] shiftLeft(int[] nums) {
+    public int[] shiftLeft2(int[] nums) {
         if (nums.length == 0) {
             return nums;
         }
@@ -479,7 +479,7 @@ public class App {
      * <p>
      * Use two loops
      */
-    public int[] tenRun(int[] nums) {
+    public int[] tenRun2(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] % 10 == 0) {
                 int j = i + 1;
@@ -538,5 +538,132 @@ public class App {
             }
         }
         return arr;
+    }
+
+    /**
+     * withoutTen method 1:
+     * <p>
+     * Use fluent logic
+     */
+    public int[] withoutTen(int[] nums) {
+        //remove all 10s
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==10){
+                nums[i]=0;
+            }
+        }
+        //resort the array
+        int rear=0;
+        //mark the index of next space
+        for(int i=0;i<nums.length;i++){
+            //go through the array
+            if(nums[i]!=0){
+                //if meet non 0 numbers
+                nums[rear]=nums[i];
+                //move the number to the mark
+                rear=rear+1;
+                //move mark further
+            }
+        }
+        //clear the rest part of the array
+        while (rear < nums.length){
+            nums[rear]=0;
+            rear++;
+        }
+        return nums;
+    }
+
+    /**
+     * withoutTen method 2:
+     * <p>
+     * Compressed method 1
+     */
+    public int[] withoutTen2(int[] nums) {
+        int[] ret= new int[nums.length];
+        int rear = 0;
+        for (int i = 0; i < nums.length; i++){
+            if(nums[i]!=10){
+                ret[rear]=nums[i];
+                rear++;
+            }
+        }
+        return ret;
+    }
+
+    public int[] zeroMax(int[] nums) {
+        //output array
+        int[] ret=new int[nums.length];
+        int maxOdd=0;
+        //reverse index
+        for(int i=nums.length-1;i>=0;i--){
+            //when 0,replace with maxOdd
+            if(nums[i]==0){
+                ret[i]=maxOdd;
+            }
+            //when odd, check if it is bigger
+            else if(nums[i]%2==1 && nums[i]>maxOdd){
+                maxOdd=nums[i];
+                ret[i]=nums[i];
+            }
+            //for the rest, just output as is
+            else{
+                ret[i]=nums[i];
+            }
+        }
+        return ret;
+    }
+
+    public int[] evenOdd(int[] nums) {
+        //return array
+        int[] ret=new int[nums.length];
+        //mark front and back
+        int front=0;
+        int rear=nums.length-1;
+        //go through the array
+        for(int i=0;i<nums.length;i++){
+            //odd
+            if(nums[i]%2==1){
+                ret[rear]=nums[i];
+                rear--;
+            }
+            //even
+            else{
+                ret[front]=nums[i];
+                front++;
+            }
+        }
+        return ret;
+    }
+
+    public String[] fizzBuzz(int start, int end) {
+        //return array
+        String []ret=new String[end-start];
+        //mark the next spare index
+        int index=0;
+        //go through the range
+        for(int i=start;i<end;i++){
+            //if 5
+            if(i%5==0){
+                //if 5 & 3
+                if(i%3==0){
+                    ret[index]="FizzBuzz";
+                }
+                //if 5 but not 3
+                else{
+                    ret[index]="Buzz";
+                }
+            }
+            //if 3
+            else if(i%3==0){
+                ret[index]="Fizz";
+            }
+            //for all the others
+            else{
+                ret[index]=String.valueOf(i);
+            }
+            //move the index forward
+            index++;
+        }
+        return ret;
     }
 }
