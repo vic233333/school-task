@@ -74,12 +74,30 @@ public class App {
         for (int i = 0; i < votesList.size(); i++) {
             sum=sum+votesList.get(i);
         }
+        //judge who wins
         if(sum<0){
             return false;
         }
         else{
             return true;
         }
+    }
+
+    public List<String> listScaredyCat(List<String> petsList) {
+        //go through the list
+        //因为狗在前的时候后面猫会吓跑，所以检索狗的位置。后面需要留一个猫的位置，所以减1
+        for (int i = 0; i < petsList.size()-1; i++) {
+            //如果第i个是狗，后面一个是猫
+            if(petsList.get(i).equals("dog")&&petsList.get(i+1).equals("cat")){
+                //猫跑走
+                petsList.remove(i+1);
+                //此处结束了一个判断，但是查看第三个样例：
+                //listScaredyCat(["cat", "dog", "cat", "cat", "snake"]) → ["cat", "dog", "snake"]
+                //猫会继续和狗反应，直到全部吓跑。如果此时正常结束，则不会判断下一只猫有没有被吓跑，所以需要-1，让程序再检查一遍
+                i=i-1;
+            }
+        }
+        return petsList;
     }
 
     public static void main(String[] args) {
