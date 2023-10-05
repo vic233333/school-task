@@ -2,8 +2,6 @@ import java.util.ArrayList;//引入ArrayList库
 import java.util.Arrays;
 import java.util.List;
 
-import org.w3c.dom.stylesheets.LinkStyle;
-
 public class App {
     public int listSumEvenIndexes(List<Integer> numsList) {
         int sum = 0;
@@ -69,16 +67,15 @@ public class App {
     }
 
     public boolean listWinRace(List<Integer> votesList) {
-        int sum=0;
+        int sum = 0;
         //go through the list
         for (int i = 0; i < votesList.size(); i++) {
-            sum=sum+votesList.get(i);
+            sum = sum + votesList.get(i);
         }
         //judge who wins
-        if(sum<0){
+        if (sum < 0) {
             return false;
-        }
-        else{
+        } else {
             return true;
         }
     }
@@ -86,15 +83,15 @@ public class App {
     public List<String> listScaredyCat(List<String> petsList) {
         //go through the list
         //因为狗在前的时候后面猫会吓跑，所以检索狗的位置。后面需要留一个猫的位置，所以减1
-        for (int i = 0; i < petsList.size()-1; i++) {
+        for (int i = 0; i < petsList.size() - 1; i++) {
             //如果第i个是狗，后面一个是猫
-            if(petsList.get(i).equals("dog")&&petsList.get(i+1).equals("cat")){
+            if (petsList.get(i).equals("dog") && petsList.get(i + 1).equals("cat")) {
                 //猫跑走
-                petsList.remove(i+1);
+                petsList.remove(i + 1);
                 //此处结束了一个判断，但是查看第三个样例：
                 //listScaredyCat(["cat", "dog", "cat", "cat", "snake"]) → ["cat", "dog", "snake"]
                 //猫会继续和狗反应，直到全部吓跑。如果此时正常结束，则不会判断下一只猫有没有被吓跑，所以需要-1，让程序再检查一遍
-                i=i-1;
+                i = i - 1;
             }
         }
         return petsList;
@@ -102,38 +99,76 @@ public class App {
 
     public boolean levelField(List<Integer> numsList) {
         //思路：求得最高值和最低值，相减来检查是否小于8
-        if(numsList.size()<=3){
+        if (numsList.size() <= 3) {
             return false;
         }
         //初始值时，最小值要尽可能大，最大值要尽可能小
-        int min=Integer.MAX_VALUE;
-        int max=0;
+        int min = Integer.MAX_VALUE;
+        int max = 0;
         for (int i = 0; i < numsList.size(); i++) {
             //find max and min
-            if(numsList.get(i)<min){
-                min=numsList.get(i);
+            if (numsList.get(i) < min) {
+                min = numsList.get(i);
             }
-            if(numsList.get(i)>max){
-                max=numsList.get(i);
+            if (numsList.get(i) > max) {
+                max = numsList.get(i);
             }
         }
-        if(max-min>8){
+        if (max - min > 8) {
             return false;
         }
         return true;
     }
 
-    public int wiseGuys(List<Integer> agesList){
-        int max=0;
+    public int wiseGuys(List<Integer> agesList) {
+        int max = 0;
         //go through the list with interval of 2
-        for (int i = 0; i < agesList.size(); i=i+2) {
-            if(agesList.get(i)+agesList.get(i+1)>max){
-                max=agesList.get(i)+agesList.get(i+1);
+        for (int i = 0; i < agesList.size(); i = i + 2) {
+            if (agesList.get(i) + agesList.get(i + 1) > max) {
+                max = agesList.get(i) + agesList.get(i + 1);
             }
         }
         return max;
     }
 
+    public String golfingBrothers(List<Integer> adamList, List<Integer> bobList, List<Integer> craigList) {
+        //get sum one by one and prevent empty list
+        double numAdam = 0;
+        for (int i = 0; i < adamList.size(); i++) {
+            numAdam = numAdam + adamList.get(i);
+        }
+        if (adamList.size() < 2) {
+            numAdam = Double.MAX_VALUE;
+        }
+        double numBob = 0;
+        for (int i = 0; i < bobList.size(); i++) {
+            numBob = numBob + bobList.get(i);
+        }
+        if (bobList.size() < 2) {
+            numBob = Double.MAX_VALUE;
+        }
+        double numCrag = 0;
+        for (int i = 0; i < craigList.size(); i++) {
+            numCrag = numCrag + craigList.get(i);
+        }
+        if (craigList.size() < 2) {
+            numCrag = Double.MAX_VALUE;
+        }
+        //get average
+        numAdam = numAdam / adamList.size();
+        numBob = numBob / bobList.size();
+        numCrag = numCrag / craigList.size();
+        //compare
+        if (numAdam < numBob && numAdam < numCrag) {
+            return "adam";
+        }
+        if (numBob < numAdam && numBob < numCrag) {
+            return "bob";
+        }
+        return "craig";
+    }
+
+    
     public static void main(String[] args) {
         List<Integer> numList = new ArrayList<Integer>();
         numList = Arrays.asList(7, 4, 2, 3, 6, 7, 7, 8, 5);
