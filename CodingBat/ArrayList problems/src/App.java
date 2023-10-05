@@ -48,25 +48,19 @@ public class App {
         return sum;
     }
 
-    public static void main(String[] args) {
-        List<Integer> numList = new ArrayList<Integer>();
-        numList = Arrays.asList(7, 4, 2, 3, 6, 7, 7, 8, 5);
-        System.out.println(listYucky7);
-    }
-
     public List<String> listCatty(List<String> animalsList) {
-        List<String> ret=new ArrayList<String>();
+        List<String> ret = new ArrayList<String>();
         //go through the list
-        for(int i=0;i<animalsList.size();i++){
+        for (int i = 0; i < animalsList.size(); i++) {
             //go through the string
             //因为我们遍历的是第一个字母，也就是C，所以只要减去两位，也就是at就可以了
-            for(int j=0;j<animalsList.get(i).length()-2;j++){
+            for (int j = 0; j < animalsList.get(i).length() - 2; j++) {
                 //如果列表中的第i位字符串的第j~j+3位等于"cat"
-                if(animalsList.get(i).substring(j,j+3+1).equals("cat")){
+                if (animalsList.get(i).substring(j, j + 3 + 1).equals("cat")) {
                     ret.add(animalsList.get(i));
                 }
                 //same as above
-                else if (animalsList.get(i).substring(j,j+3+1).equals("Cat")) {
+                else if (animalsList.get(i).substring(j, j + 3 + 1).equals("Cat")) {
                     ret.add(animalsList.get(i));
                 }
             }
@@ -74,5 +68,23 @@ public class App {
         return ret;
     }
 
+    public boolean listWinRace(List<Integer> votesList) {
+        int sum=0;
+        //go through the list
+        for (int i = 0; i < votesList.size(); i++) {
+            sum=sum+votesList.get(i);
+        }
+        if(sum<0){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 
+    public static void main(String[] args) {
+        List<Integer> numList = new ArrayList<Integer>();
+        numList = Arrays.asList(7, 4, 2, 3, 6, 7, 7, 8, 5);
+        System.out.println(listYucky7);
+    }
 }
