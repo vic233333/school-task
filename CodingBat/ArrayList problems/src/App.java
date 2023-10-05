@@ -168,7 +168,18 @@ public class App {
         return "craig";
     }
 
-    
+    public boolean listFreeSoup(List<Integer> aList, List<Integer> bList) {
+        //if >20
+        if (aList.get(1) + bList.get(1) >= 20) {
+            //if each>5
+            if (aList.get(0) + aList.get(2) >= 5 && bList.get(0) + bList.get(2) >= 5) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         List<Integer> numList = new ArrayList<Integer>();
         numList = Arrays.asList(7, 4, 2, 3, 6, 7, 7, 8, 5);
