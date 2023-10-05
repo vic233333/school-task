@@ -217,7 +217,7 @@ public class App {
      * <p>
      * 以下解法不符合AP考试范围，而且这题AP也不会考
      * <p>
-     * ArrayList写不了排序，只能转换回Array再写排序
+     * 如果硬要写的话ArrayList写不了排序，只能转换回Array再写排序
      * <p>
      * 写出来会一堆，谁爱写谁写去吧，这里各位看个思路就行了
      * <p>
@@ -243,6 +243,15 @@ public class App {
         return rankings;
     }
 
+    public List<String> listBackwardChars(String str) {
+        List<String> ret = new ArrayList<String>();
+        //倒序遍历，str的最后一位是长度-1，第一位是0
+        for(int i=str.length()-1;i>=0;i--){
+            ret.add(str.substring(i,i+1));
+        }
+        return ret;
+    }
+    
     public static void main(String[] args) {
         List<Integer> numList = new ArrayList<Integer>();
         numList = Arrays.asList(7, 4, 2, 3, 6, 7, 7, 8, 5);
