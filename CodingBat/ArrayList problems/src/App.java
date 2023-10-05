@@ -183,20 +183,33 @@ public class App {
     public List<String> listWackyWords(List<String> wordsList) {
         List<String> ret = new ArrayList<String>();
         //empty protect
-        if(wordsList.size()==0){
+        if (wordsList.size() == 0) {
             return ret;
         }
         //get prefix and suffix
-        String prefix=wordsList.get(0).substring(0,1);
-        String suffix=wordsList.get(wordsList.size()-1).substring(wordsList.get(wordsList.size()-1).length()-1);
+        String prefix = wordsList.get(0).substring(0, 1);
+        String suffix = wordsList.get(wordsList.size() - 1).substring(wordsList.get(wordsList.size() - 1).length() - 1);
         //combine
-        for(int i=0;i<wordsList.size();i++){
-            ret.add(prefix+wordsList.get(i)+suffix);
+        for (int i = 0; i < wordsList.size(); i++) {
+            ret.add(prefix + wordsList.get(i) + suffix);
         }
         return ret;
     }
 
-    
+    public boolean listGuessAverage(List<Integer> numsList, int guess) {
+        double num = 0;
+        //get sum
+        for (int i = 0; i < numsList.size(); i++) {
+            num = num + numsList.get(i);
+        }
+        //convert to average
+        num = num / numsList.size() * 1.0;
+        //judge
+        if (num * 0.95 <= guess && guess <= num * 1.05) {
+            return true;
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         List<Integer> numList = new ArrayList<Integer>();
