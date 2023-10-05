@@ -100,6 +100,31 @@ public class App {
         return petsList;
     }
 
+    public boolean levelField(List<Integer> numsList) {
+        //思路：求得最高值和最低值，相减来检查是否小于8
+        if(numsList.size()<=3){
+            return false;
+        }
+        //初始值时，最小值要尽可能大，最大值要尽可能小
+        int min=Integer.MAX_VALUE;
+        int max=0;
+        for (int i = 0; i < numsList.size(); i++) {
+            //find max and min
+            if(numsList.get(i)<min){
+                min=numsList.get(i);
+            }
+            if(numsList.get(i)>max){
+                max=numsList.get(i);
+            }
+        }
+        if(max-min>8){
+            return false;
+        }
+        return true;
+    }
+
+
+
     public static void main(String[] args) {
         List<Integer> numList = new ArrayList<Integer>();
         numList = Arrays.asList(7, 4, 2, 3, 6, 7, 7, 8, 5);
