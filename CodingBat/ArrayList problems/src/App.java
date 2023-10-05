@@ -123,7 +123,16 @@ public class App {
         return true;
     }
 
-
+    public int wiseGuys(List<Integer> agesList){
+        int max=0;
+        //go through the list with interval of 2
+        for (int i = 0; i < agesList.size(); i=i+2) {
+            if(agesList.get(i)+agesList.get(i+1)>max){
+                max=agesList.get(i)+agesList.get(i+1);
+            }
+        }
+        return max;
+    }
 
     public static void main(String[] args) {
         List<Integer> numList = new ArrayList<Integer>();
