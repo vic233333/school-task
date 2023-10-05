@@ -180,6 +180,24 @@ public class App {
         return false;
     }
 
+    public List<String> listWackyWords(List<String> wordsList) {
+        List<String> ret = new ArrayList<String>();
+        //empty protect
+        if(wordsList.size()==0){
+            return ret;
+        }
+        //get prefix and suffix
+        String prefix=wordsList.get(0).substring(0,1);
+        String suffix=wordsList.get(wordsList.size()-1).substring(wordsList.get(wordsList.size()-1).length()-1);
+        //combine
+        for(int i=0;i<wordsList.size();i++){
+            ret.add(prefix+wordsList.get(i)+suffix);
+        }
+        return ret;
+    }
+
+    
+
     public static void main(String[] args) {
         List<Integer> numList = new ArrayList<Integer>();
         numList = Arrays.asList(7, 4, 2, 3, 6, 7, 7, 8, 5);
