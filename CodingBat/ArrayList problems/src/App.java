@@ -1,6 +1,7 @@
 import java.util.ArrayList;//引入ArrayList库
 import java.util.Arrays;
 import java.util.List;
+import java.util.Comparator;
 
 public class App {
     public int listSumEvenIndexes(List<Integer> numsList) {
@@ -209,6 +210,37 @@ public class App {
             return true;
         }
         return false;
+    }
+
+    /**
+     * 写到这里我真的想骂人，这里排序一点没教，教了也写不了
+     * <p>
+     * 以下解法不符合AP考试范围，而且这题AP也不会考
+     * <p>
+     * ArrayList写不了排序，只能转换回Array再写排序
+     * <p>
+     * 写出来会一堆，谁爱写谁写去吧，这里各位看个思路就行了
+     * <p>
+     * Fuck U APCS
+     */
+    public List<Integer> listClassRanks(List<Integer> rankings) {
+        int topTenCount=0;
+        //count the top 10
+        for(int i=0;i<rankings.size();i++){
+            if(rankings.get(i)<=10){
+                topTenCount++;
+            }
+        }
+        //if >=2
+        if (topTenCount >= 2) {
+            //正序排序
+            rankings.sort(Comparator.naturalOrder());
+            return rankings;
+        }
+        //else
+        //反向排序
+        rankings.sort(Comparator.reverseOrder());
+        return rankings;
     }
 
     public static void main(String[] args) {
