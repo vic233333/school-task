@@ -267,7 +267,7 @@ public class App {
      * <p>
      * More compact way
      */
-    public String startWord(String str, String word) {
+    public String startWord2(String str, String word) {
         if (str.length() > 0 && (str.substring(1).indexOf(word.substring(1)) == 0)) {
             return str.substring(0, word.length());
         } else {
@@ -324,7 +324,7 @@ public class App {
      * <p>
      * Normal way
      */
-    public String withoutX2(String str) {
+    public String withoutX22(String str) {
         if (str.length() >= 2 && str.substring(0, 2).equals("xx")) {
             return str.substring(2);
         }
@@ -343,7 +343,7 @@ public class App {
      * <p>
      * More compact way
      */
-    public String withoutX2(String str) {
+    public String withoutX23(String str) {
         if (str.indexOf("x", 1) == 1) {
             str = str.substring(0, 1) + str.substring(2);
         }

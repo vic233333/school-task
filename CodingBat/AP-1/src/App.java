@@ -50,8 +50,8 @@ public class App {
      * <p>
      * NOT RECOMMENDED: Math.max() and Math.min() DO NOT occur in AP CSA
      */
-    public boolean scoresClump(int[] scores) {
-        for (int i = 0; i < scores.length - 2; 1++) {
+    public boolean scoresClump2(int[] scores) {
+        for (int i = 0; i < scores.length - 2; i++) {
             int max = Math.max(scores[i], Math.max(scores[i + 1], scores[i + 2]));
             int min = Math.min(scores[i], Math.min(scores[i + 1], scores[i + 2]));
             if (max - min <= 2) {
@@ -130,7 +130,7 @@ public class App {
      * <p>
      * Convert to String and process
      */
-    public boolean hasOne(int n) {
+    public boolean hasOne2(int n) {
         String trans = "" + n;
         return trans.indexOf("1") != -1;
     }

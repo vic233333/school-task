@@ -38,8 +38,7 @@ public class App {
         for (int i = 0; i < numsList.size(); i++) {
             if (numsList.get(i) == 7 || i - 1 >= 0 && numsList.get(i - 1) == 7) {
                 //do nothing
-            }
-            else {
+            } else {
                 sum += numsList.get(i);
             }
         }
@@ -223,10 +222,10 @@ public class App {
      * Fuck U APCS
      */
     public List<Integer> listClassRanks(List<Integer> rankings) {
-        int topTenCount=0;
+        int topTenCount = 0;
         //count the top 10
-        for(int i=0;i<rankings.size();i++){
-            if(rankings.get(i)<=10){
+        for (int i = 0; i < rankings.size(); i++) {
+            if (rankings.get(i) <= 10) {
                 topTenCount++;
             }
         }
@@ -245,8 +244,8 @@ public class App {
     public List<String> listBackwardChars(String str) {
         List<String> ret = new ArrayList<String>();
         //倒序遍历，str的最后一位是长度-1，第一位是0
-        for(int i=str.length()-1;i>=0;i--){
-            ret.add(str.substring(i,i+1));
+        for (int i = str.length() - 1; i >= 0; i--) {
+            ret.add(str.substring(i, i + 1));
         }
         return ret;
     }
@@ -254,6 +253,6 @@ public class App {
     public static void main(String[] args) {
         List<Integer> numList = new ArrayList<Integer>();
         numList = Arrays.asList(7, 4, 2, 3, 6, 7, 7, 8, 5);
-        System.out.println(listYucky7);
+        System.out.println();
     }
 }

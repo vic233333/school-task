@@ -36,7 +36,7 @@ public class App {
      * Using indexOf() with a return of -1 when not found,
      * avoids redundant searches.
      */
-    public int countHi(String str) {
+    public int countHi2(String str) {
         int sum = 0;
         int k = str.indexOf("hi");
         while (k != -1) {
@@ -51,7 +51,7 @@ public class App {
      * <p>
      * Traverse
      */
-    public int countHi(String str) {
+    public int countHi3(String str) {
         int count = 0;
         for (int i = 0; i < str.length() - 1; i++) {
             if (str.substring(i, i + 2).equals("hi")) {
@@ -99,7 +99,7 @@ public class App {
      * <p>
      * Find "cat" and "dog" in one loop
      */
-    public boolean catDog(String str) {
+    public boolean catDog2(String str) {
         int countCat = 0;
         int countDog = 0;
         for (int i = 0; i < str.length() - 2; i++) {
@@ -144,7 +144,7 @@ public class App {
      * <p>
      * Find "co" and "e" that are one index apart
      */
-    public int countCode(String str) {
+    public int countCode2(String str) {
         int count = 0;
         for (int i = 0; i < str.length() - 3; i++) {
             if (str.substring(i, i + 2).equals("co") &&
@@ -178,7 +178,7 @@ public class App {
      * <p>
      * Find before judging the length
      */
-    public boolean endOther(String a, String b) {
+    public boolean endOther2(String a, String b) {
         String maxn, minn;
         a = a.toLowerCase();
         b = b.toLowerCase();
@@ -196,12 +196,12 @@ public class App {
 
         /* method 2.2:
            Use substring() and equals*/
-        return maxn.substring(maxn.length() - minn.length()).equals(minn);
+//        return maxn.substring(maxn.length() - minn.length()).equals(minn);
 
         /* method 2.3:
            Use double indexOf()*/
-        return a.indexOf(b, a.length() - b.length()) != -1
-                || b.indexOf(a, b.length() - a.length()) != -1;
+//        return a.indexOf(b, a.length() - b.length()) != -1
+//                || b.indexOf(a, b.length() - a.length()) != -1;
     }
 
     /**
@@ -227,7 +227,7 @@ public class App {
      * <p>
      * Use one loop to find required "xyz"
      */
-    public boolean xyzThere(String str) {
+    public boolean xyzThere2(String str) {
         for (int i = 0; i < str.length() - 2; i++) {
             if (i == 0 &&
                     str.substring(i, i + 3).equals("xyz") ||
@@ -245,7 +245,7 @@ public class App {
      * <p>
      * Add one space at the start to avoid repeat "." judge
      */
-    public boolean xyzThere(String str) {
+    public boolean xyzThere3(String str) {
         str = " " + str;
         for (int i = 0; i < str.length() - 3; i++) {
             if (!str.substring(i, i + 1).equals(".") &&
@@ -279,7 +279,7 @@ public class App {
      * <p>
      * Find two required "b" in one loop
      */
-    public boolean bobThere(String str) {
+    public boolean bobThere2(String str) {
         for (int i = 0; i < str.length() - 2; i++) {
             if (str.substring(i, i + 1).equals("b") &&
                     str.substring(i + 2, i + 3).equals("b")) {
@@ -315,7 +315,7 @@ public class App {
      * <p>
      * Direct return
      */
-    public boolean xyBalance(String str) {
+    public boolean xyBalance2(String str) {
         for (int i = 0; i < str.length(); i++) {
             if (str.substring(i, i + 1).equals("x") &&
                     str.indexOf("y", i) == -1) {
@@ -357,7 +357,7 @@ public class App {
      * <p>
      * Use temp String to avoid repeating substring()
      */
-    public String repeatEnd(String str, int n) {
+    public String repeatEnd2(String str, int n) {
         String ans = new String("");
         String temp = str.substring(str.length() - n);
         for (int i = 0; i < n; i++) {
@@ -384,7 +384,7 @@ public class App {
      * <p>
      * Control with one variable
      */
-    public String repeatFront(String str, int n) {
+    public String repeatFront2(String str, int n) {
         String ans = new String("");
         for (int i = 0, count = n; i < n; i++, count--) {
             ans += str.substring(0, count);
@@ -415,7 +415,7 @@ public class App {
      * <p>
      * More versatile solution
      */
-    public String repeatSeparator(String word, String sep, int count) {
+    public String repeatSeparator2(String word, String sep, int count) {
         String ans = new String("");
         for (int i = 0; i < count; i++) {
             ans += word;
@@ -460,7 +460,7 @@ public class App {
      * <p>
      * Find whether the string in the middle is "xyz"
      */
-    public boolean xyzMiddle(String str) {
+    public boolean xyzMiddle2(String str) {
         if (str.length() < 3)
             return false;
 
@@ -561,7 +561,7 @@ public class App {
      * <p>
      * No need to master
      */
-    public String zipZap(String str) {
+    public String zipZap2(String str) {
         for (int i = 0; i < str.length() - 2; i++) {
             if (str.substring(i, i + 1).equals("z") &&
                     str.substring(i + 2, i + 3).equals("p")) {
@@ -578,7 +578,7 @@ public class App {
      * Use while loop and update String
      * to find z*p combination
      */
-    public String zipZap(String str) {
+    public String zipZap3(String str) {
         int k = str.indexOf("z");
         while (k != -1) {
             if (k + 2 < str.length() &&
@@ -597,7 +597,7 @@ public class App {
      * <p>
      * Determine whether the distance between this "z" and the next "p" is 2
      */
-    public String zipZap(String str) {
+    public String zipZap4(String str) {
         int k = str.indexOf("z");
         while (k != -1) {
             if (str.indexOf("p", k + 2) == k + 2) {
@@ -632,7 +632,7 @@ public class App {
      * <p>
      * Use two loop
      */
-    public String starOut(String str) {
+    public String starOut2(String str) {
         str = " " + str + " ";
         int i = str.indexOf("*");
         while (i != -1) {
@@ -682,7 +682,7 @@ public class App {
      * <p>
      * Use indexOf()
      */
-    public String wordEnds(String str, String word) {
+    public String wordEnds2(String str, String word) {
         String ans = "";
         str = " " + str + " ";
         int k = str.indexOf(word);

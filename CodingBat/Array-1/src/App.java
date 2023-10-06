@@ -84,13 +84,13 @@ public class App {
     }
 
     /**
-     * maxEnd3 method 1:
+     * maxEnd3 method 2:
      * <p>
      * Use Math.max() and Math.min()
      * <p>
      * NOT RECOMMENDED: Math.max() and Math.min() DO NOT occur in AP CSA
      */
-    public int[] maxEnd3(int[] nums) {
+    public int[] maxEnd32(int[] nums) {
         int maxn = 0;
         maxn = Math.max(nums[0], nums[nums.length - 1]);
         for (int i = 0; i < nums.length; i++) {
