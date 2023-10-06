@@ -36,13 +36,12 @@ public class App {
     public int listYucky7(List<Integer> numsList) {
         int sum = 0;
         for (int i = 0; i < numsList.size(); i++) {
-            if (numsList.get(i) == 7
-                    || i - 1 >= 0 && numsList.get(i - 1) == 7) {
-                i++;
-                continue;
+            if (numsList.get(i) == 7 || i - 1 >= 0 && numsList.get(i - 1) == 7) {
+                //do nothing
             }
-            sum += numsList.get(i);
-            System.out.println(numsList.get(i) + " ");
+            else {
+                sum += numsList.get(i);
+            }
         }
         return sum;
     }
@@ -251,7 +250,7 @@ public class App {
         }
         return ret;
     }
-    
+
     public static void main(String[] args) {
         List<Integer> numList = new ArrayList<Integer>();
         numList = Arrays.asList(7, 4, 2, 3, 6, 7, 7, 8, 5);
